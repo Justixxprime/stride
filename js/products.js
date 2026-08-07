@@ -415,11 +415,11 @@ function productCardHTML(p) {
         </div>
       </a>
       <div class="mt-3 flex items-start justify-between gap-2">
-        <div class="min-w-0">
-          <a href="product.html?id=${p.id}" class="text-sm font-semibold hover:underline">${p.name}</a>
+        <div class="min-w-0 flex-1">
+          <a href="product.html?id=${p.id}" class="text-sm font-semibold hover:underline block truncate">${p.name}</a>
           <p class="font-mono text-[10px] text-ink-soft uppercase mt-0.5">${p.category}</p>
         </div>
-        <div class="text-right shrink-0">${priceHTML}</div>
+        <div class="text-right shrink-0 whitespace-nowrap">${priceHTML}</div>
       </div>
       <button type="button" data-compare-toggle="${p.id}" class="chip !text-[10px] !py-1 !px-2.5 mt-2">+ Compare</button>
     </div>`;

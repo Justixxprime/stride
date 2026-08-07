@@ -54,21 +54,21 @@
   </div>
 
   <!-- visual side -->
-  <div class="hidden lg:block relative tile !rounded-none overflow-hidden auth-media" style="background:linear-gradient(135deg,#9D4EDD,#F72585,#3A0CA3)">
+  <div class="relative tile !rounded-none overflow-hidden auth-media h-56 sm:h-72 lg:h-auto order-first lg:order-none" style="background:linear-gradient(135deg,#9D4EDD,#F72585,#3A0CA3)">
     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
     <img data-src-base="images/auth-login" data-ext-idx="0" src="images/auth-login.jpg" alt="" class="absolute inset-0 w-full h-full object-cover auth-media-layer" onerror="imgTryNext(this)">
     <video data-src-base="videos/auth-login" class="absolute inset-0 w-full h-full object-cover auth-media-layer" muted loop playsinline autoplay></video>
     <div class="absolute inset-0" style="background:linear-gradient(0deg, rgba(11,11,12,.75), rgba(11,11,12,.15) 45%, rgba(11,11,12,.05))"></div>
     <div class="tech-scan absolute inset-0"></div>
 
-    <span class="shoe-chip" style="top:8%; left:6%;"><i class="fa-solid fa-bag-shopping text-[9px]"></i> Cart &amp; wishlist synced</span>
-    <span class="shoe-chip" style="top:18%; right:7%; animation-delay:1.2s"><i class="fa-solid fa-truck-fast text-[9px]"></i> Order tracking</span>
+    <span class="shoe-chip hidden sm:inline-flex" style="top:8%; left:6%;"><i class="fa-solid fa-bag-shopping text-[9px]"></i> Cart &amp; wishlist synced</span>
+    <span class="shoe-chip hidden sm:inline-flex" style="top:18%; right:7%; animation-delay:1.2s"><i class="fa-solid fa-truck-fast text-[9px]"></i> Order tracking</span>
 
-    <div class="absolute inset-0 flex items-end p-14">
+    <div class="absolute inset-0 flex items-end p-6 sm:p-10 lg:p-14">
       <div data-reveal>
-        <p class="font-mono text-[11px] uppercase tracking-wide text-white/60 mb-3">Welcome back</p>
-        <p class="font-display text-6xl text-white leading-[0.95]">Your bag<br><span class="font-accent italic font-normal">is waiting</span></p>
-        <p class="text-white/80 text-sm mt-4 max-w-xs">Pick up right where you left off. Wishlist, cart, and order history, synced to this account.</p>
+        <p class="font-mono text-[10px] sm:text-[11px] uppercase tracking-wide text-white/60 mb-1.5 sm:mb-3">Welcome back</p>
+        <p class="font-display text-3xl sm:text-5xl lg:text-6xl text-white leading-[0.95]">Your bag<br><span class="font-accent italic font-normal">is waiting</span></p>
+        <p class="text-white/80 text-xs sm:text-sm mt-2 sm:mt-4 max-w-xs hidden sm:block">Pick up right where you left off. Wishlist, cart, and order history, synced to this account.</p>
       </div>
     </div>
   </div>

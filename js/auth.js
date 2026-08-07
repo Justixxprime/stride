@@ -81,12 +81,57 @@ function currentAccount() {
   return auth ? findAccount(auth.email) : null;
 }
 
+/* ---------------------------------------------------------------------
+   CUSTOM PROFILE PHOTO. Stored per-account as a compressed data URL in
+   this browser's localStorage — nothing is uploaded anywhere. Replaces
+   the old behavior where every logged-in visitor saw the same baked-in
+   images/avatar.jpg; now each account shows nothing (falls back to
+   initials) until that person chooses their own photo.
+--------------------------------------------------------------------- */
+function avatarKey(email) { return `stride-avatar-${email.toLowerCase()}`; }
+function getCustomAvatar(email) {
+  try { return localStorage.getItem(avatarKey(email)); } catch { return null; }
+}
+function setCustomAvatar(email, dataUrl) {
+  try { localStorage.setItem(avatarKey(email), dataUrl); } catch (err) { console.error("Couldn't save photo:", err); }
+}
+function clearCustomAvatar(email) {
+  try { localStorage.removeItem(avatarKey(email)); } catch {}
+}
+/** Resizes/compresses a chosen image file down to a small square JPEG
+ * data URL before it's stored, so it stays well within localStorage's
+ * size limits regardless of how big the original photo was. */
+function fileToAvatarDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const reader = new FileReader();
+    reader.onerror = () => reject(new Error("Couldn't read that file"));
+    reader.onload = () => {
+      img.onerror = () => reject(new Error("That doesn't look like a valid image"));
+      img.onload = () => {
+        const size = 240;
+        const canvas = document.createElement("canvas");
+        canvas.width = size; canvas.height = size;
+        const ctx = canvas.getContext("2d");
+        const scale = Math.max(size / img.width, size / img.height);
+        const w = img.width * scale, h = img.height * scale;
+        ctx.drawImage(img, (size - w) / 2, (size - h) / 2, w, h);
+        resolve(canvas.toDataURL("image/jpeg", 0.85));
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
 /** Swaps the nav's account icon for an initials avatar when logged in. */
 function paintAuthState() {
   const auth = getAuth();
   document.querySelectorAll("[data-account-slot]").forEach((slot) => {
     if (auth) {
-      slot.innerHTML = `<a href="account.html" class="avatar-chip" aria-label="Account"><img data-src-base="images/avatar" data-ext-idx="0" src="images/avatar.jpg" alt="${auth.name}" onerror="imgTryNext(this)"><span class="relative">${initials(auth.name) || "ST"}</span></a>`;
+      const photo = getCustomAvatar(auth.email);
+      const img = photo ? `<img src="${photo}" alt="${auth.name}">` : "";
+      slot.innerHTML = `<a href="account.html" class="avatar-chip" aria-label="Account">${img}<span class="relative">${initials(auth.name) || "ST"}</span></a>`;
     } else {
       slot.innerHTML = `<a href="login.html" class="icon-btn" aria-label="Log in"><i class="fa-regular fa-user text-sm"></i></a>`;
     }

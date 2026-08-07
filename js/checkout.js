@@ -136,7 +136,74 @@ function goToStep(n) {
     dot.innerHTML = stepNum < n ? '<i class="fa-solid fa-check text-[10px]"></i>' : stepNum;
   });
   document.querySelectorAll(".step-line").forEach((line, i) => line.classList.toggle("is-done", i + 1 < n));
+  if (n === 3) renderReview();
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/** Fills in the review step: shipping address from step 1's fields, and
+ * either the card's last 4 digits or, when a gift card/credit/promo has
+ * covered the whole order, a note that no card is being charged. */
+function renderReview() {
+  const name = document.getElementById("ship-name")?.value || "";
+  const address = document.getElementById("ship-address")?.value || "";
+  const city = document.getElementById("ship-city")?.value || "";
+  const postal = document.getElementById("ship-postal")?.value || "";
+  const addressEl = document.getElementById("review-address");
+  if (addressEl) addressEl.innerHTML = `${name}<br>${address}<br>${city} ${postal}`;
+
+  const paymentEl = document.getElementById("review-payment");
+  if (paymentEl) {
+    const { total } = computeTotals();
+    if (total <= 0) {
+      paymentEl.innerHTML = '<span class="text-volt-dark"><i class="fa-solid fa-gift mr-1"></i>Fully covered by gift card / credit — no card charged</span>';
+    } else {
+      const num = (document.getElementById("card-number")?.value || "").replace(/\s/g, "");
+      const last4 = num.slice(-4) || "4242";
+      paymentEl.textContent = `•••• •••• •••• ${last4}`;
+    }
+  }
+}
+
+/** Detects Visa / Mastercard / Amex from the card number's leading
+ * digits (the standard public IIN ranges) and highlights the matching
+ * badge above the field, so it feels like a real checkout recognizing
+ * the card as you type instead of always showing all three flat. */
+function detectCardBrand(num) {
+  if (/^4/.test(num)) return "visa";
+  if (/^(5[1-5]|2[2-7])/.test(num)) return "mc";
+  if (/^3[47]/.test(num)) return "amex";
+  return null;
+}
+function initCardFormatting() {
+  const numberInput = document.getElementById("card-number");
+  const expiryInput = document.getElementById("card-expiry");
+  const cvcInput = document.getElementById("card-cvc");
+  const badges = { visa: document.getElementById("card-badge-visa"), mc: document.getElementById("card-badge-mc"), amex: document.getElementById("card-badge-amex") };
+  const brandIcon = document.getElementById("card-brand-icon");
+  const brandClass = { visa: "fa-cc-visa", mc: "fa-cc-mastercard", amex: "fa-cc-amex" };
+
+  if (numberInput) {
+    numberInput.addEventListener("input", () => {
+      const digits = numberInput.value.replace(/\D/g, "").slice(0, 16);
+      numberInput.value = digits.replace(/(.{4})/g, "$1 ").trim();
+      const brand = detectCardBrand(digits);
+      Object.entries(badges).forEach(([key, el]) => el && el.classList.toggle("!bg-volt", key === brand));
+      Object.entries(badges).forEach(([key, el]) => el && el.classList.toggle("!text-[#0B0B0C]", key === brand));
+      if (brandIcon) {
+        brandIcon.className = `fa-brands ${brand ? brandClass[brand] : "fa-credit-card"} absolute right-4 top-1/2 -translate-y-1/2 ${brand ? "text-ink" : "text-ink-soft"} text-lg`;
+      }
+    });
+  }
+  if (expiryInput) {
+    expiryInput.addEventListener("input", () => {
+      let digits = expiryInput.value.replace(/\D/g, "").slice(0, 4);
+      if (digits.length >= 3) digits = `${digits.slice(0, 2)} / ${digits.slice(2)}`;
+      expiryInput.value = digits;
+    });
+  }
+  if (cvcInput) {
+    cvcInput.addEventListener("input", () => { cvcInput.value = cvcInput.value.replace(/\D/g, "").slice(0, 4); });
+  }
 }
 
 function validateStep(n) {
@@ -148,6 +215,12 @@ function validateStep(n) {
       toast("Fill in every field before continuing");
       return false;
     }
+  }
+  if (n === 2) {
+    const digits = (document.getElementById("card-number")?.value || "").replace(/\D/g, "");
+    if (digits.length < 13) { toast("That card number looks too short"); return false; }
+    const expiry = document.getElementById("card-expiry")?.value || "";
+    if (!/^\d{2} \/ \d{2}$/.test(expiry)) { toast("Enter expiry as MM / YY"); return false; }
   }
   return true;
 }
@@ -229,16 +302,26 @@ async function placeOrder() {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderOrderSummary();
+  initCardFormatting();
   goToStep(1);
 
   document.querySelectorAll("[data-next-step]").forEach((btn) => {
     btn.addEventListener("click", () => {
       if (!validateStep(currentStep)) return;
-      if (currentStep < TOTAL_STEPS) goToStep(currentStep + 1);
+      let next = currentStep + 1;
+      // gift card / credit / promo covers the whole order — skip the
+      // card-details step entirely rather than asking for a card no
+      // charge will ever be made on.
+      if (next === 2 && computeTotals().total <= 0) next = 3;
+      if (next <= TOTAL_STEPS) goToStep(next);
     });
   });
   document.querySelectorAll("[data-prev-step]").forEach((btn) => {
-    btn.addEventListener("click", () => goToStep(Math.max(1, currentStep - 1)));
+    btn.addEventListener("click", () => {
+      let prev = currentStep - 1;
+      if (currentStep === 3 && prev === 2 && computeTotals().total <= 0) prev = 1;
+      goToStep(Math.max(1, prev));
+    });
   });
 
   document.getElementById("promo-apply-btn")?.addEventListener("click", () => {

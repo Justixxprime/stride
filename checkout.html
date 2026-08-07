@@ -65,15 +65,15 @@
           </div>
           <div class="sm:col-span-2">
             <label class="font-mono text-[11px] uppercase text-ink-soft block mb-1.5">Address</label>
-            <input required type="text" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink" placeholder="Street address">
+            <input id="ship-address" required type="text" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink" placeholder="Street address">
           </div>
           <div>
             <label class="font-mono text-[11px] uppercase text-ink-soft block mb-1.5">City</label>
-            <input required type="text" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink">
+            <input id="ship-city" required type="text" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink">
           </div>
           <div>
             <label class="font-mono text-[11px] uppercase text-ink-soft block mb-1.5">Postal code</label>
-            <input required type="text" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink">
+            <input id="ship-postal" required type="text" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink">
           </div>
         </div>
         <div class="flex justify-end mt-8">
@@ -85,22 +85,25 @@
       <section data-step="2" class="hidden">
         <h2 class="font-display text-3xl mb-6">Payment</h2>
         <div class="flex gap-3 mb-5">
-          <span class="pill pill-dark"><i class="fa-brands fa-cc-visa"></i> Visa</span>
-          <span class="pill pill-dark"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</span>
-          <span class="pill pill-dark"><i class="fa-brands fa-cc-amex"></i> Amex</span>
+          <span class="pill pill-dark" id="card-badge-visa"><i class="fa-brands fa-cc-visa"></i> Visa</span>
+          <span class="pill pill-dark" id="card-badge-mc"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</span>
+          <span class="pill pill-dark" id="card-badge-amex"><i class="fa-brands fa-cc-amex"></i> Amex</span>
         </div>
         <div class="grid sm:grid-cols-2 gap-4">
           <div class="sm:col-span-2">
             <label class="font-mono text-[11px] uppercase text-ink-soft block mb-1.5">Card number</label>
-            <input required type="text" inputmode="numeric" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink font-mono" placeholder="4242 4242 4242 4242">
+            <div class="relative">
+              <input id="card-number" required type="text" inputmode="numeric" autocomplete="cc-number" maxlength="19" class="w-full border border-line rounded-xl pl-4 pr-11 py-3 text-sm outline-none focus:border-ink font-mono tracking-wider" placeholder="4242 4242 4242 4242">
+              <i id="card-brand-icon" class="fa-brands fa-credit-card absolute right-4 top-1/2 -translate-y-1/2 text-ink-soft text-lg"></i>
+            </div>
           </div>
           <div>
             <label class="font-mono text-[11px] uppercase text-ink-soft block mb-1.5">Expiry</label>
-            <input required type="text" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink font-mono" placeholder="MM / YY">
+            <input id="card-expiry" required type="text" inputmode="numeric" autocomplete="cc-exp" maxlength="5" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink font-mono" placeholder="MM / YY">
           </div>
           <div>
             <label class="font-mono text-[11px] uppercase text-ink-soft block mb-1.5">CVC</label>
-            <input required type="text" inputmode="numeric" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink font-mono" placeholder="123">
+            <input id="card-cvc" required type="text" inputmode="numeric" autocomplete="cc-csc" maxlength="4" class="w-full border border-line rounded-xl px-4 py-3 text-sm outline-none focus:border-ink font-mono" placeholder="123">
           </div>
         </div>
         <p class="font-mono text-[10px] text-ink-soft mt-4"><i class="fa-solid fa-lock mr-1"></i>This is a portfolio demo. No payment is actually processed.</p>
@@ -115,11 +118,11 @@
         <h2 class="font-display text-3xl mb-6">Review &amp; place order</h2>
         <div class="tile-white p-5 mb-4">
           <p class="font-mono text-[11px] uppercase text-ink-soft mb-1">Shipping to</p>
-          <p class="text-sm" id="review-address">. </p>
+          <p class="text-sm" id="review-address">&nbsp;</p>
         </div>
         <div class="tile-white p-5 mb-6">
           <p class="font-mono text-[11px] uppercase text-ink-soft mb-1">Payment</p>
-          <p class="text-sm font-mono">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 4242</p>
+          <p class="text-sm font-mono" id="review-payment">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 4242</p>
         </div>
         <div class="flex justify-between">
           <button data-prev-step class="btn btn-outline"><i class="fa-solid fa-arrow-left mr-1"></i> Back</button>

@@ -83,6 +83,50 @@ document.addEventListener("DOMContentLoaded", () => {
   const guestBanner = document.getElementById("guest-banner");
   const logoutBtn = document.getElementById("logout-btn");
 
+  // ---- profile photo (stored locally on this device, per account) ----
+  const avatarChip = document.getElementById("account-avatar-chip");
+  const avatarInput = document.getElementById("avatar-upload-input");
+  const avatarRemoveBtn = document.getElementById("avatar-remove-btn");
+  const avatarUploadLabel = avatarInput ? avatarInput.closest(".relative").querySelector("label") : null;
+  function paintAccountAvatar() {
+    if (!avatarChip) return;
+    if (!auth) {
+      avatarChip.innerHTML = `<i class="fa-regular fa-user"></i>`;
+      return;
+    }
+    const photo = getCustomAvatar(auth.email);
+    avatarChip.innerHTML = photo ? `<img src="${photo}" alt="${auth.name}">` : (initials(auth.name) || "ST");
+    if (avatarRemoveBtn) avatarRemoveBtn.classList.toggle("hidden", !photo);
+  }
+  paintAccountAvatar();
+  if (!auth && avatarUploadLabel) avatarUploadLabel.classList.add("hidden");
+  if (avatarInput) {
+    avatarInput.addEventListener("change", async () => {
+      const file = avatarInput.files[0];
+      if (!file || !auth) return;
+      if (!file.type.startsWith("image/")) { toast("That file isn't an image"); return; }
+      try {
+        const dataUrl = await fileToAvatarDataUrl(file);
+        setCustomAvatar(auth.email, dataUrl);
+        paintAccountAvatar();
+        paintAuthState(); // updates the small header icon too
+        toast("Profile photo updated");
+      } catch (err) {
+        toast(err.message || "Couldn't use that photo");
+      }
+      avatarInput.value = "";
+    });
+  }
+  if (avatarRemoveBtn) {
+    avatarRemoveBtn.addEventListener("click", () => {
+      if (!auth) return;
+      clearCustomAvatar(auth.email);
+      paintAccountAvatar();
+      paintAuthState();
+      toast("Profile photo removed");
+    });
+  }
+
   if (auth) {
     if (guestBanner) guestBanner.classList.add("hidden");
     if (nameField) nameField.value = auth.name;

@@ -122,7 +122,7 @@
 <!-- ============ MOBILE NAV DRAWER ============ -->
 <div id="mobile-nav" data-drawer data-open="false" data-drawer-side="left" class="fixed inset-0 z-50 lg:hidden">
   <div class="absolute inset-0 bg-ink/50" data-drawer-close></div>
-  <div data-drawer-panel class="absolute left-0 top-0 h-full w-72 bg-paper p-6 flex flex-col">
+  <div data-drawer-panel class="absolute left-0 top-0 h-full w-72 bg-paper p-6 flex flex-col overflow-y-auto overscroll-contain">
     <div class="flex items-center justify-between mb-8">
       <span class="font-display text-xl">Menu</span>
       <button data-drawer-close class="h-9 w-9 flex items-center justify-center" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
@@ -162,7 +162,7 @@
 
 <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-16">
   <div class="tilt" data-tilt data-reveal>
-  <div class="tile aspect-[21/9] relative tilt-inner overflow-hidden" style="background:linear-gradient(120deg,#F72585,#3A0CA3,#4CC9F0)">
+  <div class="tile aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] relative tilt-inner overflow-hidden" style="background:linear-gradient(120deg,#F72585,#3A0CA3,#4CC9F0)">
     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
     <img data-src-base="images/about-wide" data-ext-idx="0" src="images/about-wide.jpg" alt="Stride workshop" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
     <video data-src-base="videos/about-workshop" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline autoplay></video>
@@ -309,14 +309,25 @@
         <li><a href="how-its-built.html" class="hover:text-volt">How this was built</a></li>
       </ul>
     </div>
-    <div class="col-span-1">
+    <div class="col-span-1 min-w-0">
       <p class="font-mono text-[11px] uppercase text-[#F7F5EF]/50 mb-4">Contact</p>
       <ul class="space-y-2.5 text-sm text-[#F7F5EF]/75">
-        <li><a href="mailto:justixxchiobi@gmail.com" class="hover:text-volt">justixxchiobi@gmail.com</a></li>
-        <li><a href="mailto:obiomachibueze@yahoo.com" class="hover:text-volt">obiomachibueze@yahoo.com</a></li>
-        <li><a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-volt">WhatsApp 0913 305 8119</a></li>
-        <li><a href="https://justixxprime.github.io/" target="_blank" rel="noopener" class="hover:text-volt">justixxprime.github.io</a></li>
+        <li><a href="contact.html" class="hover:text-volt font-semibold">Contact us</a></li>
+        <li><a href="mailto:justixxchiobi@gmail.com" class="hover:text-volt break-words">justixxchiobi@gmail.com</a></li>
+        <li><a href="mailto:obiomachibueze@yahoo.com" class="hover:text-volt break-words">obiomachibueze@yahoo.com</a></li>
+        <li><a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-volt break-words">WhatsApp 0913 305 8119</a></li>
+        <li><a href="https://justixxprime.github.io/" target="_blank" rel="noopener" class="hover:text-volt break-words">justixxprime.github.io</a></li>
       </ul>
+    </div>
+  </div>
+  <div class="border-t border-[#F7F5EF]/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex items-center justify-center sm:justify-start">
+      <div class="theme-toggle inline-flex">
+        <button data-theme-set="light" aria-label="Light mode"><i class="fa-solid fa-sun text-[11px]"></i></button>
+        <button data-theme-set="dark" aria-label="Dark mode"><i class="fa-solid fa-moon text-[11px]"></i></button>
+        <button data-theme-set="system" aria-label="System theme"><i class="fa-solid fa-circle-half-stroke text-[11px]"></i></button>
+        <button data-theme-set="sunset" aria-label="Auto by sunset"><i class="fa-solid fa-cloud-moon text-[11px]"></i></button>
+      </div>
     </div>
   </div>
   <div class="border-t border-[#F7F5EF]/10">
