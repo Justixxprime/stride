@@ -1,0 +1,1214 @@
+/* ==========================================================================
+   STRIDE — shopping site design system
+   Look: bold condensed headlines, warm cream paper, black + volt-lime
+   accent, big rounded photo tiles, a giant footer wordmark, a barcode
+   motif. Deliberately different from a dashboard or a task board: no
+   sidebar, no bordered "card" language — everything sits on warm paper
+   inside big soft-cornered photo blocks, punctuated by full-bleed black
+   sections.
+   ========================================================================== */
+
+:root{
+  --ink:#0B0B0C;
+  --paper:#F7F5EF;
+  --paper-2:#EDE9DE;
+  --line:#DEDACC;
+  --card:#FFFFFF;
+  --volt:#D7FF3F;
+  --volt-dark:#B9E625;
+  --flame:#FF4B2B;
+  --ink-soft:#6E6B60;
+  --shadow: 0 1px 2px rgba(11,11,12,.05), 0 16px 40px -20px rgba(11,11,12,.25);
+  --shadow-lg: 0 30px 70px -25px rgba(11,11,12,.4);
+}
+
+html.dark{
+  --ink:#F3F1E9;
+  --paper:#0E0E0F;
+  --paper-2:#1A1A1B;
+  --line:#2C2C2C;
+  --card:#161616;
+  --volt:#E4FF6B;
+  --volt-dark:#C9E63F;
+  --flame:#FF6B4A;
+  --ink-soft:#9C988A;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 40px -20px rgba(0,0,0,.7);
+  --shadow-lg: 0 30px 80px -25px rgba(0,0,0,.85);
+}
+
+body{ transition: background-color .35s ease, color .35s ease; }
+.tile, .tile-white, .card-hover, #detail-overlay{ transition: background-color .35s ease, border-color .35s ease, box-shadow .2s ease, transform .2s ease; }
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Work Sans', sans-serif;
+}
+.font-display{ font-family:'Anton', sans-serif; letter-spacing:.01em; text-transform:uppercase; }
+.font-mono{ font-family:'Space Mono', monospace; }
+
+/* ---- photo tile: the signature content block ---- */
+.tile{
+  background:var(--paper-2);
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+}
+.tile-white{ background:var(--card); box-shadow:var(--shadow); }
+
+/* product thumbnail placeholder art (used until a real photo is dropped in) */
+.thumb-art{
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+  aspect-ratio: 1 / 1;
+  border-radius:22px;
+  overflow:hidden;
+}
+.thumb-art img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+}
+.thumb-art .thumb-fallback-icon{
+  font-size:34%;
+  color:rgba(11,11,12,.16);
+  transform:rotate(-18deg);
+}
+.thumb-art .thumb-alt{
+  position:absolute; inset:0; opacity:0; transition:opacity .35s ease;
+}
+.thumb-art:hover .thumb-alt{ opacity:1; }
+
+/* ---- pill / tag badges (the floating "+ COMFORT" style labels) ---- */
+.pill{
+  display:inline-flex; align-items:center; gap:.4rem;
+  background:var(--card);
+  border-radius:999px;
+  padding:.5rem 1rem;
+  font-size:.72rem;
+  font-weight:600;
+  box-shadow:var(--shadow);
+}
+.pill-dark{ background:var(--ink); color:var(--paper); }
+.pill-volt{ background:var(--volt); color:#0B0B0C; }
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  font-family:'Work Sans', sans-serif;
+  font-weight:600; font-size:.85rem;
+  padding:.9rem 1.7rem;
+  border-radius:999px;
+  transition: transform .35s cubic-bezier(.2,.9,.2,1.2), background-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.btn-ink{ background:var(--ink); color:var(--paper); }
+.btn-ink:hover{ background:var(--volt); color:#0B0B0C; }
+.btn-volt{ background:var(--volt); color:#0B0B0C; }
+.btn-volt:hover{ background:#0B0B0C; color:var(--volt); }
+.btn-outline{ border:1.5px solid var(--ink); color:var(--ink); }
+.btn-outline:hover{ background:var(--ink); color:var(--paper); }
+.btn-ghost{ color:var(--ink); }
+
+/* a light diagonal gloss that sweeps across on hover — desktop only, so
+   it never fights the tap ripple on touch devices */
+@media (hover:hover) and (pointer:fine){
+  .btn-ink::after, .btn-volt::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.35) 48%, transparent 66%);
+    transform:translateX(-120%); transition:transform .55s cubic-bezier(.2,.8,.2,1);
+    pointer-events:none;
+  }
+  .btn-ink:hover::after, .btn-volt:hover::after{ transform:translateX(120%); }
+}
+
+/* magnetic button wrapper — JS nudges this element's transform on mousemove */
+.magnetic{ will-change: transform; transition: transform .2s cubic-bezier(.2,.9,.2,1); }
+
+/* ---- nav ---- */
+.nav-pill{
+  display:flex; align-items:center;
+  background:var(--card);
+  border-radius:999px;
+  box-shadow:var(--shadow);
+}
+.nav-link{ position:relative; font-size:.82rem; font-weight:600; }
+.nav-link::after{
+  content:""; position:absolute; left:0; right:100%; bottom:-3px; height:2px;
+  background:var(--ink); transition:right .25s ease;
+}
+.nav-link:hover::after{ right:0; }
+
+/* ---- icon buttons ---- */
+.icon-btn{
+  position:relative;
+  height:2.6rem; width:2.6rem;
+  border-radius:999px;
+  display:flex; align-items:center; justify-content:center;
+  border:1.5px solid var(--ink);
+  transition: background-color .2s ease, color .2s ease, transform .2s cubic-bezier(.3,1.4,.5,1);
+}
+.icon-btn:hover{ background:var(--ink); color:var(--paper); transform:scale(1.06); }
+.icon-badge{
+  position:absolute; top:-6px; right:-6px;
+  min-width:18px; height:18px; padding:0 4px;
+  border-radius:999px;
+  background:var(--flame); color:#fff;
+  font-family:'Space Mono', monospace; font-size:10px; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+  transform:scale(0); transition: transform .3s cubic-bezier(.3,1.6,.4,1);
+}
+.icon-badge.is-visible{ transform:scale(1); }
+.icon-badge.pop{ animation: badge-pop .4s cubic-bezier(.3,1.6,.4,1); }
+@keyframes badge-pop{ 0%{ transform:scale(1); } 40%{ transform:scale(1.5); } 100%{ transform:scale(1); } }
+
+/* ---------------------------------------------------------------------
+   ICON MOTION SYSTEM (site-wide). Every <i class="fa-..."> icon on
+   every page shares this base transition, plus the repeating icon
+   groups below (nav buttons, footer socials, chevrons, close buttons,
+   theme toggle, swatches, trust icons, success checks, the flash-sale
+   bolt) each get a small, tasteful, on-brand micro-interaction. Almost
+   everything triggers on hover/open/focus rather than looping forever,
+   so it reads as responsive and alive rather than distracting — the
+   two exceptions (the active theme icon, the "live" bolt) are called
+   out below.
+--------------------------------------------------------------------- */
+i[class*="fa-"]{ transition: transform .3s cubic-bezier(.3,1.4,.5,1), color .25s ease, opacity .25s ease; }
+
+/* nav / utility icon buttons (search, wishlist, cart, hamburger circle) —
+   the button already scales on hover; give the icon inside its own
+   slight counter-rotation so the two pieces feel like they move
+   independently instead of as one rigid block */
+.icon-btn:hover i{ transform:rotate(-8deg); }
+
+/* footer social icons: lift + spin + a touch of scale on hover */
+a[aria-label="WhatsApp"] i, a[aria-label="Facebook"] i, a[aria-label="Instagram"] i,
+a[aria-label="LinkedIn"] i, a[aria-label="GitHub"] i{ display:inline-block; }
+a[aria-label="WhatsApp"]:hover i, a[aria-label="Facebook"]:hover i, a[aria-label="Instagram"]:hover i,
+a[aria-label="LinkedIn"]:hover i, a[aria-label="GitHub"]:hover i{ transform:rotate(360deg) scale(1.15); }
+
+/* dropdown / accordion chevrons: nudge down on hover, flip when open
+   (the FAQ accordion already flips its own chevron via group-open:
+   rotate-180 — this just adds the matching hover nudge everywhere else) */
+.fa-chevron-down{ display:inline-block; }
+.nav-link:hover .fa-chevron-down, button:hover > .fa-chevron-down{ transform:translateY(2px); }
+[aria-expanded="true"] .fa-chevron-down{ transform:rotate(180deg); }
+
+/* close (x) buttons: rotate shut on hover instead of just sitting there */
+.fa-xmark{ display:inline-block; }
+button:hover .fa-xmark{ transform:rotate(90deg) scale(1.1); }
+
+/* theme toggle: the active sun/moon glows softly rather than sitting flat */
+.theme-toggle button.is-active i{ animation: icon-glow 2.4s ease-in-out infinite; }
+@keyframes icon-glow{ 0%,100%{ filter:drop-shadow(0 0 0 currentColor); } 50%{ filter:drop-shadow(0 0 4px currentColor); } }
+
+/* the flash-sale / limited-drop bolt icon flickers gently on hover, like
+   current arcing through it — kept to this one icon so it stays special */
+a:hover .fa-bolt{ animation: bolt-flicker 1.2s ease-in-out infinite; }
+@keyframes bolt-flicker{ 0%,19%,21%,50%,53%,100%{ opacity:1; } 20%,52%{ opacity:.35; } }
+
+/* swatches (color dots): a little tilt as they scale — feels tactile,
+   not just a flat zoom */
+.swatch:hover{ transform:scale(1.15) rotate(-8deg); }
+
+/* trust-badge / promo row icons: gentle continuous float so they read
+   as idling rather than static line art */
+.promo-row-icon i, .promo-icon-btn i{ display:inline-block; animation: icon-float 3s ease-in-out infinite; }
+@keyframes icon-float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-3px); } }
+
+/* success / confirmation checks: pop in with a small bounce instead of
+   just appearing flat */
+.fa-circle-check{ display:inline-block; animation: check-pop .5s cubic-bezier(.3,1.7,.4,1); }
+@keyframes check-pop{ 0%{ transform:scale(0); opacity:0; } 60%{ transform:scale(1.25); opacity:1; } 100%{ transform:scale(1); opacity:1; } }
+
+/* none of the above should loop for people who asked for reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .theme-toggle button.is-active i, a:hover .fa-bolt, .promo-row-icon i, .promo-icon-btn i{ animation:none !important; }
+}
+
+/* ---- marquee ticker ---- */
+.marquee{ overflow:hidden; white-space:nowrap; }
+.marquee-track{
+  display:inline-flex;
+  animation: marquee-scroll 26s linear infinite;
+}
+.marquee-track span{ padding:0 2rem; }
+@keyframes marquee-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+/* ---- product card hover ---- */
+.product-card{ cursor:pointer; }
+.product-card .thumb-art img, .product-card .thumb-art .fa-shoe-prints{ transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+.product-card:hover .thumb-art img{ transform: scale(1.06); }
+.product-card:hover .thumb-art .fa-shoe-prints{ transform: rotate(-18deg) scale(1.08); }
+.product-card .quick-add{
+  position:absolute; left:50%; bottom:14px; transform:translate(-50%, 14px);
+  opacity:0; transition: opacity .25s ease, transform .25s ease;
+}
+.product-card:hover .quick-add{ opacity:1; transform:translate(-50%, 0); }
+.product-card .wish-btn{
+  position:absolute; top:12px; right:12px; z-index:2;
+  color:#0B0B0C;
+}
+.product-card .wish-btn:hover{ color:#0B0B0C; }
+.product-card .quick-view-btn{ position:absolute; top:58px; right:12px; }
+
+/* ---- wishlist heart pop ---- */
+.heart-pop{ animation: heart-pop .45s cubic-bezier(.3,1.8,.3,1); }
+@keyframes heart-pop{ 0%{ transform:scale(1); } 35%{ transform:scale(1.5); } 60%{ transform:scale(.9); } 100%{ transform:scale(1); } }
+
+/* ---- flying add-to-cart clone ---- */
+.fly-clone{
+  position:fixed; z-index:80; border-radius:18px; pointer-events:none;
+  background:var(--paper-2);
+  box-shadow: var(--shadow-lg);
+  transition: all .7s cubic-bezier(.2,.7,.2,1);
+}
+
+/* ---- flying add-to-wishlist heart ---- */
+.fly-heart-clone{
+  position:fixed; z-index:9999; font-size:18px; color:var(--flame);
+  pointer-events:none;
+  transition: left .6s cubic-bezier(.2,.8,.2,1), top .6s cubic-bezier(.2,.8,.2,1),
+              transform .6s cubic-bezier(.2,.8,.2,1), opacity .6s ease;
+}
+.wish-bump{ animation: wish-bump .45s cubic-bezier(.3,1.8,.3,1); }
+@keyframes wish-bump{ 0%{ transform:scale(1); } 40%{ transform:scale(1.3); } 100%{ transform:scale(1); } }
+@media (prefers-reduced-motion: reduce){
+  .fly-heart-clone{ display:none; }
+  .wish-bump{ animation:none; }
+}
+
+/* ---- cart drawer ---- */
+#cart-overlay{ transition: opacity .3s ease, visibility .3s ease; }
+#cart-overlay[data-open="false"]{ opacity:0; visibility:hidden; pointer-events:none; }
+#cart-overlay[data-open="true"]{ opacity:1; visibility:visible; }
+#cart-panel{ transition: transform .4s cubic-bezier(.2,.85,.2,1); }
+#cart-overlay[data-open="false"] #cart-panel{ transform:translateX(105%); }
+#cart-overlay[data-open="true"] #cart-panel{ transform:translateX(0); }
+
+/* ---- mobile menu / filter drawer (shared mechanics) ---- */
+[data-drawer]{ transition: opacity .3s ease, visibility .3s ease; }
+[data-drawer][data-open="false"]{ opacity:0; visibility:hidden; pointer-events:none; }
+[data-drawer][data-open="true"]{ opacity:1; visibility:visible; }
+[data-drawer-panel]{ transition: transform .4s cubic-bezier(.2,.85,.2,1); }
+[data-drawer][data-open="false"] [data-drawer-panel]{ transform:translateX(105%); }
+[data-drawer][data-open="true"] [data-drawer-panel]{ transform:translateX(0); }
+[data-drawer-side="left"][data-open="false"] [data-drawer-panel]{ transform:translateX(-105%); }
+
+.hamburger span{ transition: transform .3s ease, opacity .3s ease; transform-origin:center; }
+.hamburger[data-open="true"] span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+.hamburger[data-open="true"] span:nth-child(2){ opacity:0; }
+.hamburger[data-open="true"] span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+
+/* ---- filter chips / swatches ---- */
+.chip{
+  display:inline-flex; align-items:center; gap:.4rem;
+  border:1.5px solid var(--ink); border-radius:999px;
+  padding:.4rem .9rem; font-size:.72rem; font-weight:600;
+  cursor:pointer; transition: background-color .2s ease, color .2s ease;
+}
+.chip.is-active{ background:var(--ink); color:var(--paper); }
+.chip .fa-xmark{ font-size:9px; }
+
+.size-chip{
+  height:2.4rem; min-width:2.4rem; padding:0 .5rem;
+  border-radius:10px; border:1.5px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Space Mono', monospace; font-size:.75rem; font-weight:700;
+  cursor:pointer; transition: border-color .2s ease, background-color .2s ease, color .2s ease;
+}
+.size-chip:hover{ border-color:var(--ink); }
+.size-chip.is-active{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+.size-chip.is-disabled{ opacity:.3; pointer-events:none; text-decoration:line-through; }
+
+.swatch{
+  height:1.8rem; width:1.8rem; border-radius:999px;
+  border:2px solid var(--card); outline:1.5px solid var(--line);
+  cursor:pointer; transition: outline-color .2s ease, transform .2s ease;
+}
+.swatch:hover{ transform:scale(1.1); }
+.swatch.is-active{ outline-color:var(--ink); outline-width:2px; }
+
+/* range slider */
+input[type="range"]{ -webkit-appearance:none; appearance:none; height:2px; background:var(--line); border-radius:99px; }
+input[type="range"]::-webkit-slider-thumb{ -webkit-appearance:none; height:16px; width:16px; border-radius:999px; background:var(--ink); cursor:pointer; margin-top:-7px; border:3px solid var(--paper); box-shadow:0 0 0 1px var(--ink); }
+input[type="range"]::-moz-range-thumb{ height:16px; width:16px; border-radius:999px; background:var(--ink); cursor:pointer; border:3px solid var(--paper); box-shadow:0 0 0 1px var(--ink); }
+
+/* ---- barcode motif (pure CSS) ---- */
+.barcode{
+  display:flex; align-items:stretch; gap:2px; height:38px;
+}
+.barcode span{ background:var(--ink); display:block; }
+
+/* ---- checkout stepper ---- */
+.step-dot{
+  height:2.2rem; width:2.2rem; border-radius:999px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Space Mono', monospace; font-weight:700; font-size:.8rem;
+  border:1.5px solid var(--line); color:var(--ink-soft);
+  transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+}
+.step-dot.is-active{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+.step-dot.is-done{ background:var(--volt); border-color:var(--volt); color:#0B0B0C; }
+.step-line{ height:1.5px; background:var(--line); flex:1; position:relative; overflow:hidden; }
+.step-line::after{ content:""; position:absolute; inset:0; background:var(--volt); transform:scaleX(0); transform-origin:left; transition: transform .4s ease; }
+.step-line.is-done::after{ transform:scaleX(1); }
+
+/* ---- toast ---- */
+.toast{ animation: toast-in .3s cubic-bezier(.2,.8,.2,1); }
+@keyframes toast-in{ from{ transform:translateY(10px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+
+/* ---- scroll reveal ---- */
+[data-reveal]{ opacity:0; transform:translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+[data-reveal].is-visible{ opacity:1; transform:translateY(0); }
+[data-reveal-delay="1"]{ transition-delay:.09s; }
+[data-reveal-delay="2"]{ transition-delay:.18s; }
+[data-reveal-delay="3"]{ transition-delay:.27s; }
+[data-reveal-delay="4"]{ transition-delay:.36s; }
+
+/* ---- skeleton ---- */
+.skeleton{
+  background: linear-gradient(90deg, var(--paper-2) 25%, var(--line) 37%, var(--paper-2) 63%);
+  background-size: 400% 100%;
+  animation: sk 1.4s ease infinite;
+}
+@keyframes sk{ 0%{background-position:100% 50%;} 100%{background-position:0 50%;} }
+
+/* Every photo tile (product cards, quick view, category tiles in the
+   mega menu) shimmers with the same skeleton pattern by default and
+   only settles once its image has actually loaded — js/site.js adds
+   .img-ready the moment the <img> inside fires "load" or gives up.
+   The inline background gradient set on each tile still shows through
+   underneath once ready, exactly as it did before this was added. */
+.thumb-art:not(.img-ready){
+  background: linear-gradient(90deg, var(--paper-2) 25%, var(--line) 37%, var(--paper-2) 63%) !important;
+  background-size: 400% 100%;
+  animation: sk 1.4s ease infinite;
+}
+.thumb-art img:not(.thumb-alt){ opacity:1; transition: opacity .45s ease; }
+.thumb-art:not(.img-ready) img:not(.thumb-alt){ opacity:0; }
+.thumb-art:not(.img-ready) .thumb-fallback-icon{ opacity:0; }
+.thumb-art .thumb-fallback-icon{ transition: opacity .3s ease .1s; }
+
+/* ---- success checkmark draw ---- */
+.check-path{ stroke-dasharray:60; stroke-dashoffset:60; transition: stroke-dashoffset .6s cubic-bezier(.3,.7,.2,1) .3s; }
+.check-ready .check-path{ stroke-dashoffset:0; }
+.check-circle{ transform:scale(0); transition: transform .4s cubic-bezier(.3,1.6,.4,1); transform-origin:center; }
+.check-ready .check-circle{ transform:scale(1); }
+
+kbd{ font-family:'Space Mono', monospace; font-size:11px; background:var(--paper-2); border:1px solid var(--line); border-bottom-width:2px; border-radius:5px; padding:1px 5px; }
+
+input, textarea, select{ background-color:var(--card); color:var(--ink); }
+input::placeholder, textarea::placeholder{ color:var(--ink-soft); opacity:1; }
+
+/* Prevent iOS Safari's automatic viewport zoom-in when a form field is
+   focused, which happens on any input/select/textarea with a computed
+   font-size under 16px and otherwise makes the whole page jump/zoom
+   unexpectedly on every tap into a field. Scoped to (pointer:coarse) —
+   real touchscreens (phones AND tablets) — rather than a fixed pixel
+   width, so it can't miss a device just because its viewport happens
+   to be wider than a phone (e.g. an iPad), and it never touches
+   desktop/mouse users even if their browser window is narrow. */
+@media (pointer:coarse){
+  input[type="text"], input[type="email"], input[type="password"], input[type="number"],
+  input[type="tel"], input[type="url"], input[type="search"], input[type="date"], textarea, select{
+    font-size:16px !important;
+  }
+}
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
+  [data-reveal]{ opacity:1 !important; transform:none !important; }
+}
+
+/* Touch devices don't have a real ":hover" — on iOS especially, a tap can
+   trigger :hover and then get stuck until the user taps elsewhere, which
+   reads as an unwanted "zoom"/pop on things that scale up on hover. Kill
+   the scale/rotate hover transforms specifically on coarse-pointer/no-hover
+   devices so a tap never leaves anything visually enlarged. */
+@media (hover:none){
+  .product-card:hover .thumb-art img,
+  .product-card:hover .thumb-art .fa-shoe-prints,
+  .icon-btn:hover,
+  .swatch:hover,
+  .logo-mark:hover,
+  [data-img-zoom]:hover img,
+  .promo-row:hover .promo-row-icon,
+  .promo-icon-btn:hover,
+  .tile-3d:hover,
+  .map-locate-btn:hover,
+  .leaflet-control-zoom a:hover{
+    transform:none !important;
+  }
+  .tile-3d:hover{ box-shadow:none; }
+}
+
+/* Belt-and-suspenders against any stray element widening the page on
+   small screens (a fixed-width child, an un-wrapped long string, etc.).
+   Only set on <html> — its overflow propagates to the viewport itself
+   in standards mode, so this clips horizontal overflow without turning
+   <body> into a nested scroll container, which would break the sticky
+   header. */
+html{ overflow-x:hidden; }
+body{ max-width:100%; }
+
+::-webkit-scrollbar{ width:9px; height:9px; }
+::-webkit-scrollbar-track{ background:transparent; }
+::-webkit-scrollbar-thumb{ background:var(--line); border-radius:6px; }
+
+/* ==========================================================================
+   v2 additions — theme toggle, mega menu, tilt cards, spotlight, text
+   reveal, bold type treatments, auth pages, page fade-in.
+   ========================================================================== */
+
+/* ---- page fade-in on load ---- */
+body{ animation: page-fade-in .4s ease forwards; }
+@keyframes page-fade-in{ from{ opacity:0; } to{ opacity:1; } }
+
+/* ---- nav scroll shadow ---- */
+#site-header{ transition: box-shadow .25s ease, background-color .35s ease; }
+#site-header.is-scrolled{ box-shadow: 0 1px 0 var(--line), 0 20px 40px -30px rgba(0,0,0,.25); }
+
+/* ---- 3-way theme toggle ---- */
+.theme-toggle{
+  /* display is intentionally NOT set here — it's controlled entirely by
+     the Tailwind utility classes on each usage (e.g. "hidden sm:inline-flex"
+     in the header, plain "inline-flex" elsewhere). A hardcoded display here
+     used to fight the responsive "hidden" utility at equal CSS specificity
+     and win by load order, which kept the toggle visible on mobile even
+     though "hidden" was supposed to hide it there — squeezing the header
+     icon row and clipping the rightmost icon off-screen. */
+  align-items:center; gap:2px;
+  background:var(--paper-2); border:1.5px solid var(--line); border-radius:999px; padding:3px;
+}
+.theme-toggle button{
+  height:2rem; width:2rem; border-radius:999px;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--ink-soft); transition: background-color .2s ease, color .2s ease;
+}
+.theme-toggle button.is-active{ background:var(--ink); color:var(--paper); }
+
+/* ---- mega menu ---- */
+.mega-menu{
+  position:fixed; left:0; right:0; top:80px; z-index:39;
+  background:var(--card); border-bottom:1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  opacity:0; visibility:hidden; transform:translateY(-14px) scale(.985);
+  transform-origin:top center;
+  transition: opacity .32s cubic-bezier(.2,.8,.2,1), transform .32s cubic-bezier(.2,.8,.2,1), visibility .32s;
+  overflow:hidden;
+}
+/* a slim gradient hairline across the top edge, instead of a flat border */
+.mega-menu::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--volt) 35%, var(--flame) 65%, transparent);
+  opacity:.9;
+}
+.nav-has-mega:hover .mega-menu, .nav-has-mega:focus-within .mega-menu{
+  opacity:1; visibility:visible; transform:translateY(0) scale(1);
+}
+/* each category tile rises in with its own delay for a richer, staged
+   reveal instead of the whole panel appearing as one flat block */
+.mega-menu a.group{
+  opacity:0; transform:translateY(14px);
+  transition: opacity .38s ease, transform .38s ease, box-shadow .3s ease;
+}
+.nav-has-mega:hover .mega-menu a.group, .nav-has-mega:focus-within .mega-menu a.group{ opacity:1; transform:translateY(0); }
+.mega-menu a.group:nth-child(1){ transition-delay:.05s; }
+.mega-menu a.group:nth-child(2){ transition-delay:.10s; }
+.mega-menu a.group:nth-child(3){ transition-delay:.15s; }
+.mega-menu a.group:nth-child(4){ transition-delay:.20s; }
+.mega-menu a.group .thumb-art{ transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; }
+.mega-menu a.group:hover .thumb-art{
+  transform: translateY(-5px);
+  box-shadow: 0 22px 40px -18px rgba(11,11,12,.45), 0 0 0 2px var(--volt);
+}
+.mega-menu a.group:hover img{ transform:scale(1.08); }
+.mega-menu a.group img{ transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+/* a soft scrim behind the whole header while the mega menu is open, so
+   it reads as a floor rather than floating over the page unchanged.
+   Progressive enhancement only — harmless where :has() isn't supported. */
+@media (hover:hover){
+  body:has(.nav-has-mega:hover) #site-header{ box-shadow:0 24px 48px -20px rgba(11,11,12,.35); }
+}
+
+/* ---- simple nav dropdown (compact, right-aligned — used for "More") ---- */
+.simple-dropdown{
+  position:absolute; top:calc(100% + 14px); right:0; width:230px; z-index:39;
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  box-shadow: var(--shadow-lg); padding:.5rem;
+  opacity:0; visibility:hidden; transform:translateY(-8px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+}
+.nav-has-dropdown{ position:relative; }
+.nav-has-dropdown:hover .simple-dropdown, .nav-has-dropdown:focus-within .simple-dropdown{
+  opacity:1; visibility:visible; transform:translateY(0);
+}
+.simple-dropdown a{
+  display:flex; align-items:center; gap:.6rem; padding:.6rem .75rem; border-radius:10px;
+  font-size:.85rem; font-weight:500; color:var(--ink); transition: background .15s ease;
+}
+.simple-dropdown a:hover{ background:var(--paper-2); }
+.simple-dropdown a.is-current{ background:var(--paper-2); color:var(--volt-dark); font-weight:700; }
+.simple-dropdown a i{ width:16px; color:var(--ink-soft); }
+
+/* ---- 3D tilt product card ---- */
+.tilt{ perspective:900px; }
+.tilt-inner{ transition: transform .15s ease-out; transform-style:preserve-3d; will-change:transform; }
+
+/* ---- cursor spotlight (hero) ---- */
+.spotlight-zone{ position:relative; overflow:hidden; }
+.spotlight-glow{
+  position:absolute; inset:0; pointer-events:none; opacity:0;
+  background: radial-gradient(320px circle at var(--sx,50%) var(--sy,50%), color-mix(in srgb, var(--volt) 35%, transparent), transparent 70%);
+  transition: opacity .3s ease;
+}
+.spotlight-zone:hover .spotlight-glow{ opacity:1; }
+
+/* ---- word-by-word text reveal ---- */
+.split-word{ display:inline-block; overflow:hidden; vertical-align:top; }
+.split-word span{
+  display:inline-block; transform:translateY(110%);
+  transition: transform .7s cubic-bezier(.2,.8,.2,1);
+}
+.split-ready .split-word span{ transform:translateY(0); }
+.split-word:nth-child(1) span{ transition-delay:.02s; }
+.split-word:nth-child(2) span{ transition-delay:.08s; }
+.split-word:nth-child(3) span{ transition-delay:.14s; }
+.split-word:nth-child(4) span{ transition-delay:.20s; }
+.split-word:nth-child(5) span{ transition-delay:.26s; }
+.split-word:nth-child(6) span{ transition-delay:.32s; }
+
+/* ---- bold type treatments ---- */
+.text-stroke{ -webkit-text-stroke: 2px var(--ink); color:transparent; }
+.text-gradient{
+  background: linear-gradient(100deg, var(--ink) 20%, var(--volt-dark) 55%, var(--ink) 85%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  background-size:220% 100%;
+}
+
+/* ---- parallax hero image ---- */
+[data-parallax]{ will-change: transform; }
+
+/* ---- auth pages ---- */
+.auth-shell{ min-height:100vh; display:grid; }
+@media (min-width:1024px){ .auth-shell{ grid-template-columns: 1fr 1fr; } }
+
+/* ---- auth page cinematic media panel ---- */
+.auth-media-layer{
+  animation: auth-kenburns 18s ease-in-out infinite alternate;
+}
+video.auth-media-layer{ opacity:0; transition: opacity .6s ease; }
+video.auth-media-layer.is-loaded{ opacity:1; }
+@keyframes auth-kenburns{
+  0%{ transform: scale(1) translate(0,0); }
+  100%{ transform: scale(1.12) translate(-1%,-1%); }
+}
+@media (prefers-reduced-motion: reduce){ .auth-media-layer{ animation:none; } }
+
+/* ---- lookbook full-bleed section ---- */
+.lookbook-panel{ min-height:70vh; display:flex; align-items:flex-end; position:relative; overflow:hidden; }
+.lookbook-panel .lookbook-caption{ position:relative; z-index:2; }
+.lookbook-panel::after{ content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,.55), transparent 55%); z-index:1; pointer-events:none; }
+
+/* ---- avatar / account state ---- */
+.avatar-chip{
+  height:2.6rem; width:2.6rem; border-radius:999px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--ink); color:var(--paper);
+  font-family:'Space Mono', monospace; font-size:.7rem; font-weight:700;
+  overflow:hidden; position:relative; border:1.5px solid var(--ink);
+}
+.avatar-chip img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
+/* ---- nav live search dropdown ---- */
+.nav-search-results{
+  position:absolute; left:0; right:0; top:calc(100% + 8px);
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  box-shadow: var(--shadow-lg);
+  max-height:360px; overflow-y:auto;
+  opacity:0; visibility:hidden; transform:translateY(-6px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+  z-index:50;
+}
+.nav-search-results.is-open{ opacity:1; visibility:visible; transform:translateY(0); }
+.nav-search-result{
+  display:flex; align-items:center; gap:.75rem; padding:.6rem .9rem;
+  transition: background-color .15s ease;
+}
+.nav-search-result:hover{ background:var(--paper-2); }
+
+/* ---- active nav link (current page) ---- */
+.nav-link.is-current{ font-weight:700; color:var(--volt-dark); }
+.nav-link.is-current::after{ right:0; background:var(--volt-dark); height:2.5px; }
+#mobile-nav a.is-current{ color:var(--ink); position:relative; padding-left:14px; }
+#mobile-nav a.is-current::before{ content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); height:6px; width:6px; border-radius:999px; background:var(--volt-dark); }
+footer a.is-current{ color:var(--volt); font-weight:600; position:relative; }
+footer a.is-current::before{ content:""; position:absolute; left:-14px; top:50%; transform:translateY(-50%); height:5px; width:5px; border-radius:999px; background:var(--volt); }
+
+
+/* ==========================================================================
+   v3 additions — richer 3D + icon motion, requested after the contrast
+   bug fixes above. All CSS-only where possible so it scales to grids
+   rendered dynamically by JS without needing per-card re-initialization.
+   ========================================================================== */
+
+/* ---- logo 3D wiggle ---- */
+.logo-mark{ display:inline-block; transition: transform .35s cubic-bezier(.3,1.6,.4,1); transform-style:preserve-3d; view-transition-name:site-logo; }
+.logo-mark:hover{ transform: perspective(300px) rotateY(-14deg) rotateX(6deg) scale(1.05); }
+
+/* ---- View Transitions: smooth cross-fade between pages (Chrome/Edge; ----
+   other browsers just keep their normal instant navigation, no fallback
+   code needed) ---- */
+@view-transition{ navigation: auto; }
+::view-transition-old(root){ animation-duration:.35s; animation-timing-function:cubic-bezier(.4,0,.2,1); }
+::view-transition-new(root){ animation-duration:.4s; animation-timing-function:cubic-bezier(.2,.8,.3,1); }
+::view-transition-old(site-logo), ::view-transition-new(site-logo){ animation-duration:.3s; }
+@media (prefers-reduced-motion: reduce){
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*){ animation:none !important; }
+}
+
+/* ---- product card 3D tilt on hover (CSS-only, no JS re-init needed) ---- */
+.product-card .thumb-art{
+  transition: box-shadow .35s ease, transform .4s cubic-bezier(.2,.8,.2,1);
+  transform-style: preserve-3d;
+}
+.product-card:hover .thumb-art{
+  box-shadow: var(--shadow-lg);
+  transform: perspective(700px) rotateX(3deg) rotateY(-3deg) translateY(-6px) scale(1.02);
+}
+
+/* ---- generic tile 3D lift, for static hero/feature tiles ---- */
+.tile-3d{ transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; transform-style:preserve-3d; }
+.tile-3d:hover{ transform: perspective(800px) rotateX(3deg) rotateY(-3deg) translateY(-4px); box-shadow: var(--shadow-lg); }
+
+/* ---- icon buttons: rotate + pop on hover instead of a flat scale ---- */
+.icon-btn{ transition: background-color .2s ease, color .2s ease, transform .3s cubic-bezier(.3,1.6,.4,1); }
+.icon-btn:hover{ transform: scale(1.08) rotate(-6deg); }
+.icon-btn:active{ transform: scale(.94) rotate(0deg); }
+
+/* ---- cart/wishlist icon shake when the badge pops ---- */
+@keyframes icon-shake{ 0%,100%{ transform:rotate(0); } 25%{ transform:rotate(-12deg); } 75%{ transform:rotate(12deg); } }
+.icon-shake{ animation: icon-shake .4s ease; }
+
+/* ---- image reveal-zoom on any [data-img-zoom] wrapper ---- */
+[data-img-zoom]{ overflow:hidden; }
+[data-img-zoom] img{ transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+[data-img-zoom]:hover img{ transform: scale(1.08) rotate(-1deg); }
+
+/* ---- staggered star pop-in, plays once the card scrolls into view ---- */
+.stars-animated i{ display:inline-block; opacity:0; transform:scale(0) rotate(-35deg); }
+[data-reveal].is-visible .stars-animated i{ animation: star-pop .45s cubic-bezier(.3,1.7,.4,1) forwards; }
+[data-reveal].is-visible .stars-animated i:nth-child(1){ animation-delay:.15s; }
+[data-reveal].is-visible .stars-animated i:nth-child(2){ animation-delay:.22s; }
+[data-reveal].is-visible .stars-animated i:nth-child(3){ animation-delay:.29s; }
+[data-reveal].is-visible .stars-animated i:nth-child(4){ animation-delay:.36s; }
+[data-reveal].is-visible .stars-animated i:nth-child(5){ animation-delay:.43s; }
+@keyframes star-pop{ to{ opacity:1; transform:scale(1) rotate(0); } }
+
+/* ==========================================================================
+   v4 — quick view, size guide, lightbox zoom, recently viewed
+   ========================================================================== */
+
+/* ---- centered modal (quick view, size guide) ---- */
+.modal-overlay{
+  position:fixed; inset:0; z-index:65;
+  display:flex; align-items:center; justify-content:center; padding:1.25rem;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+.modal-overlay[data-open="false"]{ opacity:0; visibility:hidden; pointer-events:none; }
+.modal-overlay[data-open="true"]{ opacity:1; visibility:visible; }
+.modal-overlay .modal-backdrop{ position:absolute; inset:0; background:rgba(11,11,12,.55); backdrop-filter:blur(2px); }
+.modal-panel{
+  position:relative; background:var(--card); border-radius:24px;
+  box-shadow:var(--shadow-lg); max-height:90vh; overflow-y:auto;
+  transform: scale(.94) translateY(10px); transition: transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.modal-overlay[data-open="true"] .modal-panel{ transform: scale(1) translateY(0); }
+
+/* ---- lightbox ---- */
+.lightbox-overlay{
+  position:fixed; inset:0; z-index:70;
+  background:rgba(11,11,12,.92);
+  display:flex; align-items:center; justify-content:center; padding:2rem;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+.lightbox-overlay[data-open="false"]{ opacity:0; visibility:hidden; pointer-events:none; }
+.lightbox-overlay[data-open="true"]{ opacity:1; visibility:visible; }
+.lightbox-overlay img, .lightbox-overlay .lightbox-art{
+  max-width:min(90vw, 700px); max-height:80vh; border-radius:20px;
+  transform: scale(.92); transition: transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.lightbox-overlay[data-open="true"] img, .lightbox-overlay[data-open="true"] .lightbox-art{ transform: scale(1); }
+.lightbox-dot{ width:6px; height:6px; border-radius:999px; background:rgba(255,255,255,.35); display:inline-block; transition:all .25s ease; }
+.lightbox-dot.is-active{ background:#fff; width:18px; border-radius:999px; }
+.zoom-cursor{ cursor: zoom-in; }
+
+/* ---- product gallery: dots + thumbnail selection ---- */
+.gallery-dot{ width:6px; height:6px; border-radius:999px; background:rgba(255,255,255,.55); border:1px solid rgba(0,0,0,.1); transition:all .25s ease; }
+.gallery-dot.is-active{ background:var(--ink); width:16px; border-radius:999px; }
+.gallery-thumb{ cursor:pointer; border:2px solid transparent; transition:border-color .2s ease, transform .2s ease; padding:0; }
+.gallery-thumb:hover{ transform:translateY(-2px); }
+.gallery-thumb.is-active{ border-color:var(--ink); }
+#gallery-prev, #gallery-next{ opacity:0; transition:opacity .2s ease; }
+#gallery-main:hover #gallery-prev, #gallery-main:hover #gallery-next{ opacity:1; }
+@media (max-width:768px){ #gallery-prev, #gallery-next{ opacity:1; } }
+
+/* ---- recently viewed / quick view shared bits ---- */
+.qv-swatch{ height:1.6rem; width:1.6rem; border-radius:999px; border:2px solid var(--card); outline:1.5px solid var(--line); cursor:pointer; }
+.qv-swatch.is-active{ outline-color:var(--ink); outline-width:2px; }
+
+/* ==========================================================================
+   v5 — grain texture, scroll progress, custom cursor, ripple, skip link
+   ========================================================================== */
+
+/* ---- grain texture overlay ---- */
+body::after{
+  content:"";
+  position:fixed; inset:0; z-index:150; pointer-events:none;
+  opacity:.035; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- scroll progress bar ---- */
+/* ---- back to top ---- */
+#back-to-top{
+  position:fixed; right:20px; bottom:20px; z-index:140;
+  height:44px; width:44px; border-radius:999px;
+  background:var(--ink); color:var(--paper);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:var(--shadow-lg);
+  opacity:0; visibility:hidden; transform:translateY(12px) scale(.9);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease, background .2s ease;
+}
+#back-to-top:hover{ background:var(--volt-dark); }
+#back-to-top.is-visible{ opacity:1; visibility:visible; transform:translateY(0) scale(1); }
+@media (max-width:640px){ #back-to-top{ right:14px; bottom:88px; height:40px; width:40px; } }
+
+#scroll-progress{
+  position:fixed; top:0; left:0; height:3px; width:0%;
+  background:var(--volt-dark); z-index:160;
+  transition: width .1s linear;
+}
+
+/* ---- custom cursor (desktop / fine-pointer only) ---- */
+@media (pointer:fine){
+  .has-custom-cursor, .has-custom-cursor *{ cursor:none !important; }
+  #cursor-dot, #cursor-ring{
+    position:fixed; top:0; left:0; z-index:170; pointer-events:none;
+    border-radius:999px; transform:translate(-50%,-50%);
+  }
+  #cursor-dot{ height:6px; width:6px; background:var(--ink); transition: background-color .2s ease, opacity .2s ease; }
+  #cursor-ring{
+    height:34px; width:34px; border:1.5px solid var(--ink);
+    transition: transform .18s cubic-bezier(.2,.8,.2,1), width .2s ease, height .2s ease, border-color .2s ease, background-color .2s ease, opacity .2s ease;
+  }
+  #cursor-ring.is-active{ width:52px; height:52px; background:var(--volt); border-color:var(--volt); opacity:.9; }
+  #cursor-ring.is-hidden, #cursor-dot.is-hidden{ opacity:0; }
+}
+
+/* ---- button press ripple ---- */
+.btn, .icon-btn{ position:relative; overflow:hidden; }
+.ripple{
+  position:absolute; border-radius:999px; background:currentColor; opacity:.35;
+  transform:scale(0); animation: ripple-out .6s ease-out forwards; pointer-events:none;
+}
+@keyframes ripple-out{ to{ transform:scale(2.6); opacity:0; } }
+
+/* ---- skip to content ---- */
+.skip-link{
+  position:fixed; top:-100px; left:1rem; z-index:180;
+  background:var(--ink); color:var(--paper);
+  padding:.75rem 1.25rem; border-radius:0 0 12px 12px;
+  font-size:.8rem; font-weight:600;
+  transition: top .2s ease;
+}
+.skip-link:focus{ top:0; }
+
+/* ---- 404 easter egg: shoe walks off ---- */
+@keyframes shoe-walk{
+  0%{ transform: translateX(0) rotate(0deg); }
+  100%{ transform: translateX(140vw) rotate(15deg); }
+}
+.shoe-walk{ animation: shoe-walk 4.5s ease-in forwards; animation-delay:1.2s; }
+
+/* ---- confetti (order confirmation) ---- */
+.confetti-piece{
+  position:fixed; top:-10px; z-index:195; pointer-events:none;
+  border-radius:2px;
+  animation: confetti-fall linear forwards;
+}
+@keyframes confetti-fall{
+  0%{ transform:translateY(0) rotate(0deg); opacity:1; }
+  100%{ transform:translateY(105vh) rotate(540deg); opacity:.9; }
+}
+
+/* ---- build-your-own live preview ---- */
+/* ---- cinematic build preview ---- */
+.gift-mode-btn{
+  padding:.5rem .9rem; border-radius:999px; font-size:.8rem; font-weight:600;
+  color:var(--ink-soft); transition: all .2s ease; cursor:pointer;
+}
+.gift-mode-btn.is-active{ background:var(--ink); color:var(--paper); }
+.style-chip{
+  padding:.55rem .7rem; border-radius:12px; border:1.5px solid var(--line);
+  font-size:.78rem; font-weight:600; text-align:center; cursor:pointer;
+  transition: all .2s ease; background:var(--paper);
+}
+.style-chip:hover{ border-color:var(--ink); }
+.style-chip.is-active{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+#build-photo-stage{ transition: opacity .3s ease; }
+#build-photo-tint{ transition: background-color .4s ease; }
+
+/* ---- build wizard: stepper ---- */
+.build-stepper-item{ display:flex; flex-direction:column; align-items:center; gap:.5rem; flex:0 0 auto; }
+.build-stepper-dot{
+  height:34px; width:34px; border-radius:999px; border:1.5px solid var(--line);
+  background:var(--paper); color:var(--ink-soft); font-size:.8rem; font-weight:700;
+  display:flex; align-items:center; justify-content:center; transition: all .2s ease;
+}
+.build-stepper-dot:disabled{ cursor:not-allowed; opacity:.5; }
+.build-stepper-item.is-active .build-stepper-dot{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+.build-stepper-item.is-done .build-stepper-dot{ background:var(--volt); border-color:var(--volt); color:#0B0B0C; }
+.build-stepper-label{ font-size:.65rem; text-transform:uppercase; font-family:var(--font-mono, monospace); color:var(--ink-soft); white-space:nowrap; }
+.build-stepper-item.is-active .build-stepper-label{ color:var(--ink); font-weight:600; }
+.build-stepper-line{ flex:1 1 auto; height:1.5px; background:var(--line); margin:0 -4px 20px; min-width:14px; }
+
+/* ---- build wizard: base model cards ---- */
+.model-card{ text-align:left; border:2px solid transparent; border-radius:18px; padding:6px; transition: border-color .2s ease; }
+.model-card:hover{ border-color:var(--line); }
+.model-card.is-active{ border-color:var(--ink); }
+.model-check{ position:absolute; top:8px; right:8px; color:var(--volt); font-size:1.1rem; opacity:0; transition:opacity .2s ease; text-shadow:0 0 0 3px #fff, 0 1px 3px rgba(0,0,0,.3); }
+.model-card.is-active .model-check{ opacity:1; }
+.build-step.hidden{ display:none; }
+#build-photo-tint{ transition: background-color .4s ease; }
+#build-preview{ perspective:900px; }
+#build-photo-img{
+  animation: build-float 4.5s ease-in-out infinite;
+  transition: opacity .3s ease;
+}
+@keyframes build-float{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+}
+.build-glow{
+  position:absolute; inset:0; margin:auto; width:70%; height:70%;
+  border-radius:999px; filter:blur(60px); opacity:.5;
+  background: var(--build-glow-color, var(--volt));
+  transition: background-color .5s ease;
+}
+.build-sweep{
+  position:absolute; inset:0; overflow:hidden; pointer-events:none;
+}
+.build-sweep::after{
+  content:""; position:absolute; top:0; bottom:0; width:35%;
+  background:linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent);
+  animation: build-sweep-move 3.2s ease-in-out infinite;
+  animation-delay:1s;
+}
+@keyframes build-sweep-move{
+  0%{ left:-40%; }
+  35%, 100%{ left:120%; }
+}
+@media (prefers-reduced-motion: reduce){
+  #build-photo-img{ animation:none; }
+  .build-sweep::after{ animation:none; display:none; }
+}
+
+/* ==========================================================================
+   v6 — high-tech visual system: aurora ambient backgrounds, shimmer on
+   placeholder art (fades in behind whatever real photo gets dropped in
+   later), scanline accents for dark sections, a 3D turntable shoe, and
+   a mobile touch-target pass.
+   ========================================================================== */
+
+/* ---- aurora: soft moving color blobs behind hero / feature sections ---- */
+.aurora{ position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+.aurora i{
+  position:absolute; width:42%; padding-top:42%; border-radius:999px;
+  filter:blur(70px); opacity:.4; font-style:normal;
+  animation: aurora-float 16s ease-in-out infinite;
+}
+.aurora i:nth-child(1){ background:var(--volt); top:-12%; left:-6%; animation-delay:0s; }
+.aurora i:nth-child(2){ background:var(--flame); top:25%; right:-12%; animation-delay:-5.5s; }
+.aurora i:nth-child(3){ background:#7209B7; bottom:-18%; left:22%; animation-delay:-10.5s; }
+@keyframes aurora-float{
+  0%,100%{ transform:translate(0,0) scale(1); }
+  33%{ transform:translate(4%,-6%) scale(1.1); }
+  66%{ transform:translate(-5%,5%) scale(.92); }
+}
+
+/* ---- shimmer sheen on placeholder art tiles / thumbs ----
+   Sits *below* the real <img> in paint order (::before is first-child),
+   so once real photos are dropped in it's simply covered — no cleanup
+   needed later. */
+.tile-3d, .thumb-art{ position:relative; }
+.tile-3d::before, .thumb-art::before{
+  content:""; position:absolute; inset:0; z-index:0;
+  background:linear-gradient(120deg, transparent 25%, rgba(255,255,255,.28) 48%, transparent 72%);
+  background-size:220% 100%;
+  animation: shimmer-sweep 5s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes shimmer-sweep{ 0%{ background-position:160% 0; } 100%{ background-position:-60% 0; } }
+
+/* ---- scanline accent for dark / tech sections ---- */
+.tech-scan{ position:relative; overflow:hidden; }
+.tech-scan::after{
+  content:""; position:absolute; left:0; right:0; top:-5%; height:2px;
+  background:linear-gradient(90deg, transparent, var(--volt), transparent);
+  opacity:.55;
+  animation: tech-scan-move 6.5s linear infinite;
+}
+@keyframes tech-scan-move{ 0%{ top:-5%; } 100%{ top:105%; } }
+
+.shoe-chip{
+  position:absolute; display:inline-flex; align-items:center; gap:.4rem;
+  background:rgba(247,245,239,.08); border:1px solid rgba(247,245,239,.18);
+  backdrop-filter:blur(6px); color:#F7F5EF;
+  border-radius:999px; padding:.45rem .9rem; font-size:.7rem; font-weight:600;
+  animation: chip-float 5s ease-in-out infinite;
+  z-index:2; pointer-events:none;
+}
+@keyframes chip-float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+
+@media (max-width:640px){
+  .icon-btn{ height:2.75rem; width:2.75rem; }
+  .swatch{ height:2.15rem; width:2.15rem; }
+  .size-chip{ height:2.65rem; min-width:2.65rem; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .aurora i, .tile-3d::before, .thumb-art::before, .tech-scan::after,
+  .shoe-chip{ animation:none; }
+}
+
+/* ==========================================================================
+   STORE LOCATOR MAP — Leaflet (OpenStreetMap tiles, no API key needed),
+   restyled to match the dark/volt Stride look: custom pin markers with a
+   pulsing glow, dark popups, custom zoom controls, glassy overlay UI.
+   ========================================================================== */
+#stride-map-wrap{
+  position:relative; border-radius:1.25rem; overflow:hidden;
+  box-shadow:0 20px 60px -20px rgba(0,0,0,.5);
+  border:1px solid rgba(247,245,239,.08);
+}
+#stride-map{ height:520px; width:100%; background:#141414; }
+@media (max-width:640px){ #stride-map{ height:400px; } }
+
+.leaflet-container{ font-family:"Work Sans", sans-serif; background:#141414; }
+.leaflet-control-attribution{
+  background:rgba(11,11,12,.65)!important; color:rgba(247,245,239,.5)!important;
+  backdrop-filter:blur(6px); border-radius:.5rem 0 0 0!important; padding:2px 8px!important;
+}
+.leaflet-control-attribution a{ color:rgba(247,245,239,.75)!important; }
+
+/* zoom controls, restyled as glassy pill buttons */
+.leaflet-control-zoom{ border:none!important; box-shadow:none!important; }
+.leaflet-control-zoom a{
+  background:rgba(11,11,12,.75)!important; color:var(--volt)!important;
+  border:1px solid rgba(247,245,239,.15)!important; backdrop-filter:blur(8px);
+  width:38px!important; height:38px!important; line-height:38px!important;
+  font-size:18px!important; transition:transform .2s ease, background .2s ease;
+}
+.leaflet-control-zoom a:first-child{ border-radius:.85rem .85rem 0 0!important; }
+.leaflet-control-zoom a:last-child{ border-radius:0 0 .85rem .85rem!important; margin-top:1px!important; }
+.leaflet-control-zoom a:hover{ background:var(--volt)!important; color:#0B0B0C!important; transform:scale(1.06); }
+
+/* the store pin: a volt dot with a soft pulsing ring, shoe icon inside */
+.stride-pin{ position:relative; width:38px; height:38px; }
+.stride-pin-core{
+  position:absolute; inset:0; margin:auto; width:30px; height:30px; border-radius:999px;
+  background:linear-gradient(135deg,var(--volt),var(--volt-dark));
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.45), 0 0 0 3px rgba(11,11,12,.85);
+  color:#0B0B0C; font-size:13px;
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+.stride-pin-ring{
+  position:absolute; inset:0; margin:auto; width:30px; height:30px; border-radius:999px;
+  border:2px solid var(--volt); opacity:.55;
+  animation:pin-pulse 2.4s ease-out infinite;
+}
+@keyframes pin-pulse{
+  0%{ transform:scale(1); opacity:.55; }
+  100%{ transform:scale(2.1); opacity:0; }
+}
+.stride-pin:hover .stride-pin-core, .stride-pin.is-active .stride-pin-core{
+  transform:scale(1.18) rotate(-8deg);
+}
+.stride-pin.is-flagship .stride-pin-core{ background:linear-gradient(135deg,var(--flame),#C4302B); color:#fff; }
+.stride-pin.is-flagship .stride-pin-ring{ border-color:var(--flame); }
+
+/* popup restyle: dark glass card matching the footer aesthetic */
+.leaflet-popup-content-wrapper{
+  background:#0B0B0C; color:#F7F5EF; border-radius:1rem;
+  box-shadow:0 20px 50px -15px rgba(0,0,0,.6); border:1px solid rgba(247,245,239,.1);
+}
+.leaflet-popup-tip{ background:#0B0B0C; box-shadow:none; }
+.leaflet-popup-content{ margin:.9rem 1.1rem; min-width:190px; }
+.leaflet-popup-close-button{ color:rgba(247,245,239,.5)!important; }
+.leaflet-popup-close-button:hover{ color:var(--volt)!important; }
+.map-popup-eyebrow{ font-family:"Space Mono",monospace; font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:var(--volt); margin-bottom:.35rem; }
+.map-popup-title{ font-family:"Anton",sans-serif; font-size:1.15rem; line-height:1.1; margin-bottom:.4rem; }
+.map-popup-addr{ font-size:.78rem; color:rgba(247,245,239,.65); line-height:1.5; margin-bottom:.6rem; }
+.map-popup-actions{ display:flex; gap:.5rem; }
+.map-popup-actions a{
+  font-size:.7rem; font-weight:700; padding:.4rem .7rem; border-radius:999px;
+  display:inline-flex; align-items:center; gap:.3rem; transition:transform .2s ease, background .2s ease;
+}
+.map-popup-actions a.map-btn-primary{ background:var(--volt); color:#0B0B0C; }
+.map-popup-actions a.map-btn-primary:hover{ transform:translateY(-2px); background:var(--volt-dark); }
+.map-popup-actions a.map-btn-ghost{ border:1px solid rgba(247,245,239,.25); color:#F7F5EF; }
+.map-popup-actions a.map-btn-ghost:hover{ transform:translateY(-2px); background:rgba(247,245,239,.1); }
+
+/* top overlay chip + locate-me button floating on the map */
+.map-overlay-chip{
+  position:absolute; top:14px; left:14px; z-index:[1000]; z-index:1000;
+  background:rgba(11,11,12,.7); color:#F7F5EF; backdrop-filter:blur(8px);
+  border:1px solid rgba(247,245,239,.15); border-radius:999px;
+  padding:.5rem 1rem; font-size:.72rem; font-weight:600; display:flex; align-items:center; gap:.5rem;
+}
+.map-overlay-chip i{ color:var(--volt); }
+.map-locate-btn{
+  position:absolute; top:14px; right:14px; z-index:1000;
+  background:rgba(11,11,12,.75); color:var(--volt); backdrop-filter:blur(8px);
+  border:1px solid rgba(247,245,239,.15); border-radius:999px;
+  width:40px; height:40px; display:flex; align-items:center; justify-content:center;
+  transition:transform .2s ease, background .2s ease;
+}
+.map-locate-btn:hover{ background:var(--volt); color:#0B0B0C; transform:scale(1.08); }
+.map-locate-btn.is-loading i{ animation:spin 0.9s linear infinite; }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+/* store cards get a subtle lift + volt ring when their pin is active */
+.store-card{ cursor:pointer; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; border:1px solid transparent; }
+.store-card:hover{ transform:translateY(-4px); }
+.store-card.is-active{ border-color:var(--volt); box-shadow:0 12px 30px -12px rgba(0,0,0,.25); }
+.store-card .store-view-pin{
+  margin-top:.85rem; display:inline-flex; align-items:center; gap:.35rem;
+  font-size:.72rem; font-weight:700; color:var(--volt-dark);
+}
+.store-card .store-view-pin i{ transition:transform .2s ease; }
+.store-card:hover .store-view-pin i{ transform:translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce){
+  .stride-pin-ring{ animation:none; }
+  .map-locate-btn.is-loading i{ animation:none; }
+}
+
+/* ---- giant footer "STRIDE" wordmark: sweeping two-color gradient ---- */
+.footer-stride-mark{
+  background:linear-gradient(90deg, var(--volt) 0%, #F7F5EF 25%, var(--flame) 50%, #F7F5EF 75%, var(--volt) 100%);
+  background-size:300% 100%;
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:stride-mark-sweep 9s linear infinite;
+}
+@keyframes stride-mark-sweep{ 0%{ background-position:0% 50%; } 100%{ background-position:-300% 50%; } }
+@media (prefers-reduced-motion: reduce){ .footer-stride-mark{ animation:none; color:#F7F5EF; } }
+
+/* ---- discount code / gift code manage rows (account page) ---- */
+.promo-row{
+  position:relative; padding:1rem 1.1rem; border:1px solid var(--line); border-radius:1rem;
+  background:var(--paper-2); transition:border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+  overflow:hidden;
+}
+.promo-row::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:linear-gradient(var(--volt), var(--flame)); opacity:0; transition:opacity .25s ease;
+}
+.promo-row:hover{ border-color:var(--volt-dark); box-shadow:0 8px 24px -14px rgba(0,0,0,.25); }
+.promo-row.is-editing{ border-color:var(--volt-dark); background:var(--card); }
+.promo-row.is-editing::before{ opacity:1; }
+
+.promo-row-view{ display:flex; align-items:center; gap:.9rem; }
+.promo-row.is-editing .promo-row-view{ opacity:.45; filter:saturate(.5); pointer-events:none; }
+
+.promo-row-icon{
+  flex-shrink:0; width:2.6rem; height:2.6rem; border-radius:.85rem;
+  background:linear-gradient(135deg, var(--volt), var(--volt-dark));
+  color:#0B0B0C; display:flex; align-items:center; justify-content:center; font-size:1rem;
+  box-shadow:0 4px 12px -4px rgba(0,0,0,.25);
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.promo-row:hover .promo-row-icon{ transform:scale(1.08) rotate(-6deg); }
+.promo-row-icon.is-gift{ background:linear-gradient(135deg,#F72585,#7209B7); color:#fff; }
+
+.promo-row-info{ min-width:0; flex:1; }
+.promo-row-code{ font-family:"Space Mono",monospace; font-weight:700; font-size:.9rem; letter-spacing:.01em; }
+.promo-row-sub{ font-size:.72rem; color:var(--ink-soft); margin-top:.1rem; }
+
+.promo-row-pill{
+  flex-shrink:0; font-family:"Space Mono",monospace; font-weight:700; font-size:.78rem;
+  padding:.35rem .8rem; border-radius:999px; background:var(--ink); color:var(--paper);
+}
+
+.promo-row-actions{ display:flex; align-items:center; gap:.4rem; flex-shrink:0; }
+.promo-icon-btn{
+  width:2.15rem; height:2.15rem; border-radius:.65rem; display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--line); background:var(--card); color:var(--ink-soft); font-size:.78rem;
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1), background .2s ease, color .2s ease, border-color .2s ease;
+}
+.promo-icon-btn:hover{ background:var(--volt); border-color:var(--volt); color:#0B0B0C; transform:scale(1.1) rotate(-8deg); }
+.promo-icon-btn:active{ transform:scale(.92); }
+.promo-icon-btn.is-danger:hover{ background:var(--flame); border-color:var(--flame); color:#fff; }
+
+/* smooth accordion expand for the edit panel, no JS height calc needed */
+.promo-row-edit-wrap{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .35s cubic-bezier(.4,0,.2,1); }
+.promo-row.is-editing .promo-row-edit-wrap{ grid-template-rows:1fr; }
+.promo-row-edit-wrap > .promo-row-edit{
+  min-height:0; overflow:hidden;
+  display:flex; flex-wrap:wrap; align-items:flex-end; gap:.75rem;
+  padding-top:0; opacity:0; transform:translateY(-6px); transition:opacity .25s ease .05s, transform .25s ease .05s, padding-top .35s ease;
+}
+.promo-row.is-editing .promo-row-edit{ padding-top:1.1rem; opacity:1; transform:translateY(0); }
+
+.promo-edit-field{ display:flex; flex-direction:column; gap:.3rem; min-width:110px; }
+.promo-edit-field label{ font-family:"Space Mono",monospace; font-size:9px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); }
+.promo-edit-field select, .promo-edit-field input{
+  border:1px solid var(--line); border-radius:.7rem; padding:.55rem .8rem; font-size:.85rem;
+  background:var(--card); outline:none; transition:border-color .2s ease, box-shadow .2s ease;
+}
+.promo-edit-field select:focus, .promo-edit-field input:focus{ border-color:var(--volt-dark); box-shadow:0 0 0 3px rgba(215,255,63,.25); }
+
+.promo-edit-actions{ display:flex; gap:.5rem; margin-left:auto; }
+.promo-save-btn, .promo-cancel-btn{
+  display:inline-flex; align-items:center; gap:.4rem; font-size:.78rem; font-weight:700;
+  padding:.55rem 1rem; border-radius:.7rem; transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.promo-save-btn{ background:var(--volt); color:#0B0B0C; }
+.promo-save-btn:hover{ background:var(--volt-dark); transform:translateY(-2px); box-shadow:0 8px 18px -8px rgba(215,255,63,.5); }
+.promo-cancel-btn{ background:transparent; border:1px solid var(--line); color:var(--ink-soft); }
+.promo-cancel-btn:hover{ border-color:var(--ink-soft); color:var(--ink); transform:translateY(-2px); }
+.promo-save-btn:active, .promo-cancel-btn:active{ transform:scale(.96); }
+
+@media (max-width:480px){
+  .promo-row-view{ flex-wrap:wrap; }
+  .promo-row-pill{ order:3; margin-left:calc(2.6rem + .9rem); }
+  .promo-edit-actions{ margin-left:0; width:100%; }
+  .promo-save-btn, .promo-cancel-btn{ flex:1; justify-content:center; }
+}
+@media (prefers-reduced-motion: reduce){
+  .promo-row, .promo-row-icon, .promo-icon-btn, .promo-row-edit-wrap, .promo-row-edit, .promo-save-btn, .promo-cancel-btn{ transition:none; }
+}
+
+/* ---- gift card page: alert boxes + a satisfying "balance changed" bump ---- */
+.gift-alert{
+  display:flex; align-items:flex-start; gap:.6rem; padding:.85rem 1rem; border-radius:.9rem;
+  background:var(--paper-2); border:1px solid var(--line); font-size:.85rem; line-height:1.5;
+  animation:gift-alert-in .35s cubic-bezier(.2,.8,.3,1);
+}
+.gift-alert i{ margin-top:.15rem; color:var(--ink-soft); }
+.gift-alert a{ font-weight:700; text-decoration:underline; }
+.gift-alert.is-success{ background:color-mix(in srgb, var(--volt) 14%, var(--paper-2)); border-color:var(--volt-dark); }
+.gift-alert.is-success i{ color:var(--volt-dark); }
+.gift-alert.is-warning{ background:color-mix(in srgb, var(--flame) 12%, var(--paper-2)); border-color:var(--flame); }
+.gift-alert.is-warning i{ color:var(--flame); }
+@keyframes gift-alert-in{ 0%{ opacity:0; transform:translateY(-6px); } 100%{ opacity:1; transform:translateY(0); } }
+
+.balance-bump{ animation:balance-bump .5s cubic-bezier(.3,1.6,.4,1); }
+@keyframes balance-bump{ 0%{ transform:scale(1); } 35%{ transform:scale(1.08); } 100%{ transform:scale(1); } }
+@media (prefers-reduced-motion: reduce){
+  .gift-alert{ animation:none; }
+  .balance-bump{ animation:none; }
+}

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.imgTryNext = function(img){ img.style.display = "none"; };</script>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('stride-theme');var d=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(t!=='light'&&d))document.documentElement.classList.add('dark')})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product | Stride</title>
+<meta name="description" content="Product detail page.">
+<meta name="author" content="Obioma Chibueze Justice">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 28 28%22><rect width=%2228%22 height=%2228%22 rx=%226%22 fill=%22%230B0B0C%22/><path d=%22M6 20c2-6 4-9 7-9s4 4 9 4%22 stroke=%22%23D7FF3F%22 stroke-width=%222.4%22 fill=%22none%22 stroke-linecap=%22round%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: { extend: {
+      colors: { ink:'var(--ink)', 'ink-soft':'var(--ink-soft)', paper:'var(--paper)', 'paper-2':'var(--paper-2)', line:'var(--line)', card:'var(--card)', volt:'var(--volt)', 'volt-dark':'var(--volt-dark)', flame:'var(--flame)' },
+      fontFamily: { display:['"Anton"','sans-serif'], body:['"Work Sans"','sans-serif'], mono:['"Space Mono"','monospace'], accent:['"Fraunces"','serif'] }
+    }}
+  }
+</script>
+</head>
+<body class="font-body text-ink antialiased">
+<!-- ============ NAV ============ -->
+<header id="site-header" class="sticky top-0 z-40 bg-paper/95 backdrop-blur border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
+    <a href="index.html" class="font-display text-2xl shrink-0 logo-mark">Stride<span class="text-volt">.</span></a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-ink">
+      <div class="nav-has-mega relative">
+        <a href="shop.html" class="nav-link inline-flex items-center gap-1.5">Shop <i class="fa-solid fa-chevron-down text-[9px] opacity-50"></i></a>
+        <div class="mega-menu">
+          <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+            <a href="shop.html?category=running" class="group">
+              <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+              </div>
+              <p class="font-semibold text-sm group-hover:underline">Running</p>
+            </a>
+            <a href="shop.html?category=trail" class="group">
+              <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+              </div>
+              <p class="font-semibold text-sm group-hover:underline">Trail</p>
+            </a>
+            <a href="shop.html?category=lifestyle" class="group">
+              <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+              </div>
+              <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+            </a>
+            <a href="shop.html?category=casual" class="group">
+              <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+              </div>
+              <p class="font-semibold text-sm group-hover:underline">Casual</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="lookbook.html" class="nav-link">Lookbook</a>
+      <a href="build.html" class="nav-link">Build</a>
+      <a href="journal.html" class="nav-link">Journal</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="shop.html?sale=1" class="nav-link">Sale</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <div class="nav-has-dropdown">
+        <button type="button" class="nav-link inline-flex items-center gap-1.5" aria-haspopup="true">More <i class="fa-solid fa-chevron-down text-[9px] opacity-50"></i></button>
+        <div class="simple-dropdown">
+          <a href="size-guide.html"><i class="fa-solid fa-ruler"></i>Size Guide</a>
+          <a href="stores.html"><i class="fa-solid fa-map-location-dot"></i>Store Locator</a>
+          <a href="gift-cards.html"><i class="fa-solid fa-gift"></i>Gift Cards</a>
+          <a href="drops.html"><i class="fa-solid fa-bolt"></i>Limited Drops</a>
+          <a href="rewards.html"><i class="fa-solid fa-star"></i>Rewards</a>
+          <a href="sustainability.html"><i class="fa-solid fa-seedling"></i>Sustainability</a>
+          <a href="press.html"><i class="fa-solid fa-newspaper"></i>Press &amp; Wholesale</a>
+          <a href="careers.html"><i class="fa-solid fa-briefcase"></i>Careers</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hidden md:flex items-center flex-1 max-w-xs mx-4">
+      <div class="relative w-full">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-ink-soft text-xs"></i>
+        <input id="nav-search" type="text" autocomplete="off" placeholder="Search shoes..." class="w-full bg-card border border-line rounded-full pl-10 pr-4 py-2.5 text-sm focus:border-ink outline-none">
+        <div id="nav-search-results" class="nav-search-results"></div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+      <div class="theme-toggle hidden sm:inline-flex">
+        <button data-theme-set="light" aria-label="Light mode"><i class="fa-solid fa-sun text-[11px]"></i></button>
+        <button data-theme-set="dark" aria-label="Dark mode"><i class="fa-solid fa-moon text-[11px]"></i></button>
+        <button data-theme-set="system" aria-label="System theme"><i class="fa-solid fa-circle-half-stroke text-[11px]"></i></button><button data-theme-set="sunset" aria-label="Auto by sunset"><i class="fa-solid fa-cloud-moon text-[11px]"></i></button>
+      </div>
+      <a href="wishlist.html" data-wishlist-open class="icon-btn relative" aria-label="Wishlist">
+        <i class="fa-regular fa-heart text-sm"></i>
+        <span data-wishlist-badge class="icon-badge">0</span>
+      </a>
+      <span data-account-slot class="inline-flex"></span>
+      <button data-drawer-open="cart-drawer" data-cart-open class="icon-btn relative" aria-label="Open cart">
+        <i class="fa-solid fa-bag-shopping text-sm"></i>
+        <span data-cart-badge class="icon-badge">0</span>
+      </button>
+      <button id="hamburger-btn" class="hamburger lg:hidden flex flex-col justify-center gap-[5px] h-10 w-10" aria-label="Open menu" data-open="false">
+        <span class="block h-0.5 w-5 bg-ink rounded"></span>
+        <span class="block h-0.5 w-5 bg-ink rounded"></span>
+        <span class="block h-0.5 w-5 bg-ink rounded"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div id="mobile-nav" data-drawer data-open="false" data-drawer-side="left" class="fixed inset-0 z-50 lg:hidden">
+  <div class="absolute inset-0 bg-ink/50" data-drawer-close></div>
+  <div data-drawer-panel class="absolute left-0 top-0 h-full w-72 bg-paper p-6 flex flex-col">
+    <div class="flex items-center justify-between mb-8">
+      <span class="font-display text-xl">Menu</span>
+      <button data-drawer-close class="h-9 w-9 flex items-center justify-center" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <a href="shop.html" class="py-3 border-b border-line font-semibold">Shop</a>
+    <a href="lookbook.html" class="py-3 border-b border-line font-semibold">Lookbook</a>
+    <a href="build.html" class="py-3 border-b border-line font-semibold">Build Your Own</a>
+    <a href="journal.html" class="py-3 border-b border-line font-semibold">Journal</a>
+    <a href="about.html" class="py-3 border-b border-line font-semibold">About</a>
+    <a href="shop.html?sale=1" class="py-3 border-b border-line font-semibold">Sale</a>
+    <a href="faq.html" class="py-3 border-b border-line font-semibold">FAQ</a>
+    <a href="size-guide.html" class="py-3 border-b border-line font-semibold">Size Guide</a>
+    <a href="stores.html" class="py-3 border-b border-line font-semibold">Store Locator</a>
+    <a href="gift-cards.html" class="py-3 border-b border-line font-semibold">Gift Cards</a>
+    <a href="drops.html" class="py-3 border-b border-line font-semibold">Limited Drops</a>
+    <a href="rewards.html" class="py-3 border-b border-line font-semibold">Rewards</a>
+    <a href="sustainability.html" class="py-3 border-b border-line font-semibold">Sustainability</a>
+    <a href="press.html" class="py-3 border-b border-line font-semibold">Press &amp; Wholesale</a>
+    <a href="careers.html" class="py-3 border-b border-line font-semibold">Careers</a>
+    <a href="wishlist.html" class="py-3 border-b border-line font-semibold">Wishlist</a>
+    <a href="account.html" class="py-3 border-b border-line font-semibold">Account</a>
+    <a href="contact.html" class="py-3 border-b border-line font-semibold">Contact</a>
+    <div class="theme-toggle mt-5 inline-flex">
+      <button data-theme-set="light" aria-label="Light mode"><i class="fa-solid fa-sun text-[11px]"></i></button>
+      <button data-theme-set="dark" aria-label="Dark mode"><i class="fa-solid fa-moon text-[11px]"></i></button>
+      <button data-theme-set="system" aria-label="System theme"><i class="fa-solid fa-circle-half-stroke text-[11px]"></i></button><button data-theme-set="sunset" aria-label="Auto by sunset"><i class="fa-solid fa-cloud-moon text-[11px]"></i></button>
+    </div>
+  </div>
+</div>
+
+<section class="max-w-7xl mx-auto px-5 sm:px-8 pt-8 pb-4">
+  <p class="font-mono text-[11px] text-ink-soft"><a href="shop.html" class="hover:text-ink">Shop</a> / <span id="crumb-name">Product</span></p>
+</section>
+
+<section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20">
+  <div class="grid lg:grid-cols-2 gap-10">
+    <!-- gallery -->
+    <div data-reveal>
+      <div id="gallery-main" class="tile tile-3d aspect-square relative mb-4 zoom-cursor overflow-hidden" style="background:#eee">
+        <div id="gallery-track" class="absolute inset-0 flex h-full" style="transition:transform .35s cubic-bezier(.2,.8,.2,1)"></div>
+        <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[28%] text-black/10 pointer-events-none"></i>
+        <button type="button" id="gallery-prev" class="icon-btn !h-9 !w-9 !border-0 bg-white/90 backdrop-blur absolute left-3 top-1/2 -translate-y-1/2 z-10" aria-label="Previous photo"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+        <button type="button" id="gallery-next" class="icon-btn !h-9 !w-9 !border-0 bg-white/90 backdrop-blur absolute right-3 top-1/2 -translate-y-1/2 z-10" aria-label="Next photo"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+        <span class="pill absolute bottom-4 right-4 !text-[10px] z-10"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i>Click to zoom</span>
+        <div id="gallery-dots" class="absolute bottom-4 left-4 z-10 flex gap-1.5"></div>
+      </div>
+      <div id="gallery-thumbs" class="grid grid-cols-4 gap-4"></div>
+    </div>
+
+    <!-- info -->
+    <div data-reveal data-reveal-delay="1">
+      <p id="product-category" class="font-mono text-[11px] uppercase text-ink-soft mb-2"></p>
+      <h1 id="product-name" class="font-display text-4xl sm:text-5xl leading-tight"></h1>
+      <div class="flex items-center gap-2 mt-3">
+        <div id="product-stars" class="flex gap-0.5"></div>
+        <span id="product-rating-count" class="font-mono text-xs text-ink-soft"></span>
+      </div>
+      <div id="product-price" class="mt-5"></div>
+      <p id="product-desc" class="text-sm text-ink-soft leading-relaxed mt-5 max-w-md"></p>
+
+      <div class="mt-7">
+        <p class="font-mono text-[11px] uppercase text-ink-soft mb-3">Color: <span id="selected-color-label" class="text-ink font-bold"></span></p>
+        <div id="color-swatches" class="flex flex-wrap gap-3"></div>
+      </div>
+
+      <div class="mt-6">
+        <div class="flex items-center justify-between mb-3">
+          <p class="font-mono text-[11px] uppercase text-ink-soft">Size (US)</p>
+          <button data-open-size-guide class="font-mono text-[11px] underline text-ink-soft">Size guide</button>
+        </div>
+        <div id="size-chips" class="grid grid-cols-5 gap-2 max-w-sm"></div>
+        <p id="stock-note" class="text-xs mt-2"></p>
+      </div>
+
+      <p id="social-proof" class="text-xs text-ink-soft mt-4"><i class="fa-solid fa-eye mr-1"></i><span id="viewer-count"></span> people looking at this right now</p>
+
+      <div class="flex items-center gap-4 mt-8">
+        <div class="flex items-center gap-4 border border-line rounded-full px-4 py-3">
+          <button id="qty-dec" class="w-4" aria-label="Decrease quantity"><i class="fa-solid fa-minus text-xs"></i></button>
+          <input id="qty-input" type="number" value="1" min="1" class="w-8 text-center font-mono text-sm outline-none bg-transparent" readonly>
+          <button id="qty-inc" class="w-4" aria-label="Increase quantity"><i class="fa-solid fa-plus text-xs"></i></button>
+        </div>
+        <button id="add-to-cart-btn" class="magnetic btn btn-ink flex-1"><span>Add to bag</span> <i class="fa-solid fa-bag-shopping ml-2"></i></button>
+        <button id="wish-btn-detail" data-wish-btn="" class="icon-btn shrink-0" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+        <button id="share-btn" class="icon-btn shrink-0" aria-label="Copy link to this product"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 mt-8 pt-8 border-t border-line">
+        <div class="text-center"><i class="fa-solid fa-truck-fast text-lg mb-2"></i><p class="font-mono text-[10px] text-ink-soft">Free shipping $100+</p></div>
+        <div class="text-center"><i class="fa-solid fa-rotate-left text-lg mb-2"></i><p class="font-mono text-[10px] text-ink-soft">30-day returns</p></div>
+        <div class="text-center"><i class="fa-solid fa-shield-halved text-lg mb-2"></i><p class="font-mono text-[10px] text-ink-soft">Secure checkout</p></div>
+      </div>
+
+      <!-- tabs -->
+      <div class="mt-10">
+        <div class="flex gap-6 border-b border-line">
+          <button data-tab="description" class="is-active pb-3 text-sm font-semibold border-b-2 border-ink -mb-px">Description</button>
+          <button data-tab="reviews" class="pb-3 text-sm font-semibold text-ink-soft border-b-2 border-transparent -mb-px">Reviews</button>
+          <button data-tab="shipping" class="pb-3 text-sm font-semibold text-ink-soft border-b-2 border-transparent -mb-px">Shipping</button>
+        </div>
+        <div data-tab-panel="description" class="py-5 text-sm text-ink-soft leading-relaxed">
+          Every Stride shoe ships from our workshop with a 1,000-mile midsole warranty. Materials are chosen for durability first, look second. Though we haven't had to compromise on either yet.
+        </div>
+        <div data-tab-panel="reviews" class="hidden py-5 space-y-4">
+          <div class="border-b border-line pb-4">
+            <div class="flex gap-0.5 text-ink mb-1"><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i></div>
+            <p class="text-sm">"Exactly as described, fits true to size." <span class="font-mono text-[11px] text-ink-soft">. Verified buyer</span></p>
+          </div>
+          <div>
+            <div class="flex gap-0.5 text-ink mb-1"><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-regular fa-star text-xs"></i></div>
+            <p class="text-sm">"Great shoe, ran a little narrow for me." <span class="font-mono text-[11px] text-ink-soft">. Verified buyer</span></p>
+          </div>
+        </div>
+        <div data-tab-panel="shipping" class="hidden py-5 text-sm text-ink-soft leading-relaxed">
+          Orders ship within 1-2 business days. Standard shipping (3-5 days) is free over $100; express (1-2 days) is available at checkout. Returns are free within 30 days of delivery.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN MOTION ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20">
+  <div class="tilt" data-tilt data-reveal>
+  <div class="tile aspect-[21/8] relative tilt-inner overflow-hidden" style="background:linear-gradient(120deg,#0B0B0C,#3A0CA3,#F72585)">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <video id="product-motion-video" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline autoplay></video>
+    <div class="absolute inset-0" style="background:linear-gradient(0deg, rgba(11,11,12,.7), transparent 55%)"></div>
+    <div class="absolute bottom-6 left-6 sm:bottom-8 sm:left-8">
+      <p class="font-mono text-[10px] uppercase text-white/60 mb-1">In motion</p>
+      <p class="font-display text-2xl sm:text-3xl text-white">See it on foot</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ RELATED ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20">
+  <h2 class="font-display text-4xl mb-8" data-reveal>You might also like</h2>
+  <div id="related-grid" class="grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6"></div>
+</section>
+
+<!-- ============ RECENTLY VIEWED ============ -->
+<section id="recently-viewed-section" class="hidden max-w-7xl mx-auto px-5 sm:px-8 pb-20">
+  <h2 class="font-display text-4xl mb-8" data-reveal><i class="fa-regular fa-clock mr-2"></i>Recently viewed</h2>
+  <div id="recently-viewed-grid" class="grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6"></div>
+</section>
+
+<!-- ============ CART DRAWER ============ -->
+<div id="cart-drawer" data-drawer data-open="false" class="fixed inset-0 z-50">
+  <div class="absolute inset-0 bg-ink/50" data-drawer-close></div>
+  <div data-drawer-panel class="absolute right-0 top-0 h-full w-full sm:w-[420px] bg-paper flex flex-col">
+    <div class="flex items-center justify-between px-6 h-20 border-b border-line shrink-0">
+      <span class="font-display text-xl">Your Bag</span>
+      <button data-drawer-close class="h-9 w-9 flex items-center justify-center" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="cart-drawer-body" class="flex-1 overflow-y-auto px-6"></div>
+    <div id="cart-drawer-footer" class="border-t border-line p-6 shrink-0 hidden">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-mono text-sm text-ink-soft">Subtotal</span>
+        <span class="font-mono text-lg font-bold" data-cart-subtotal>$0.00</span>
+      </div>
+      <a href="checkout.html" class="btn btn-ink w-full">Checkout <i class="fa-solid fa-arrow-right ml-1"></i></a>
+      <a href="cart.html" class="block text-center text-xs font-mono text-ink-soft mt-3 hover:text-ink">View full bag</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOASTS ============ -->
+<div id="toast-wrap" aria-live="polite" aria-atomic="true" class="fixed bottom-5 right-5 z-[70] flex flex-col gap-2 items-end"></div>
+<!-- ============ FOOTER ============ -->
+<footer class="bg-[#0B0B0C] text-[#F7F5EF] mt-24 tech-scan">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 sm:py-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-10 sm:gap-10">
+    <div class="col-span-2 md:col-span-2">
+      <p class="font-display text-2xl mb-4">Stride<span class="text-volt">.</span></p>
+      <p class="text-sm text-[#F7F5EF]/60 max-w-xs">Shoes built for the days you actually wear them. A portfolio project by Obioma Chibueze Justice.</p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <a href="mailto:justixxchiobi@gmail.com" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="Email"><i class="fa-solid fa-envelope text-sm"></i></a>
+        <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+        <a href="https://www.facebook.com/share/1DjQejGRxH/?mibextid=wwXIfr" target="_blank" rel="noopener" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+        <a href="https://www.instagram.com/chibueze_obioma" target="_blank" rel="noopener" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram text-sm"></i></a>
+        <a href="https://www.linkedin.com/in/chibueze-obioma-650497273/" target="_blank" rel="noopener" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+        <a href="https://github.com/Justixxprime" target="_blank" rel="noopener" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="GitHub"><i class="fa-brands fa-github text-sm"></i></a>
+      </div>
+    </div>
+    <div class="col-span-1">
+      <p class="font-mono text-[11px] uppercase text-[#F7F5EF]/50 mb-4">Shop</p>
+      <ul class="space-y-2.5 text-sm text-[#F7F5EF]/75">
+        <li><a href="shop.html" class="hover:text-volt">All shoes</a></li>
+        <li><a href="build.html" class="hover:text-volt">Build Your Own</a></li>
+        <li><a href="shop.html?sale=1" class="hover:text-volt">Sale</a></li>
+        <li><a href="gift-cards.html" class="hover:text-volt">Gift Cards</a></li>
+        <li><a href="drops.html" class="hover:text-volt">Limited Drops</a></li>
+      </ul>
+    </div>
+    <div class="col-span-1">
+      <p class="font-mono text-[11px] uppercase text-[#F7F5EF]/50 mb-4">Company</p>
+      <ul class="space-y-2.5 text-sm text-[#F7F5EF]/75">
+        <li><a href="about.html" class="hover:text-volt">About</a></li>
+        <li><a href="journal.html" class="hover:text-volt">Journal</a></li>
+        <li><a href="sustainability.html" class="hover:text-volt">Sustainability</a></li>
+        <li><a href="careers.html" class="hover:text-volt">Careers</a></li>
+        <li><a href="press.html" class="hover:text-volt">Press &amp; Wholesale</a></li>
+      </ul>
+    </div>
+    <div class="col-span-1">
+      <p class="font-mono text-[11px] uppercase text-[#F7F5EF]/50 mb-4">Support</p>
+      <ul class="space-y-2.5 text-sm text-[#F7F5EF]/75">
+        <li><a href="size-guide.html" class="hover:text-volt">Size Guide</a></li>
+        <li><a href="stores.html" class="hover:text-volt">Store Locator</a></li>
+        <li><a href="rewards.html" class="hover:text-volt">Rewards</a></li>
+        <li><a href="faq.html" class="hover:text-volt">FAQ</a></li>
+        <li><a href="how-its-built.html" class="hover:text-volt">How this was built</a></li>
+      </ul>
+    </div>
+    <div class="col-span-1">
+      <p class="font-mono text-[11px] uppercase text-[#F7F5EF]/50 mb-4">Contact</p>
+      <ul class="space-y-2.5 text-sm text-[#F7F5EF]/75">
+        <li><a href="mailto:justixxchiobi@gmail.com" class="hover:text-volt">justixxchiobi@gmail.com</a></li>
+        <li><a href="mailto:obiomachibueze@yahoo.com" class="hover:text-volt">obiomachibueze@yahoo.com</a></li>
+        <li><a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-volt">WhatsApp 0913 305 8119</a></li>
+        <li><a href="https://justixxprime.github.io/" target="_blank" rel="noopener" class="hover:text-volt">justixxprime.github.io</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-[#F7F5EF]/10">
+    <p class="font-display text-[16vw] leading-none text-center py-4 select-none footer-stride-mark">STRIDE</p>
+  </div>
+  <div class="border-t border-[#F7F5EF]/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#F7F5EF]/50 font-mono">
+      <span>&copy; 2026 Obioma Chibueze Justice. A portfolio project</span>
+      <span>Built by hand, no ecommerce template</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/site.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/enhancements.js"></script>
+<script src="js/product-page.js"></script>
+</body>
+</html>

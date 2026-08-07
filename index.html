@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>window.imgTryNext = function(img){ img.style.display = "none"; };</script>
+<meta charset="UTF-8">
+<script>(function(){var t=localStorage.getItem('stride-theme');var d=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(t!=='light'&&d))document.documentElement.classList.add('dark')})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stride | Shoes built for how you actually move</title>
+<meta name="description" content="Stride is a shoe brand concept: running, trail, and lifestyle sneakers with a shopping experience built entirely by hand.">
+<meta property="og:title" content="Stride">
+<meta property="og:description" content="Shoes built for how you actually move.">
+<meta property="og:type" content="website">
+<meta name="author" content="Obioma Chibueze Justice">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 28 28%22><rect width=%2228%22 height=%2228%22 rx=%226%22 fill=%22%230B0B0C%22/><path d=%22M6 20c2-6 4-9 7-9s4 4 9 4%22 stroke=%22%23D7FF3F%22 stroke-width=%222.4%22 fill=%22none%22 stroke-linecap=%22round%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: { extend: {
+      colors: { ink:'var(--ink)', 'ink-soft':'var(--ink-soft)', paper:'var(--paper)', 'paper-2':'var(--paper-2)', line:'var(--line)', card:'var(--card)', volt:'var(--volt)', 'volt-dark':'var(--volt-dark)', flame:'var(--flame)' },
+      fontFamily: { display:['"Anton"','sans-serif'], body:['"Work Sans"','sans-serif'], mono:['"Space Mono"','monospace'], accent:['"Fraunces"','serif'] }
+    }}
+  }
+</script>
+</head>
+<body class="font-body text-ink antialiased">
+<!-- ============ NAV ============ -->
+<header id="site-header" class="sticky top-0 z-40 bg-paper/95 backdrop-blur border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
+    <a href="index.html" class="font-display text-2xl shrink-0 logo-mark">Stride<span class="text-volt">.</span></a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-ink">
+      <div class="nav-has-mega relative">
+        <a href="shop.html" class="nav-link inline-flex items-center gap-1.5">Shop <i class="fa-solid fa-chevron-down text-[9px] opacity-50"></i></a>
+        <div class="mega-menu">
+          <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+            <a href="shop.html?category=running" class="group">
+              <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+              </div>
+              <p class="font-semibold text-sm group-hover:underline">Running</p>
+            </a>
+            <a href="shop.html?category=trail" class="group">
+              <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+              </div>
+              <p class="font-semibold text-sm group-hover:underline">Trail</p>
+            </a>
+            <a href="shop.html?category=lifestyle" class="group">
+              <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+              </div>
+              <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+            </a>
+            <a href="shop.html?category=casual" class="group">
+              <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+              </div>
+              <p class="font-semibold text-sm group-hover:underline">Casual</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="lookbook.html" class="nav-link">Lookbook</a>
+      <a href="build.html" class="nav-link">Build</a>
+      <a href="journal.html" class="nav-link">Journal</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="shop.html?sale=1" class="nav-link">Sale</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <div class="nav-has-dropdown">
+        <button type="button" class="nav-link inline-flex items-center gap-1.5" aria-haspopup="true">More <i class="fa-solid fa-chevron-down text-[9px] opacity-50"></i></button>
+        <div class="simple-dropdown">
+          <a href="size-guide.html"><i class="fa-solid fa-ruler"></i>Size Guide</a>
+          <a href="stores.html"><i class="fa-solid fa-map-location-dot"></i>Store Locator</a>
+          <a href="gift-cards.html"><i class="fa-solid fa-gift"></i>Gift Cards</a>
+          <a href="drops.html"><i class="fa-solid fa-bolt"></i>Limited Drops</a>
+          <a href="rewards.html"><i class="fa-solid fa-star"></i>Rewards</a>
+          <a href="sustainability.html"><i class="fa-solid fa-seedling"></i>Sustainability</a>
+          <a href="press.html"><i class="fa-solid fa-newspaper"></i>Press &amp; Wholesale</a>
+          <a href="careers.html"><i class="fa-solid fa-briefcase"></i>Careers</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hidden md:flex items-center flex-1 max-w-xs mx-4">
+      <div class="relative w-full">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-ink-soft text-xs"></i>
+        <input id="nav-search" type="text" autocomplete="off" placeholder="Search shoes..." class="w-full bg-card border border-line rounded-full pl-10 pr-4 py-2.5 text-sm focus:border-ink outline-none">
+        <div id="nav-search-results" class="nav-search-results"></div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+      <div class="theme-toggle hidden sm:inline-flex">
+        <button data-theme-set="light" aria-label="Light mode"><i class="fa-solid fa-sun text-[11px]"></i></button>
+        <button data-theme-set="dark" aria-label="Dark mode"><i class="fa-solid fa-moon text-[11px]"></i></button>
+        <button data-theme-set="system" aria-label="System theme"><i class="fa-solid fa-circle-half-stroke text-[11px]"></i></button><button data-theme-set="sunset" aria-label="Auto by sunset"><i class="fa-solid fa-cloud-moon text-[11px]"></i></button>
+      </div>
+      <a href="wishlist.html" data-wishlist-open class="icon-btn relative" aria-label="Wishlist">
+        <i class="fa-regular fa-heart text-sm"></i>
+        <span data-wishlist-badge class="icon-badge">0</span>
+      </a>
+      <span data-account-slot class="inline-flex"></span>
+      <button data-drawer-open="cart-drawer" data-cart-open class="icon-btn relative" aria-label="Open cart">
+        <i class="fa-solid fa-bag-shopping text-sm"></i>
+        <span data-cart-badge class="icon-badge">0</span>
+      </button>
+      <button id="hamburger-btn" class="hamburger lg:hidden flex flex-col justify-center gap-[5px] h-10 w-10" aria-label="Open menu" data-open="false">
+        <span class="block h-0.5 w-5 bg-ink rounded"></span>
+        <span class="block h-0.5 w-5 bg-ink rounded"></span>
+        <span class="block h-0.5 w-5 bg-ink rounded"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div id="mobile-nav" data-drawer data-open="false" data-drawer-side="left" class="fixed inset-0 z-50 lg:hidden">
+  <div class="absolute inset-0 bg-ink/50" data-drawer-close></div>
+  <div data-drawer-panel class="absolute left-0 top-0 h-full w-72 bg-paper p-6 flex flex-col">
+    <div class="flex items-center justify-between mb-8">
+      <span class="font-display text-xl">Menu</span>
+      <button data-drawer-close class="h-9 w-9 flex items-center justify-center" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <a href="shop.html" class="py-3 border-b border-line font-semibold">Shop</a>
+    <a href="lookbook.html" class="py-3 border-b border-line font-semibold">Lookbook</a>
+    <a href="build.html" class="py-3 border-b border-line font-semibold">Build Your Own</a>
+    <a href="journal.html" class="py-3 border-b border-line font-semibold">Journal</a>
+    <a href="about.html" class="py-3 border-b border-line font-semibold">About</a>
+    <a href="shop.html?sale=1" class="py-3 border-b border-line font-semibold">Sale</a>
+    <a href="faq.html" class="py-3 border-b border-line font-semibold">FAQ</a>
+    <a href="size-guide.html" class="py-3 border-b border-line font-semibold">Size Guide</a>
+    <a href="stores.html" class="py-3 border-b border-line font-semibold">Store Locator</a>
+    <a href="gift-cards.html" class="py-3 border-b border-line font-semibold">Gift Cards</a>
+    <a href="drops.html" class="py-3 border-b border-line font-semibold">Limited Drops</a>
+    <a href="rewards.html" class="py-3 border-b border-line font-semibold">Rewards</a>
+    <a href="sustainability.html" class="py-3 border-b border-line font-semibold">Sustainability</a>
+    <a href="press.html" class="py-3 border-b border-line font-semibold">Press &amp; Wholesale</a>
+    <a href="careers.html" class="py-3 border-b border-line font-semibold">Careers</a>
+    <a href="wishlist.html" class="py-3 border-b border-line font-semibold">Wishlist</a>
+    <a href="account.html" class="py-3 border-b border-line font-semibold">Account</a>
+    <a href="contact.html" class="py-3 border-b border-line font-semibold">Contact</a>
+    <div class="theme-toggle mt-5 inline-flex">
+      <button data-theme-set="light" aria-label="Light mode"><i class="fa-solid fa-sun text-[11px]"></i></button>
+      <button data-theme-set="dark" aria-label="Dark mode"><i class="fa-solid fa-moon text-[11px]"></i></button>
+      <button data-theme-set="system" aria-label="System theme"><i class="fa-solid fa-circle-half-stroke text-[11px]"></i></button><button data-theme-set="sunset" aria-label="Auto by sunset"><i class="fa-solid fa-cloud-moon text-[11px]"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MARQUEE ============ -->
+<div class="bg-[#0B0B0C] text-[#F7F5EF] marquee py-2.5">
+  <div class="marquee-track font-mono text-xs uppercase tracking-wide">
+    <span>Free shipping over $100</span><span>&bull;</span><span>New drops every Friday</span><span>&bull;</span><span>30-day returns</span><span>&bull;</span>
+    <span>Free shipping over $100</span><span>&bull;</span><span>New drops every Friday</span><span>&bull;</span><span>30-day returns</span><span>&bull;</span>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 pt-14 pb-10 spotlight-zone relative" data-spotlight>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="spotlight-glow"></div>
+  <p id="welcome-back" class="hidden font-mono text-[11px] uppercase text-ink-soft mb-4 relative"></p>
+  <div class="flex items-end justify-between flex-wrap gap-4 relative" data-reveal>
+    <h1 class="font-display text-[16vw] sm:text-7xl md:text-8xl leading-[0.9]" data-split-text data-accent-word="comfort">Reimagined Comfort</h1>
+  </div>
+
+  <div class="grid md:grid-cols-[1fr_1.4fr] gap-5 mt-8">
+    <div data-reveal data-reveal-delay="1">
+      <p class="font-mono text-[11px] text-ink-soft uppercase mb-2">From 2026</p>
+      <div class="barcode mb-2" data-barcode></div>
+      <p class="font-mono text-[10px] text-ink-soft mb-6">(01) 234 567 890 123</p>
+      <p class="text-sm text-ink-soft max-w-xs leading-relaxed">Cushioned insoles cradle your feet in supportive arch designs, engineered for a stride that doesn't quit by hour three.</p>
+      <a href="shop.html" class="magnetic inline-block mt-6"><span class="btn btn-ink">Shop the drop <i class="fa-solid fa-arrow-right ml-1"></i></span></a>
+    </div>
+
+    <div class="tilt" data-tilt data-reveal data-reveal-delay="2" data-parallax="0.07">
+    <div class="tile relative aspect-[4/3] tilt-inner overflow-hidden" style="background:linear-gradient(135deg,#F4A261,#E76F51)">
+      <img data-src-base="images/hero-shoe" data-ext-idx="0" src="images/hero-shoe.jpg" alt="Stride hero sneaker" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+      <video data-src-base="videos/hero-loop" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline autoplay></video>
+      <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[30%] text-black/10"></i>
+      <span class="pill pill-dark absolute top-5 left-5"><i class="fa-solid fa-plus text-[9px]"></i> Comfort</span>
+      <span class="pill absolute bottom-6 right-6"><i class="fa-solid fa-bolt text-[9px]"></i> Style</span>
+    </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-3 gap-4 mt-4">
+    <div class="tile tile-3d aspect-square relative" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)" data-reveal data-parallax="0.05">
+      <img data-src-base="images/hero-2" data-ext-idx="0" src="images/hero-2.jpg" alt="Sneaker detail" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+      <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[35%] text-black/10"></i>
+    </div>
+    <div class="tile tile-3d aspect-square flex items-center justify-center relative" data-reveal data-reveal-delay="1" data-parallax="0.09">
+      <div class="barcode" data-barcode style="height:60%"></div>
+    </div>
+    <div class="tile tile-3d aspect-square relative" style="background:linear-gradient(135deg,#F72585,#7209B7)" data-reveal data-reveal-delay="2" data-parallax="0.13">
+      <img data-src-base="images/hero-3" data-ext-idx="0" src="images/hero-3.jpg" alt="Sneaker detail" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+      <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[35%] text-black/10"></i>
+      <span class="pill pill-volt absolute bottom-4 left-4 !text-[10px]">Comfort in every step</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUILD YOUR OWN SHOWCASE ============ -->
+<section class="relative overflow-hidden bg-[#0B0B0C] text-[#F7F5EF] py-20 tech-scan">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative grid md:grid-cols-2 gap-12 items-center">
+    <div data-reveal>
+      <p class="font-mono text-[11px] uppercase tracking-wide mb-3" style="color:var(--volt)">Made to order</p>
+      <h2 class="font-display text-5xl sm:text-6xl leading-[0.95] mb-5">Four steps.<br>One&#8209;of&#8209;one.</h2>
+      <p class="text-[#F7F5EF]/65 max-w-md leading-relaxed mb-6">Start from a real Stride model, then customize the upper, sole, and laces one panel at a time. See it update instantly before it goes in the bag.</p>
+      <div class="flex flex-wrap gap-x-5 gap-y-2 mb-8 font-mono text-[11px] uppercase text-[#F7F5EF]/45">
+        <span>01 Model</span><span>02 Upper</span><span>03 Sole</span><span>04 Laces</span><span>05 Review</span>
+      </div>
+      <a href="build.html" class="magnetic inline-block"><span class="btn" style="background:var(--volt);color:#0B0B0C;">Start building <i class="fa-solid fa-arrow-right ml-2"></i></span></a>
+    </div>
+
+    <div class="tilt" data-tilt data-reveal data-reveal-delay="1">
+      <div class="tile aspect-[4/3] relative overflow-hidden tilt-inner" style="background:linear-gradient(135deg,#606C38,#283618)">
+        <img data-src-base="images/products/quantum-pulse" data-ext-idx="0" src="images/products/quantum-pulse.jpg" alt="Quantum Pulse Trainer" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+        <i class="fa-solid fa-shoe-prints thumb-fallback-icon" style="position:absolute; inset:0; margin:auto; font-size:30%; color:rgba(255,255,255,.12)"></i>
+        <span class="pill absolute top-5 left-5"><i class="fa-solid fa-swatchbook text-[9px]"></i> Fully colorable</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+  <h2 class="font-display text-5xl sm:text-6xl mb-8" data-reveal>About Us</h2>
+  <div class="grid md:grid-cols-2 gap-8 items-center">
+    <div class="tile tile-3d aspect-[4/3] relative" style="background:linear-gradient(135deg,#FFB703,#FB8500)" data-reveal>
+      <img data-src-base="images/about-shoe" data-ext-idx="0" src="images/about-shoe.jpg" alt="Colorful sneaker" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+      <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[30%] text-black/10"></i>
+    </div>
+    <div data-reveal data-reveal-delay="1">
+      <p class="text-ink-soft leading-relaxed max-w-md">Welcome to our footwear haven, where style seamlessly blends with comfort. Step into a shoe built the way running shoes are built, then styled the way a good sneaker should be. Every stride is a delightful journey.</p>
+      <a href="about.html" class="magnetic inline-block mt-6"><span class="btn btn-ink">Shop now <i class="fa-solid fa-arrow-right ml-1"></i></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMFORT MEETS FASHION ============ -->
+<section class="bg-paper-2 py-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid md:grid-cols-2 gap-8 mb-10">
+      <h2 class="font-display text-5xl sm:text-6xl leading-[0.95]" data-reveal>Comfort<br>Meets<br>Fashion</h2>
+      <div data-reveal data-reveal-delay="1">
+        <p class="font-mono text-[11px] uppercase text-ink-soft mb-3">Sustainable shopping, engineered in</p>
+        <p class="text-ink-soft leading-relaxed max-w-md">Enhanced stability and reduced fatigue, from shoes featuring supportive arch designs built for the miles that actually matter.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="tile-white p-6" data-reveal>
+        <p class="font-mono text-[11px] uppercase text-ink-soft mb-4">Premium quality</p>
+        <div class="tile tile-3d aspect-[3/4] relative" style="background:linear-gradient(160deg,#FFC107,#212121)">
+          <img data-src-base="images/comfort-1" data-ext-idx="0" src="images/comfort-1.jpg" alt="Premium sneaker" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+          <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[30%] text-white/10"></i>
+        </div>
+      </div>
+      <div class="flex flex-col gap-5">
+        <div class="tile-white p-5" data-reveal data-reveal-delay="1">
+          <div class="tile tile-3d aspect-[16/10] relative mb-4" style="background:linear-gradient(135deg,#9D4EDD,#F4A261)">
+            <img data-src-base="images/comfort-2" data-ext-idx="0" src="images/comfort-2.jpg" alt="Sneaker angle" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+            <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[26%] text-black/10"></i>
+          </div>
+          <p class="text-sm text-ink-soft leading-relaxed">Move effortlessly with lightweight shoes that provide comfort without weighing you down.</p>
+        </div>
+        <div class="tile-white p-5" data-reveal data-reveal-delay="2">
+          <div class="tile tile-3d aspect-[16/10] relative" style="background:linear-gradient(135deg,#219EBC,#8ECAE6)">
+            <img data-src-base="images/comfort-3" data-ext-idx="0" src="images/comfort-3.jpg" alt="Sneaker sole" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+            <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[26%] text-black/10"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT GRID ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+  <div class="flex items-end justify-between flex-wrap gap-3 mb-10" data-reveal>
+    <div>
+      <h2 class="font-display text-5xl sm:text-6xl">Product</h2>
+      <p class="font-mono text-[11px] uppercase text-ink-soft mt-2">Explore must-have products here</p>
+    </div>
+    <div class="flex items-center gap-2 text-xs">
+      <span class="font-mono text-ink-soft hidden sm:inline">Search:</span>
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-soft text-xs"></i>
+        <input id="home-search" type="text" placeholder="Try 'running'..." class="bg-card border border-line rounded-full pl-9 pr-4 py-2 text-sm focus:border-ink outline-none w-44 sm:w-56">
+      </div>
+    </div>
+  </div>
+
+  <div id="featured-grid" class="grid grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6"></div>
+
+  <p class="text-center text-sm text-ink-soft max-w-md mx-auto mt-10" data-reveal>Styles that prioritize both comfort and fashion, ensuring you feel great in every pair you own.</p>
+  <div class="flex justify-center mt-6" data-reveal>
+    <a href="shop.html" class="magnetic"><span class="btn btn-outline">View more <i class="fa-solid fa-arrow-right ml-1"></i></span></a>
+  </div>
+</section>
+
+<!-- ============ STATS STRIP ============ -->
+<section class="bg-[#0B0B0C] text-[#F7F5EF] py-14">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div data-reveal><p class="font-display text-4xl text-volt">40K+</p><p class="font-mono text-[10px] uppercase text-[#F7F5EF]/60 mt-2">Pairs shipped</p></div>
+    <div data-reveal data-reveal-delay="1"><p class="font-display text-4xl text-volt">4.8</p><p class="font-mono text-[10px] uppercase text-[#F7F5EF]/60 mt-2">Average rating</p></div>
+    <div data-reveal data-reveal-delay="2"><p class="font-display text-4xl text-volt">30-Day</p><p class="font-mono text-[10px] uppercase text-[#F7F5EF]/60 mt-2">Free returns</p></div>
+    <div data-reveal data-reveal-delay="3"><p class="font-display text-4xl text-volt">12</p><p class="font-mono text-[10px] uppercase text-[#F7F5EF]/60 mt-2">Signature styles</p></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+  <div class="flex items-end justify-between flex-wrap gap-4 mb-10">
+    <h2 class="font-display text-5xl sm:text-6xl" data-reveal>Worn &amp; Loved</h2>
+    <p class="font-mono text-[11px] uppercase text-ink-soft" data-reveal data-reveal-delay="1"><i class="fa-solid fa-star text-amber-400 mr-1"></i>4.8 average, 800+ reviews</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="tilt" data-tilt data-reveal>
+    <div class="tile-white card-hover p-6 relative overflow-hidden tilt-inner">
+      <i class="fa-solid fa-quote-left absolute top-5 right-5 text-line text-2xl"></i>
+      <div class="flex gap-1 text-ink mb-4 stars-animated"><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i></div>
+      <p class="text-sm leading-relaxed">"First running shoe that didn't need a two-week break-in. Wore them on a half marathon in week one."</p>
+      <div class="flex items-center gap-2.5 mt-5">
+        <span class="h-8 w-8 rounded-full bg-ink text-paper font-mono text-[10px] font-bold flex items-center justify-center">AM</span>
+        <p class="font-mono text-[11px] text-ink-soft">Amara, Lagos</p>
+      </div>
+    </div>
+    </div>
+    <div class="tilt" data-tilt data-reveal data-reveal-delay="1">
+    <div class="tile-white card-hover p-6 relative overflow-hidden tilt-inner">
+      <i class="fa-solid fa-quote-left absolute top-5 right-5 text-line text-2xl"></i>
+      <div class="flex gap-1 text-ink mb-4 stars-animated"><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star-half-stroke text-xs"></i></div>
+      <p class="text-sm leading-relaxed">"The Rider FV is stupidly comfortable out of the box. Ordered a second pair in Ink within a month."</p>
+      <div class="flex items-center gap-2.5 mt-5">
+        <span class="h-8 w-8 rounded-full bg-ink text-paper font-mono text-[10px] font-bold flex items-center justify-center">KO</span>
+        <p class="font-mono text-[11px] text-ink-soft">Kenji, Osaka</p>
+      </div>
+    </div>
+    </div>
+    <div class="tilt" data-tilt data-reveal data-reveal-delay="2">
+    <div class="tile-white card-hover p-6 relative overflow-hidden tilt-inner">
+      <i class="fa-solid fa-quote-left absolute top-5 right-5 text-line text-2xl"></i>
+      <div class="flex gap-1 text-ink mb-4 stars-animated"><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i></div>
+      <p class="text-sm leading-relaxed">"Checkout took under a minute and shipping notifications actually kept me updated. Rare these days."</p>
+      <div class="flex items-center gap-2.5 mt-5">
+        <span class="h-8 w-8 rounded-full bg-ink text-paper font-mono text-[10px] font-bold flex items-center justify-center">PT</span>
+        <p class="font-mono text-[11px] text-ink-soft">Priya, Toronto</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="max-w-4xl mx-auto px-5 sm:px-8 pb-20">
+  <div class="tile bg-volt p-10 sm:p-14 text-center relative overflow-hidden" data-reveal data-tilt>
+    <div class="tilt-inner">
+    <i class="fa-solid fa-bolt absolute top-6 left-6 text-[#0B0B0C]/15 text-3xl"></i>
+    <h2 class="font-display text-4xl sm:text-5xl text-[#0B0B0C]">Get the next drop first</h2>
+    <p class="text-sm text-[#0B0B0C]/70 max-w-sm mx-auto mt-3">New styles, restocks, and a code for 10% off your first pair. No spam, unsubscribe whenever.</p>
+    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mt-6">
+      <input type="email" required placeholder="you@example.com" class="flex-1 bg-[#F7F5EF] text-[#0B0B0C] border border-[#0B0B0C]/15 rounded-full px-5 py-3 text-sm outline-none focus:border-[#0B0B0C]">
+      <button type="submit" class="btn shrink-0 bg-[#0B0B0C] text-[#F7F5EF] hover:bg-[#F7F5EF] hover:text-[#0B0B0C] transition-colors">Subscribe</button>
+    </form>
+    <p id="newsletter-success" class="hidden text-xs font-mono mt-4 text-[#0B0B0C]"><i class="fa-solid fa-circle-check mr-1"></i>You're on the list.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CART DRAWER ============ -->
+<div id="cart-drawer" data-drawer data-open="false" class="fixed inset-0 z-50">
+  <div class="absolute inset-0 bg-ink/50" data-drawer-close></div>
+  <div data-drawer-panel class="absolute right-0 top-0 h-full w-full sm:w-[420px] bg-paper flex flex-col">
+    <div class="flex items-center justify-between px-6 h-20 border-b border-line shrink-0">
+      <span class="font-display text-xl">Your Bag</span>
+      <button data-drawer-close class="h-9 w-9 flex items-center justify-center" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="cart-drawer-body" class="flex-1 overflow-y-auto px-6"></div>
+    <div id="cart-drawer-footer" class="border-t border-line p-6 shrink-0 hidden">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-mono text-sm text-ink-soft">Subtotal</span>
+        <span class="font-mono text-lg font-bold" data-cart-subtotal>$0.00</span>
+      </div>
+      <a href="checkout.html" class="btn btn-ink w-full">Checkout <i class="fa-solid fa-arrow-right ml-1"></i></a>
+      <a href="cart.html" class="block text-center text-xs font-mono text-ink-soft mt-3 hover:text-ink">View full bag</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOASTS ============ -->
+<div id="toast-wrap" aria-live="polite" aria-atomic="true" class="fixed bottom-5 right-5 z-[70] flex flex-col gap-2 items-end"></div>
+<!-- ============ FOOTER ============ -->
+<footer class="bg-[#0B0B0C] text-[#F7F5EF] mt-24 tech-scan">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 sm:py-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-10 sm:gap-10">
+    <div class="col-span-2 md:col-span-2">
+      <p class="font-display text-2xl mb-4">Stride<span class="text-volt">.</span></p>
+      <p class="text-sm text-[#F7F5EF]/60 max-w-xs">Shoes built for the days you actually wear them. A portfolio project by Obioma Chibueze Justice.</p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <a href="mailto:justixxchiobi@gmail.com" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="Email"><i class="fa-solid fa-envelope text-sm"></i></a>
+        <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+        <a href="https://www.facebook.com/share/1DjQejGRxH/?mibextid=wwXIfr" target="_blank" rel="noopener" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+        <a href="https://www.instagram.com/chibueze_obioma" target="_blank" rel="noopener" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram text-sm"></i></a>
+        <a href="https://www.linkedin.com/in/chibueze-obioma-650497273/" target="_blank" rel="noopener" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+        <a href="https://github.com/Justixxprime" target="_blank" rel="noopener" class="h-10 w-10 rounded-full border border-[#F7F5EF]/25 flex items-center justify-center hover:bg-volt hover:text-[#0B0B0C] hover:border-volt transition-colors" aria-label="GitHub"><i class="fa-brands fa-github text-sm"></i></a>
+      </div>
+    </div>
+    <div class="col-span-1">
+      <p class="font-mono text-[11px] uppercase text-[#F7F5EF]/50 mb-4">Shop</p>
+      <ul class="space-y-2.5 text-sm text-[#F7F5EF]/75">
+        <li><a href="shop.html" class="hover:text-volt">All shoes</a></li>
+        <li><a href="build.html" class="hover:text-volt">Build Your Own</a></li>
+        <li><a href="shop.html?sale=1" class="hover:text-volt">Sale</a></li>
+        <li><a href="gift-cards.html" class="hover:text-volt">Gift Cards</a></li>
+        <li><a href="drops.html" class="hover:text-volt">Limited Drops</a></li>
+      </ul>
+    </div>
+    <div class="col-span-1">
+      <p class="font-mono text-[11px] uppercase text-[#F7F5EF]/50 mb-4">Company</p>
+      <ul class="space-y-2.5 text-sm text-[#F7F5EF]/75">
+        <li><a href="about.html" class="hover:text-volt">About</a></li>
+        <li><a href="journal.html" class="hover:text-volt">Journal</a></li>
+        <li><a href="sustainability.html" class="hover:text-volt">Sustainability</a></li>
+        <li><a href="careers.html" class="hover:text-volt">Careers</a></li>
+        <li><a href="press.html" class="hover:text-volt">Press &amp; Wholesale</a></li>
+      </ul>
+    </div>
+    <div class="col-span-1">
+      <p class="font-mono text-[11px] uppercase text-[#F7F5EF]/50 mb-4">Support</p>
+      <ul class="space-y-2.5 text-sm text-[#F7F5EF]/75">
+        <li><a href="size-guide.html" class="hover:text-volt">Size Guide</a></li>
+        <li><a href="stores.html" class="hover:text-volt">Store Locator</a></li>
+        <li><a href="rewards.html" class="hover:text-volt">Rewards</a></li>
+        <li><a href="faq.html" class="hover:text-volt">FAQ</a></li>
+        <li><a href="how-its-built.html" class="hover:text-volt">How this was built</a></li>
+      </ul>
+    </div>
+    <div class="col-span-1">
+      <p class="font-mono text-[11px] uppercase text-[#F7F5EF]/50 mb-4">Contact</p>
+      <ul class="space-y-2.5 text-sm text-[#F7F5EF]/75">
+        <li><a href="mailto:justixxchiobi@gmail.com" class="hover:text-volt">justixxchiobi@gmail.com</a></li>
+        <li><a href="mailto:obiomachibueze@yahoo.com" class="hover:text-volt">obiomachibueze@yahoo.com</a></li>
+        <li><a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-volt">WhatsApp 0913 305 8119</a></li>
+        <li><a href="https://justixxprime.github.io/" target="_blank" rel="noopener" class="hover:text-volt">justixxprime.github.io</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-[#F7F5EF]/10">
+    <p class="font-display text-[16vw] leading-none text-center py-4 select-none footer-stride-mark">STRIDE</p>
+  </div>
+  <div class="border-t border-[#F7F5EF]/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#F7F5EF]/50 font-mono">
+      <span>&copy; 2026 Obioma Chibueze Justice. A portfolio project</span>
+      <span>Built by hand, no ecommerce template</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/site.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/enhancements.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const auth = getAuth();
+    const welcomeEl = document.getElementById("welcome-back");
+    if (auth && welcomeEl) {
+      const firstName = auth.name.split(" ")[0];
+      welcomeEl.textContent = `Welcome back, ${firstName}`;
+      welcomeEl.classList.remove("hidden");
+    }
+
+    const grid = document.getElementById("featured-grid");
+    const wishedIds = getWishlist();
+    let featured;
+    if (wishedIds.length) {
+      // logged-in-feeling touch: lean the featured row toward categories
+      // already in the wishlist, instead of always showing the same six
+      const likedCategories = new Set(wishedIds.map((id) => findProduct(id)?.category).filter(Boolean));
+      const matching = PRODUCTS.filter((p) => likedCategories.has(p.category) && !wishedIds.includes(p.id));
+      const rest = PRODUCTS.filter((p) => !likedCategories.has(p.category) && !wishedIds.includes(p.id));
+      featured = [...matching, ...rest].slice(0, 6);
+    } else {
+      featured = PRODUCTS.slice(0, 6);
+    }
+    grid.innerHTML = featured.map(productCardHTML).join("");
+    initScrollReveal();
+    initQuickAdd(grid);
+
+    document.getElementById("home-search")?.addEventListener("input", (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      const results = q ? PRODUCTS.filter((p) => (p.name + " " + p.category).toLowerCase().includes(q)) : PRODUCTS.slice(0, 6);
+      grid.innerHTML = results.length
+        ? results.map(productCardHTML).join("")
+        : `<p class="col-span-full text-center text-sm text-ink-soft py-10">No shoes match "${e.target.value}". <a href="shop.html" class="underline">browse the full shop</a>.</p>`;
+      initScrollReveal();
+      initQuickAdd(grid);
+    });
+
+    document.getElementById("newsletter-form")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      document.getElementById("newsletter-success").classList.remove("hidden");
+      e.target.reset();
+    });
+  });
+</script>
+</body>
+</html>
