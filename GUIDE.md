@@ -60,8 +60,10 @@ items, the checkout summary) just reads from that same array.
 ### Three new pages, plus a lot of polish (latest)
 
 - **`build.html`** — a "Build Your Own" configurator. Pick colors for the
-  upper, sole, and laces and watch a live SVG preview update instantly;
-  add your build to the bag as a custom line item.
+  upper, sole, and laces and watch a live preview update instantly —
+  not a flat illustration, your actual base-model product photo,
+  recolored region by region (see section 17 for how). Add your build
+  to the bag as a custom line item.
 - **`journal.html`** — three short editorial posts, giving the brand an
   actual voice instead of just product cards.
 - **`how-its-built.html`** — a visitor-facing, casual-toned walkthrough
@@ -789,3 +791,97 @@ the actual stored balance for that code goes up, same ledger the
 A small floating button (bottom-right) appears after scrolling down
 about 600px, on every single page — injected once from `js/site.js`
 (`initBackToTop()`), so it didn't need touching 26 HTML files.
+
+---
+
+## 17. Case-sensitivity, transparent overlays, real per-part color, and a proper install icon
+
+A round of fixes aimed at bugs that only show up on the *live* GitHub
+Pages site, not necessarily in local preview — plus one real design
+upgrade to the Build page.
+
+### The root cause behind a lot of "it looks broken on my phone"
+GitHub Pages serves files from a case-sensitive filesystem (Linux).
+Most local dev setups (Mac, Windows) are case-*insensitive*, so a
+reference to `videos/hero-loop.mp4` happily finds `Hero-Loop.mp4` on
+your machine and still 404s once deployed. All 31 files in `/videos`
+had capitalized names while the code referenced them lowercase — every
+video on the live site was silently failing. Renamed every file to
+match the code exactly (`git mv`, verified byte-for-byte afterward).
+
+### A debug leftover that defeated the fallback system
+Every page had an inline stub —
+`window.imgTryNext = function(img){ img.style.display = "none"; }` —
+sitting *before* the real `imgTryNext` in `js/site.js` loaded. Since
+images can start loading before deferred scripts finish, any image
+that needed to fall back during that window got hard-hidden instead of
+getting the intended graceful gradient+icon treatment. Removed from
+every page.
+
+### The transparent header / invisible drawer overlay bug
+The theme colors (`--ink`, `--paper`, etc. in `css/style.css`) were
+defined as hex strings. Tailwind's opacity-modifier syntax
+(`bg-paper/95`, `bg-ink/50`, `text-ink-soft/70`...) needs the CSS
+variable to hold bare `R G B` numbers so it can wrap it as
+`rgb(var(--x) / alpha)` — a hex string there is invalid CSS, and the
+browser just drops the whole rule. No error, just a background that
+never renders. Verified directly with `getComputedStyle`: the sticky
+header's background was computing to `rgba(0,0,0,0)` despite having
+`bg-paper/95` applied, which is why scrolled content visibly bled
+straight through the header instead of showing as a soft frosted-glass
+blur. The exact same bug made the cart drawer's and mobile nav's dark
+backdrop (`bg-ink/50`) invisible on every page.
+
+**Fix:** added parallel `--x-rgb: "R G B"` custom properties (light +
+dark mode) alongside the existing hex ones — nothing that already
+uses `var(--ink)` elsewhere in the stylesheet was touched — and
+updated the inline Tailwind color config on all 26 pages to use
+`rgb(var(--x-rgb) / <alpha-value>)`. Re-verified: header now computes
+`rgba(247,245,239,0.95)` as intended, and the drawer backdrops
+visibly dim the page again.
+
+### Build page: real per-part color instead of one flat tint
+The old preview took the base model's real photo, desaturated it, and
+laid a *single* blended color over the whole thing (65% upper + 25%
+sole + 10% laces mixed into one flat wash) — and that tint bled onto
+the studio background too, not just the shoe.
+
+Now each of the 6 base models (`quantum-pulse`, `nitro-3-running`,
+`retro-88-classic`, `urban-glide-low`, `aero-knit-runner`,
+`peak-trail-mid`) has three hand-fit alpha masks — one each for
+upper, sole, and laces — in `images/build-masks/<id>-{upper,sole,laces}.png`.
+`js/build.js` draws the real photo onto a canvas, then for each part:
+fills an offscreen canvas with the chosen color, clips it to that
+part's mask, and composites it onto the photo with
+`globalCompositeOperation = "color"` — which keeps all of the original
+photo's shading, texture, and highlights and only swaps hue/saturation.
+The background is never touched, since it isn't inside any mask. See
+`paintPreviewCanvas()` in `js/build.js` if you add a 7th base model —
+it needs the same three masks at the same pixel dimensions as its
+source photo.
+
+### "In motion" panels show a real photo now, not just a gradient
+`product.html`'s "See it on foot" panel used to fall back to a flat
+brand-gradient if the product's video wasn't available yet. It now
+shows the product's own real photo as an immediate background/fallback
+first (same smart-fallback pattern as everywhere else on the site),
+with the gradient only as the last-resort safety net if even the photo
+fails to load. Confirmed this covers all 22 real products, including
+`rider-fv-sneakers`, the one product with no matching video file.
+
+### A phone number field on the contact form
+`contact.html` now has an optional phone field, wired into the
+existing Web3Forms submission alongside name/email/topic/message.
+
+### A real install icon (favicon.ico → home screen)
+Added a proper icon set built from the existing brand mark (black
+rounded square, volt-green swoosh): `favicon.ico` (multi-res),
+`apple-touch-icon.png` for "Add to Home Screen" on iPhone, `icon-192`
+/ `icon-512` PNGs plus a padded maskable variant for Android's
+install/adaptive-icon system, and `site.webmanifest` (name, theme and
+background color, standalone display) so Chrome on Android offers a
+real install prompt. `theme-color` and `apple-mobile-web-app-*` meta
+tags make the status bar / address bar area match the site's cream
+background instead of the browser default. All of it lives in
+`/icons/` + `favicon.ico` + `site.webmanifest` at the repo root, wired
+identically into all 26 pages.

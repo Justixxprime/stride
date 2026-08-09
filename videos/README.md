@@ -12,8 +12,16 @@ just shows instead — nothing breaks.
   shop-banner.mp4        — Shop page banner
   product-{id}.mp4       — Product page "In motion" banner, one per
                             product id (e.g. product-nitro-3-running.mp4)
-                            — falls back to a plain aurora background
-                            if that product doesn't have one yet
+                            — falls back to that product's own real
+                            photo if the video isn't there yet (not a
+                            plain gradient — the gradient is only the
+                            very last resort if the photo fails too)
   sustainability.mp4     — Sustainability page banner
+
+Filenames are matched exactly, including case — GitHub Pages is a
+case-sensitive filesystem, so `Hero-Loop.mp4` will work fine in local
+preview on a Mac/Windows machine but silently 404 once deployed. Keep
+everything here lowercase-hyphenated, matching the `videos/...`
+references in the HTML/JS exactly.
 
 See GUIDE.md section 13b for the full reference, including images.

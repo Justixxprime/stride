@@ -22,3 +22,17 @@ gallery (with working thumbnails, swipe, and zoom) never looks broken.
 
 See GUIDE.md section 13b for the full base-name list, including the
 Shop category tiles in images/categories/.
+
+Filenames are matched exactly, including case — GitHub Pages is a
+case-sensitive filesystem, so double-check capitalization matches the
+`image` field in js/products.js exactly once deployed, even if it
+worked fine in local preview on a Mac/Windows machine.
+
+**images/build-masks/** — not product photos themselves, but per-part
+alpha masks (upper/sole/laces) for the 6 shoes used as Build Your Own
+base models, named `<product-id>-upper.png`, `<product-id>-sole.png`,
+`<product-id>-laces.png`. These are what let the Build page recolor
+your actual product photo region by region instead of tinting the
+whole image at once. See GUIDE.md section 17 if you add a 7th base
+model — it needs the same three masks, at the same pixel dimensions
+as its source photo.

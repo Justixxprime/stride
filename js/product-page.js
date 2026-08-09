@@ -119,6 +119,8 @@ function renderProductPage() {
   document.getElementById("crumb-name").textContent = p.name;
 
   const motionVideo = document.getElementById("product-motion-video");
+  const motionPoster = document.getElementById("product-motion-poster");
+  if (motionPoster) motionPoster.outerHTML = smartImgTag(p.image, p.name, 'id="product-motion-poster" class="absolute inset-0 w-full h-full object-cover"');
   if (motionVideo) {
     motionVideo.dataset.srcBase = `videos/product-${p.id}`;
     if (window.initSmartVideos) initSmartVideos();

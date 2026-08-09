@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>window.imgTryNext = function(img){ img.style.display = "none"; };</script>
 <meta charset="UTF-8">
 <script>(function(){var t=localStorage.getItem('stride-theme');var d=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(t!=='light'&&d))document.documentElement.classList.add('dark')})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +8,16 @@
 <meta name="description" content="Shoes you've saved for later.">
 <meta name="author" content="Obioma Chibueze Justice">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 28 28%22><rect width=%2228%22 height=%2228%22 rx=%226%22 fill=%22%230B0B0C%22/><path d=%22M6 20c2-6 4-9 7-9s4 4 9 4%22 stroke=%22%23D7FF3F%22 stroke-width=%222.4%22 fill=%22none%22 stroke-linecap=%22round%22/></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#F7F5EF">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Stride">
+<meta name="mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -18,7 +27,7 @@
   tailwind.config = {
     darkMode: 'class',
     theme: { extend: {
-      colors: { ink:'var(--ink)', 'ink-soft':'var(--ink-soft)', paper:'var(--paper)', 'paper-2':'var(--paper-2)', line:'var(--line)', card:'var(--card)', volt:'var(--volt)', 'volt-dark':'var(--volt-dark)', flame:'var(--flame)' },
+      colors: { ink:'rgb(var(--ink-rgb) / <alpha-value>)', 'ink-soft':'rgb(var(--ink-soft-rgb) / <alpha-value>)', paper:'rgb(var(--paper-rgb) / <alpha-value>)', 'paper-2':'rgb(var(--paper-2-rgb) / <alpha-value>)', line:'rgb(var(--line-rgb) / <alpha-value>)', card:'rgb(var(--card-rgb) / <alpha-value>)', volt:'rgb(var(--volt-rgb) / <alpha-value>)', 'volt-dark':'rgb(var(--volt-dark-rgb) / <alpha-value>)', flame:'rgb(var(--flame-rgb) / <alpha-value>)' },
       fontFamily: { display:['"Anton"','sans-serif'], body:['"Work Sans"','sans-serif'], mono:['"Space Mono"','monospace'], accent:['"Fraunces"','serif'] }
     }}
   }
@@ -30,7 +39,7 @@
   <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
     <a href="index.html" class="font-display text-2xl shrink-0 logo-mark">Stride<span class="text-volt">.</span></a>
 
-    <nav class="hidden lg:flex items-center gap-8 text-ink">
+    <nav class="hidden lg:flex items-center gap-4 xl:gap-8 text-ink">
       <div class="nav-has-mega relative">
         <a href="shop.html" class="nav-link inline-flex items-center gap-1.5">Shop <i class="fa-solid fa-chevron-down text-[9px] opacity-50"></i></a>
         <div class="mega-menu">

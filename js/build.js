@@ -3,9 +3,10 @@
    A step-by-step configurator modeled on how Nike By You / Adidas actually
    run theirs: pick a real base shoe first (its fit, sole, and price all
    carry over), then customize upper / sole / laces one panel at a time,
-   then review before it goes in the bag. The live preview is a refined
-   flat illustration that recolors instantly. No 3D engine, no loading,
-   works everywhere.
+   then review before it goes in the bag. The live preview recolors your
+   actual base-model photo region by region (upper / sole / laces each
+   painted from their own hand-fit mask) via canvas so the shoe you see
+   is real, not a flat illustration or a single blended tint.
    ========================================================================== */
 
 const BUILD_COLORS = [
@@ -31,27 +32,86 @@ function getBaseModel() {
   return findProduct(build.modelId) || findProduct(BASE_MODEL_IDS[0]);
 }
 
-function hexToRgb(hex) {
-  const n = parseInt(hex.replace("#", ""), 16);
-  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+/* ---------------------------------------------------------------------
+   PER-PART PHOTO RECOLORING. Each base model has a real product photo
+   plus three hand-fit alpha masks (upper / sole / laces — see
+   images/build-masks/). We draw the real photo onto a canvas, then for
+   each part: fill an offscreen canvas with the chosen color, clip it to
+   that part's mask (destination-in), and composite it onto the photo
+   with globalCompositeOperation "color" — which keeps all of the
+   original photo's shading, texture and highlights and only replaces
+   hue/saturation, exactly like recoloring a real shoe, region by
+   region instead of one flat tint over the whole thing.
+--------------------------------------------------------------------- */
+const modelAssetCache = {};
+
+function loadImg(src) {
+  return new Promise((resolve) => {
+    const i = new Image();
+    i.onload = () => resolve(i);
+    i.onerror = () => resolve(null);
+    i.src = src;
+  });
 }
-function mixColors(weighted) {
-  let r = 0, g = 0, b = 0;
-  weighted.forEach(([hex, w]) => { const [rr, gg, bb] = hexToRgb(hex); r += rr * w; g += gg * w; b += bb * w; });
-  return `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`;
+
+function getModelAssets(p) {
+  if (modelAssetCache[p.id]) return modelAssetCache[p.id];
+  const maskBase = `images/build-masks/${p.id}`;
+  const promise = Promise.all([
+    loadImg(`${p.image}.jpg`).then((img) => img || loadImg(`${p.image}.webp`)),
+    loadImg(`${maskBase}-upper.png`),
+    loadImg(`${maskBase}-sole.png`),
+    loadImg(`${maskBase}-laces.png`),
+  ]).then(([photo, upperMask, soleMask, lacesMask]) => ({ photo, upperMask, soleMask, lacesMask }));
+  modelAssetCache[p.id] = promise;
+  return promise;
+}
+
+let paintToken = 0;
+async function paintPreviewCanvas() {
+  const p = getBaseModel();
+  const canvas = document.getElementById("build-preview-canvas");
+  const img = document.getElementById("build-photo-img");
+  if (!canvas) return;
+  const myToken = ++paintToken;
+  const { photo, upperMask, soleMask, lacesMask } = await getModelAssets(p);
+  if (myToken !== paintToken) return; // a newer model/color change superseded this paint
+
+  if (!photo) { canvas.style.display = "none"; return; } // real photo failed to load — plain <img> fallback (with its own onerror chain) stays visible instead
+
+  canvas.width = photo.naturalWidth;
+  canvas.height = photo.naturalHeight;
+  const ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(photo, 0, 0);
+
+  [[upperMask, build.upper], [soleMask, build.sole], [lacesMask, build.laces]].forEach(([mask, color]) => {
+    if (!mask) return;
+    const off = document.createElement("canvas");
+    off.width = canvas.width;
+    off.height = canvas.height;
+    const octx = off.getContext("2d");
+    octx.fillStyle = color;
+    octx.fillRect(0, 0, off.width, off.height);
+    octx.globalCompositeOperation = "destination-in";
+    octx.drawImage(mask, 0, 0, off.width, off.height);
+
+    ctx.globalCompositeOperation = "color";
+    ctx.globalAlpha = 0.92;
+    ctx.drawImage(off, 0, 0);
+    ctx.globalCompositeOperation = "source-over";
+    ctx.globalAlpha = 1;
+  });
+
+  canvas.style.display = "";
+  img.style.opacity = "0"; // keep the plain photo underneath as a silent fallback; hide it once the canvas has something to show
+  markImgReady(img);
 }
 
 function paintPreview() {
-  const tint = document.getElementById("build-photo-tint");
-  if (tint) {
-    tint.style.background = mixColors([
-      [build.upper, 0.65],
-      [build.sole, 0.25],
-      [build.laces, 0.10],
-    ]);
-  }
   const glow = document.getElementById("build-glow");
   if (glow) glow.style.setProperty("--build-glow-color", build.upper);
+  paintPreviewCanvas();
 }
 
 function updatePreviewPhoto() {
@@ -62,8 +122,12 @@ function updatePreviewPhoto() {
   delete img.dataset.usingFallback;
   img.alt = p.name;
   img.style.display = "";
+  img.style.opacity = "1";
   img.src = `${p.image}.${IMG_EXTS[0]}`;
   img.onerror = () => imgTryNext(img);
+  const canvas = document.getElementById("build-preview-canvas");
+  if (canvas) canvas.style.display = "none";
+  paintPreviewCanvas();
 }
 
 function renderModelTag() {

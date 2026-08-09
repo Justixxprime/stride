@@ -18,6 +18,24 @@
   --volt-dark:#B9E625;
   --flame:#FF4B2B;
   --ink-soft:#6E6B60;
+  /* RGB-triplet twins of the colors above, used only by the Tailwind
+     color config (theme.extend.colors) so utilities like bg-paper/95
+     or bg-ink/50 can actually apply an alpha channel. Tailwind's
+     opacity modifiers need `rgb(var(--x) / <alpha-value>)`, which
+     requires the variable to hold bare "R G B" numbers — a hex string
+     in that position is invalid CSS and the browser just drops the
+     whole declaration, silently leaving the background transparent.
+     Every existing var(--ink) etc. elsewhere in this file is untouched
+     and keeps using the hex versions above. Keep both in sync. */
+  --ink-rgb: 11 11 12;
+  --paper-rgb: 247 245 239;
+  --paper-2-rgb: 237 233 222;
+  --line-rgb: 222 218 204;
+  --card-rgb: 255 255 255;
+  --volt-rgb: 215 255 63;
+  --volt-dark-rgb: 185 230 37;
+  --flame-rgb: 255 75 43;
+  --ink-soft-rgb: 110 107 96;
   --shadow: 0 1px 2px rgba(11,11,12,.05), 0 16px 40px -20px rgba(11,11,12,.25);
   --shadow-lg: 0 30px 70px -25px rgba(11,11,12,.4);
 }
@@ -32,6 +50,15 @@ html.dark{
   --volt-dark:#C9E63F;
   --flame:#FF6B4A;
   --ink-soft:#9C988A;
+  --ink-rgb: 243 241 233;
+  --paper-rgb: 14 14 15;
+  --paper-2-rgb: 26 26 27;
+  --line-rgb: 44 44 44;
+  --card-rgb: 22 22 22;
+  --volt-rgb: 228 255 107;
+  --volt-dark-rgb: 201 230 63;
+  --flame-rgb: 255 107 74;
+  --ink-soft-rgb: 156 152 138;
   --shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 40px -20px rgba(0,0,0,.7);
   --shadow-lg: 0 30px 80px -25px rgba(0,0,0,.85);
 }
@@ -108,6 +135,18 @@ body{
 .btn-outline{ border:1.5px solid var(--ink); color:var(--ink); }
 .btn-outline:hover{ background:var(--ink); color:var(--paper); }
 .btn-ghost{ color:var(--ink); }
+
+/* product page action row — qty stepper + Add to bag + wish/share.
+   Add to bag must never be squeezed into a tall pill/circle: give it a
+   sane minimum width and lock its text to one line, and let it wrap to
+   its own full-width row (via flex-wrap on the parent) if the qty
+   stepper + icon buttons don't leave enough room beside it. */
+.product-actions-row{ row-gap:.75rem; }
+.product-add-btn{
+  flex:1 1 12rem;
+  min-width:12rem;
+  white-space:nowrap;
+}
 
 /* a light diagonal gloss that sweeps across on hover — desktop only, so
    it never fights the tap ripple on touch devices */
@@ -389,6 +428,23 @@ input[type="range"]::-moz-range-thumb{ height:16px; width:16px; border-radius:99
 .thumb-art:not(.img-ready) .thumb-fallback-icon{ opacity:0; }
 .thumb-art .thumb-fallback-icon{ transition: opacity .3s ease .1s; }
 
+/* #build-preview reuses .thumb-art for its loading shimmer + fallback
+   icon toggling, but it's a wide 4:3 hero photo, not a square thumb —
+   keep its own aspect ratio and corner radius instead of thumb-art's
+   defaults (specificity here beats the plain .thumb-art rule). */
+#build-preview.thumb-art{ aspect-ratio:4/3; border-radius:22px; }
+
+/* the "in motion" video panel on product.html reuses .thumb-art too,
+   but it's an ultra-wide dark panel with its own responsive aspect
+   ratio (4:3 / 16:9 / 21:8 by breakpoint) instead of thumb-art's usual
+   1:1 default — mirror those same breakpoints here so overriding it
+   doesn't collapse the panel to zero height, and lighten the fallback
+   icon since it sits on a dark gradient instead of the usual paper bg. */
+.in-motion-frame.thumb-art{ aspect-ratio:4/3; border-radius:0; }
+@media (min-width:640px){ .in-motion-frame.thumb-art{ aspect-ratio:16/9; } }
+@media (min-width:1024px){ .in-motion-frame.thumb-art{ aspect-ratio:21/8; } }
+.in-motion-frame .thumb-fallback-icon{ color:rgba(255,255,255,.18); }
+
 /* ---- success checkmark draw ---- */
 .check-path{ stroke-dasharray:60; stroke-dashoffset:60; transition: stroke-dashoffset .6s cubic-bezier(.3,.7,.2,1) .3s; }
 .check-ready .check-path{ stroke-dashoffset:0; }
@@ -448,7 +504,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
    Only set on <html> — its overflow propagates to the viewport itself
    in standards mode, so this clips horizontal overflow without turning
    <body> into a nested scroll container, which would break the sticky
-   header. */
+   header. (Re-verified directly: with Tailwind's utilities actually
+   loading, position:sticky computes correctly here — an earlier check
+   of mine gave a false positive because of a broken stylesheet path in
+   my own test harness, not a real bug in this rule.) */
 html{ overflow-x:hidden; }
 body{ max-width:100%; }
 
@@ -858,7 +917,6 @@ body::after{
 .style-chip:hover{ border-color:var(--ink); }
 .style-chip.is-active{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
 #build-photo-stage{ transition: opacity .3s ease; }
-#build-photo-tint{ transition: background-color .4s ease; }
 
 /* ---- build wizard: stepper ---- */
 .build-stepper-item{ display:flex; flex-direction:column; align-items:center; gap:.5rem; flex:0 0 auto; }
@@ -881,11 +939,12 @@ body::after{
 .model-check{ position:absolute; top:8px; right:8px; color:var(--volt); font-size:1.1rem; opacity:0; transition:opacity .2s ease; text-shadow:0 0 0 3px #fff, 0 1px 3px rgba(0,0,0,.3); }
 .model-card.is-active .model-check{ opacity:1; }
 .build-step.hidden{ display:none; }
-#build-photo-tint{ transition: background-color .4s ease; }
 #build-preview{ perspective:900px; }
-#build-photo-img{
+#build-photo-img,
+#build-preview-canvas{
   animation: build-float 4.5s ease-in-out infinite;
   transition: opacity .3s ease;
+  object-fit: cover;
 }
 @keyframes build-float{
   0%,100%{ transform: translateY(0); }

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>window.imgTryNext = function(img){ img.style.display = "none"; };</script>
 <meta charset="UTF-8">
 <script>(function(){var t=localStorage.getItem('stride-theme');var d=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(t!=='light'&&d))document.documentElement.classList.add('dark')})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +8,16 @@
 <meta name="description" content="Product detail page.">
 <meta name="author" content="Obioma Chibueze Justice">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 28 28%22><rect width=%2228%22 height=%2228%22 rx=%226%22 fill=%22%230B0B0C%22/><path d=%22M6 20c2-6 4-9 7-9s4 4 9 4%22 stroke=%22%23D7FF3F%22 stroke-width=%222.4%22 fill=%22none%22 stroke-linecap=%22round%22/></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#F7F5EF">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Stride">
+<meta name="mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -18,7 +27,7 @@
   tailwind.config = {
     darkMode: 'class',
     theme: { extend: {
-      colors: { ink:'var(--ink)', 'ink-soft':'var(--ink-soft)', paper:'var(--paper)', 'paper-2':'var(--paper-2)', line:'var(--line)', card:'var(--card)', volt:'var(--volt)', 'volt-dark':'var(--volt-dark)', flame:'var(--flame)' },
+      colors: { ink:'rgb(var(--ink-rgb) / <alpha-value>)', 'ink-soft':'rgb(var(--ink-soft-rgb) / <alpha-value>)', paper:'rgb(var(--paper-rgb) / <alpha-value>)', 'paper-2':'rgb(var(--paper-2-rgb) / <alpha-value>)', line:'rgb(var(--line-rgb) / <alpha-value>)', card:'rgb(var(--card-rgb) / <alpha-value>)', volt:'rgb(var(--volt-rgb) / <alpha-value>)', 'volt-dark':'rgb(var(--volt-dark-rgb) / <alpha-value>)', flame:'rgb(var(--flame-rgb) / <alpha-value>)' },
       fontFamily: { display:['"Anton"','sans-serif'], body:['"Work Sans"','sans-serif'], mono:['"Space Mono"','monospace'], accent:['"Fraunces"','serif'] }
     }}
   }
@@ -30,7 +39,7 @@
   <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
     <a href="index.html" class="font-display text-2xl shrink-0 logo-mark">Stride<span class="text-volt">.</span></a>
 
-    <nav class="hidden lg:flex items-center gap-8 text-ink">
+    <nav class="hidden lg:flex items-center gap-4 xl:gap-8 text-ink">
       <div class="nav-has-mega relative">
         <a href="shop.html" class="nav-link inline-flex items-center gap-1.5">Shop <i class="fa-solid fa-chevron-down text-[9px] opacity-50"></i></a>
         <div class="mega-menu">
@@ -199,13 +208,13 @@
 
       <p id="social-proof" class="text-xs text-ink-soft mt-4"><i class="fa-solid fa-eye mr-1"></i><span id="viewer-count"></span> people looking at this right now</p>
 
-      <div class="flex items-center gap-4 mt-8">
-        <div class="flex items-center gap-4 border border-line rounded-full px-4 py-3">
+      <div class="flex flex-wrap items-center gap-3 mt-8 product-actions-row">
+        <div class="flex items-center gap-4 border border-line rounded-full px-4 py-3 shrink-0">
           <button id="qty-dec" class="w-4" aria-label="Decrease quantity"><i class="fa-solid fa-minus text-xs"></i></button>
           <input id="qty-input" type="number" value="1" min="1" class="w-8 text-center font-mono text-sm outline-none bg-transparent" readonly>
           <button id="qty-inc" class="w-4" aria-label="Increase quantity"><i class="fa-solid fa-plus text-xs"></i></button>
         </div>
-        <button id="add-to-cart-btn" class="magnetic btn btn-ink flex-1"><span>Add to bag</span> <i class="fa-solid fa-bag-shopping ml-2"></i></button>
+        <button id="add-to-cart-btn" class="magnetic btn btn-ink product-add-btn"><span>Add to bag</span> <i class="fa-solid fa-bag-shopping ml-2"></i></button>
         <button id="wish-btn-detail" data-wish-btn="" class="icon-btn shrink-0" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
         <button id="share-btn" class="icon-btn shrink-0" aria-label="Copy link to this product"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
       </div>
@@ -247,8 +256,10 @@
 <!-- ============ IN MOTION ============ -->
 <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20">
   <div class="tilt" data-tilt data-reveal>
-  <div class="tile aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/8] relative tilt-inner overflow-hidden" style="background:linear-gradient(120deg,#0B0B0C,#3A0CA3,#F72585)">
+  <div class="tile thumb-art in-motion-frame aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/8] relative tilt-inner overflow-hidden" style="background:linear-gradient(120deg,#0B0B0C,#3A0CA3,#F72585)">
     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <img id="product-motion-poster" data-ext-idx="0" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+    <i class="fa-solid fa-shoe-prints thumb-fallback-icon" aria-hidden="true"></i>
     <video id="product-motion-video" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline autoplay></video>
     <div class="absolute inset-0" style="background:linear-gradient(0deg, rgba(11,11,12,.7), transparent 55%)"></div>
     <div class="absolute bottom-6 left-6 sm:bottom-10 sm:left-10">
