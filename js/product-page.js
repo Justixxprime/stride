@@ -38,7 +38,7 @@ function renderGallery(p) {
   track.innerHTML = galleryImages
     .map(
       (slot) => `
-    <div class="shrink-0 h-full relative" style="width:${100 / n}%; background:${p.gradient}">
+    <div class="shrink-0 h-full relative thumb-art" style="width:${100 / n}%; background:${p.gradient}">
       ${smartImgTag(slot.base, p.name, 'class="absolute inset-0 w-full h-full object-cover"', slot.fallback, slot.filter)}
     </div>`
     )
@@ -51,7 +51,7 @@ function renderGallery(p) {
   document.getElementById("gallery-thumbs").innerHTML = galleryImages
     .map(
       (slot, i) => `
-    <button type="button" class="gallery-thumb tile aspect-square relative overflow-hidden ${i === 0 ? "is-active" : ""}" data-goto="${i}" style="background:${p.gradient}" aria-label="Show photo ${i + 1}">
+    <button type="button" class="gallery-thumb tile aspect-square relative overflow-hidden thumb-art ${i === 0 ? "is-active" : ""}" data-goto="${i}" style="background:${p.gradient}" aria-label="Show photo ${i + 1}">
       ${smartImgTag(slot.base, `${p.name} view ${i + 1}`, 'class="absolute inset-0 w-full h-full object-cover"', slot.fallback, slot.filter)}
     </button>`
     )

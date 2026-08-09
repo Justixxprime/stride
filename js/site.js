@@ -15,7 +15,7 @@
                src="images/products/nitro-3-running.jpg"
                onerror="imgTryNext(this)">
 --------------------------------------------------------------------- */
-const IMG_EXTS = ["jpg", "jpeg", "png", "webp", "avif"];
+const IMG_EXTS = ["webp", "avif", "jpg", "jpeg", "png"];
 function imgTryNext(img) {
   const usingFallback = img.dataset.usingFallback === "1";
   const base = usingFallback ? img.dataset.fallback : img.dataset.srcBase;
