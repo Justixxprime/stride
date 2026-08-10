@@ -218,7 +218,26 @@ function lbRender() {
   const art = document.getElementById("lightbox-art");
   const slot = lbImages[lbIndex];
   if (!art || !slot) return;
-  art.innerHTML = smartImgTag(slot.base, "", 'class="w-full h-full object-cover rounded-[20px]"', slot.fallback, slot.filter);
+
+  const wrap = document.createElement("div");
+  wrap.innerHTML = smartImgTag(slot.base, "", 'class="lb-incoming"', slot.fallback, slot.filter);
+  const incoming = wrap.firstElementChild;
+  art.appendChild(incoming);
+
+  let swapped = false;
+  const swap = () => {
+    if (swapped) return;
+    swapped = true;
+    art.querySelectorAll("img").forEach((el) => { if (el !== incoming) el.remove(); });
+    requestAnimationFrame(() => incoming.classList.remove("lb-incoming"));
+  };
+  if (incoming.complete && incoming.naturalWidth) {
+    swap();
+  } else {
+    incoming.addEventListener("load", swap, { once: true });
+    setTimeout(swap, 900);
+  }
+
   const dots = document.getElementById("lightbox-dots");
   const nav = document.querySelectorAll("[data-lb-prev], [data-lb-next]");
   if (lbImages.length > 1) {
@@ -272,6 +291,7 @@ function openLightbox(gradient, images, startIndex) {
   ensureLightboxMarkup();
   lbImages = Array.isArray(images) ? images : [{ base: images }];
   lbIndex = startIndex || 0;
+  if (window.prefetchSmartImages) prefetchSmartImages(lbImages.map((s) => s.base));
   document.getElementById("lightbox-art").style.background = gradient;
   lbRender();
   openModal("lightbox-overlay");

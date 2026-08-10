@@ -809,9 +809,17 @@ footer a.is-current::before{ content:""; position:absolute; left:-14px; top:50%;
 .gallery-thumb{ cursor:pointer; border:2px solid transparent; transition:border-color .2s ease, transform .2s ease; padding:0; }
 .gallery-thumb:hover{ transform:translateY(-2px); }
 .gallery-thumb.is-active{ border-color:var(--ink); }
-#gallery-prev, #gallery-next{ opacity:0; transition:opacity .2s ease; }
-#gallery-main:hover #gallery-prev, #gallery-main:hover #gallery-next{ opacity:1; }
-@media (max-width:768px){ #gallery-prev, #gallery-next{ opacity:1; } }
+#gallery-prev, #gallery-next{ opacity:1; transition:opacity .2s ease; }
+@media (hover:hover){
+  #gallery-prev, #gallery-next{ opacity:0; }
+  #gallery-main:hover #gallery-prev, #gallery-main:hover #gallery-next{ opacity:1; }
+}
+
+/* lightbox crossfade: layered images fade into each other instead of
+   the whole slot going blank/gradient while the next photo loads */
+#lightbox-art{ position:relative; overflow:hidden; }
+#lightbox-art img{ max-width:none; max-height:none; position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:none; opacity:1; transition:opacity .4s ease; }
+#lightbox-art img.lb-incoming{ opacity:0; }
 
 /* ---- recently viewed / quick view shared bits ---- */
 .qv-swatch{ height:1.6rem; width:1.6rem; border-radius:999px; border:2px solid var(--card); outline:1.5px solid var(--line); cursor:pointer; }
