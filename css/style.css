@@ -815,6 +815,22 @@ footer a.is-current::before{ content:""; position:absolute; left:-14px; top:50%;
   #gallery-main:hover #gallery-prev, #gallery-main:hover #gallery-next{ opacity:1; }
 }
 
+.nav-arrow{
+  height:46px; width:46px; border-radius:999px;
+  background:rgba(11,11,12,.6);
+  backdrop-filter:blur(10px) saturate(160%); -webkit-backdrop-filter:blur(10px) saturate(160%);
+  border:1.5px solid rgba(215,255,63,.4);
+  display:flex; align-items:center; justify-content:center; color:#fff;
+  box-shadow:0 6px 20px rgba(0,0,0,.3);
+  transition:transform .28s cubic-bezier(.2,.8,.2,1), border-color .25s ease, box-shadow .3s ease, background .25s ease;
+  cursor:pointer;
+}
+.nav-arrow svg{ width:20px; height:20px; display:block; transition:transform .28s cubic-bezier(.2,.8,.2,1); }
+.nav-arrow:hover{ border-color:var(--volt); background:rgba(11,11,12,.8); transform:scale(1.1); box-shadow:0 8px 26px rgba(0,0,0,.35), 0 0 22px rgba(215,255,63,.35); }
+.nav-arrow:active{ transform:scale(.9); }
+.nav-arrow-prev:hover svg{ transform:translateX(-3px); }
+.nav-arrow-next:hover svg{ transform:translateX(3px); }
+
 /* lightbox crossfade: layered images fade into each other instead of
    the whole slot going blank/gradient while the next photo loads */
 #lightbox-art{ position:relative; overflow:hidden; }

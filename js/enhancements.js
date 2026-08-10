@@ -257,8 +257,8 @@ function ensureLightboxMarkup() {
   el.dataset.open = "false";
   el.innerHTML = `
     <button data-lb-close class="absolute top-6 right-6 h-10 w-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 z-10" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-    <button data-lb-prev class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 z-10" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
-    <button data-lb-next class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 z-10" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+    <button data-lb-prev class="nav-arrow nav-arrow-prev absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-10" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"></polyline></svg></button>
+    <button data-lb-next class="nav-arrow nav-arrow-next absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-10" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
     <div id="lightbox-art" class="lightbox-art aspect-square w-[500px] max-w-[90vw]"></div>
     <div id="lightbox-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 z-10"></div>`;
   document.body.appendChild(el);
