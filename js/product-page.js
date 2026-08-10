@@ -30,6 +30,7 @@ function buildGalleryImages(p) {
 function renderGallery(p) {
   galleryImages = buildGalleryImages(p);
   galleryIndex = 0;
+  if (window.prefetchSmartImages) prefetchSmartImages(galleryImages.map((s) => s.base));
   const n = galleryImages.length;
 
   document.getElementById("gallery-main").style.background = p.gradient;

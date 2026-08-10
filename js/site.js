@@ -16,6 +16,15 @@
                onerror="imgTryNext(this)">
 --------------------------------------------------------------------- */
 const IMG_EXTS = ["webp", "avif", "jpg", "jpeg", "png"];
+
+function prefetchSmartImg(basePath) {
+  if (!basePath) return;
+  IMG_EXTS.forEach((ext) => { const probe = new Image(); probe.src = `${basePath}.${ext}`; });
+}
+function prefetchSmartImages(basePaths) {
+  (basePaths || []).forEach(prefetchSmartImg);
+}
+
 function imgTryNext(img) {
   const usingFallback = img.dataset.usingFallback === "1";
   const base = usingFallback ? img.dataset.fallback : img.dataset.srcBase;
