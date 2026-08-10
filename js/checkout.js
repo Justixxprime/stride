@@ -118,12 +118,20 @@ function renderOrderSummary() {
     document.getElementById("summary-credit").textContent = "\u2212" + formatPrice(creditApplied);
   } else creditRow.classList.add("hidden");
 
-  const giftCodeRow = document.getElementById("summary-giftcode-row");
+const giftCodeRow = document.getElementById("summary-giftcode-row");
   if (appliedGiftCode && giftCodeApplied > 0) {
     giftCodeRow.classList.remove("hidden");
     document.getElementById("summary-giftcode-code").textContent = appliedGiftCode.code;
     document.getElementById("summary-giftcode").textContent = "\u2212" + formatPrice(giftCodeApplied);
   } else giftCodeRow.classList.add("hidden");
+
+  const coveredMsg = document.getElementById("payment-covered-message");
+  const cardFields = document.getElementById("payment-card-fields");
+  if (coveredMsg && cardFields) {
+    const covered = total <= 0;
+    coveredMsg.classList.toggle("hidden", !covered);
+    cardFields.classList.toggle("hidden", covered);
+  }
 }
 
 function goToStep(n) {
@@ -208,6 +216,7 @@ function initCardFormatting() {
 
 function validateStep(n) {
   const section = document.querySelector(`[data-step="${n}"]`);
+  if (n === 2 && computeTotals().total <= 0) return true;
   const required = section.querySelectorAll("[required]");
   for (const field of required) {
     if (!field.value.trim()) {
