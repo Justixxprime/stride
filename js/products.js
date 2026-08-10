@@ -411,7 +411,7 @@ function productCardHTML(p) {
           <button class="quick-view-btn icon-btn !h-9 !w-9 !border-0 bg-white/90 backdrop-blur z-10" data-quick-view="${p.id}" aria-label="Quick view" style="color:#0B0B0C">
             <i class="fa-regular fa-eye text-xs"></i>
           </button>
-          <button class="quick-add btn btn-ink !py-2.5 !px-5 !text-xs" data-quick-add="${p.id}">Quick add <i class="fa-solid fa-plus ml-1"></i></button>
+          <button class="quick-add btn btn-ink !py-1.5 !px-3 !text-[10px] sm:!py-2.5 sm:!px-5 sm:!text-xs" data-quick-add="${p.id}">Quick add <i class="fa-solid fa-plus ml-1"></i></button>
         </div>
       </a>
       <div class="mt-3 flex items-start justify-between gap-2">
