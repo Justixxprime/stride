@@ -1,0 +1,1034 @@
+diff --git a/about.html b/about.html
+index 0882198..ab0d978 100644
+--- a/about.html
++++ b/about.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+@@ -185,7 +185,7 @@
+   <div class="tilt" data-tilt data-reveal>
+   <div class="tile aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] relative tilt-inner overflow-hidden" style="background:linear-gradient(120deg,#F72585,#3A0CA3,#4CC9F0)">
+     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+-    <img data-src-base="images/about-wide" data-ext-idx="0" src="images/about-wide.jpg" alt="Stride workshop" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
++    <img data-src-base="images/about-wide" data-ext-idx="0" src="images/about-wide.webp" alt="Stride workshop" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+     <video data-src-base="videos/about-workshop" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline autoplay></video>
+   </div>
+   </div>
+diff --git a/account.html b/account.html
+index ec7daf7..9e4f647 100644
+--- a/account.html
++++ b/account.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/build.html b/build.html
+index a653af2..e76f93e 100644
+--- a/build.html
++++ b/build.html
+@@ -57,28 +57,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/careers.html b/careers.html
+index ef95c4c..48a2a2b 100644
+--- a/careers.html
++++ b/careers.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/cart.html b/cart.html
+index 0afe109..b2d5eca 100644
+--- a/cart.html
++++ b/cart.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/contact.html b/contact.html
+index b07a20e..4449cf3 100644
+--- a/contact.html
++++ b/contact.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/css/style.css b/css/style.css
+index 47d5f89..d627363 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -563,7 +563,7 @@ body{ animation: page-fade-in .4s ease forwards; }
+   background:linear-gradient(90deg, transparent, var(--volt) 35%, var(--flame) 65%, transparent);
+   opacity:.9;
+ }
+-.nav-has-mega:hover .mega-menu, .nav-has-mega:focus-within .mega-menu{
++.nav-has-mega:hover .mega-menu, .nav-has-mega:focus-within .mega-menu, .nav-has-mega.is-open .mega-menu{
+   opacity:1; visibility:visible; transform:translateY(0) scale(1);
+ }
+ /* each category tile rises in with its own delay for a richer, staged
+@@ -572,7 +572,7 @@ body{ animation: page-fade-in .4s ease forwards; }
+   opacity:0; transform:translateY(14px);
+   transition: opacity .38s ease, transform .38s ease, box-shadow .3s ease;
+ }
+-.nav-has-mega:hover .mega-menu a.group, .nav-has-mega:focus-within .mega-menu a.group{ opacity:1; transform:translateY(0); }
++.nav-has-mega:hover .mega-menu a.group, .nav-has-mega:focus-within .mega-menu a.group, .nav-has-mega.is-open .mega-menu a.group{ opacity:1; transform:translateY(0); }
+ .mega-menu a.group:nth-child(1){ transition-delay:.05s; }
+ .mega-menu a.group:nth-child(2){ transition-delay:.10s; }
+ .mega-menu a.group:nth-child(3){ transition-delay:.15s; }
+diff --git a/drops.html b/drops.html
+index 1f0fb0e..72a93d7 100644
+--- a/drops.html
++++ b/drops.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+@@ -198,7 +198,7 @@
+   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+     <div class="tile-white overflow-hidden" data-reveal>
+       <div class="tile thumb-art aspect-square relative overflow-hidden" style="background:linear-gradient(135deg,#F72585,#7209B7)">
+-        <img data-src-base="images/drops/vol-01" data-ext-idx="4" src="images/drops/vol-01.png" alt="Drop Vol. 01" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++        <img data-src-base="images/drops/vol-01" data-ext-idx="4" src="images/drops/vol-01.webp" alt="Drop Vol. 01" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+         <i class="fa-solid fa-shoe-prints thumb-fallback-icon"></i>
+         <span class="pill pill-dark absolute top-3 left-3 !text-[9px]">Sold out</span>
+       </div>
+diff --git a/faq.html b/faq.html
+index 127b636..9b5b7b1 100644
+--- a/faq.html
++++ b/faq.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/gift-cards.html b/gift-cards.html
+index 9c950f2..18715aa 100644
+--- a/gift-cards.html
++++ b/gift-cards.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/how-its-built.html b/how-its-built.html
+index ed70487..1d8fe21 100644
+--- a/how-its-built.html
++++ b/how-its-built.html
+@@ -57,28 +57,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/index.html b/index.html
+index 9e236fb..bc06a8f 100644
+--- a/index.html
++++ b/index.html
+@@ -57,28 +57,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+@@ -201,7 +201,7 @@
+ 
+     <div class="tilt" data-tilt data-reveal data-reveal-delay="2" data-parallax="0.07">
+     <div class="tile relative aspect-[4/3] tilt-inner overflow-hidden" style="background:linear-gradient(135deg,#F4A261,#E76F51)">
+-      <img data-src-base="images/hero-shoe" data-ext-idx="0" src="images/hero-shoe.jpg" alt="Stride hero sneaker" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++      <img data-src-base="images/hero-shoe" data-ext-idx="0" src="images/hero-shoe.webp" alt="Stride hero sneaker" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+       <video data-src-base="videos/hero-loop" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline autoplay></video>
+       <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[30%] text-black/10"></i>
+       <span class="pill pill-dark absolute top-5 left-5"><i class="fa-solid fa-plus text-[9px]"></i> Comfort</span>
+@@ -212,14 +212,14 @@
+ 
+   <div class="grid grid-cols-3 gap-4 mt-4">
+     <div class="tile tile-3d aspect-square relative" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)" data-reveal data-parallax="0.05">
+-      <img data-src-base="images/hero-2" data-ext-idx="0" src="images/hero-2.jpg" alt="Sneaker detail" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
++      <img data-src-base="images/hero-2" data-ext-idx="0" src="images/hero-2.webp" alt="Sneaker detail" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+       <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[35%] text-black/10"></i>
+     </div>
+     <div class="tile tile-3d aspect-square flex items-center justify-center relative" data-reveal data-reveal-delay="1" data-parallax="0.09">
+       <div class="barcode" data-barcode style="height:60%"></div>
+     </div>
+     <div class="tile tile-3d aspect-square relative" style="background:linear-gradient(135deg,#F72585,#7209B7)" data-reveal data-reveal-delay="2" data-parallax="0.13">
+-      <img data-src-base="images/hero-3" data-ext-idx="0" src="images/hero-3.jpg" alt="Sneaker detail" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
++      <img data-src-base="images/hero-3" data-ext-idx="0" src="images/hero-3.webp" alt="Sneaker detail" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+       <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[35%] text-black/10"></i>
+       <span class="pill pill-volt absolute bottom-4 left-4 !text-[10px]">Comfort in every step</span>
+     </div>
+@@ -242,7 +242,7 @@
+ 
+     <div class="tilt" data-tilt data-reveal data-reveal-delay="1">
+       <div class="tile aspect-[4/3] relative overflow-hidden tilt-inner" style="background:linear-gradient(135deg,#606C38,#283618)">
+-        <img data-src-base="images/products/quantum-pulse" data-ext-idx="0" src="images/products/quantum-pulse.jpg" alt="Quantum Pulse Trainer" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++        <img data-src-base="images/products/quantum-pulse" data-ext-idx="0" src="images/products/quantum-pulse.webp" alt="Quantum Pulse Trainer" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+         <i class="fa-solid fa-shoe-prints thumb-fallback-icon" style="position:absolute; inset:0; margin:auto; font-size:30%; color:rgba(255,255,255,.12)"></i>
+         <span class="pill absolute top-5 left-5"><i class="fa-solid fa-swatchbook text-[9px]"></i> Fully colorable</span>
+       </div>
+@@ -253,7 +253,7 @@
+   <h2 class="font-display text-5xl sm:text-6xl mb-8" data-reveal>About Us</h2>
+   <div class="grid md:grid-cols-2 gap-8 items-center">
+     <div class="tile tile-3d aspect-[4/3] relative" style="background:linear-gradient(135deg,#FFB703,#FB8500)" data-reveal>
+-      <img data-src-base="images/about-shoe" data-ext-idx="0" src="images/about-shoe.jpg" alt="Colorful sneaker" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
++      <img data-src-base="images/about-shoe" data-ext-idx="0" src="images/about-shoe.webp" alt="Colorful sneaker" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+       <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[30%] text-black/10"></i>
+     </div>
+     <div data-reveal data-reveal-delay="1">
+@@ -278,21 +278,21 @@
+       <div class="tile-white p-6" data-reveal>
+         <p class="font-mono text-[11px] uppercase text-ink-soft mb-4">Premium quality</p>
+         <div class="tile tile-3d aspect-[3/4] relative" style="background:linear-gradient(160deg,#FFC107,#212121)">
+-          <img data-src-base="images/comfort-1" data-ext-idx="0" src="images/comfort-1.jpg" alt="Premium sneaker" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
++          <img data-src-base="images/comfort-1" data-ext-idx="0" src="images/comfort-1.webp" alt="Premium sneaker" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+           <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[30%] text-white/10"></i>
+         </div>
+       </div>
+       <div class="flex flex-col gap-5">
+         <div class="tile-white p-5" data-reveal data-reveal-delay="1">
+           <div class="tile tile-3d aspect-[16/10] relative mb-4" style="background:linear-gradient(135deg,#9D4EDD,#F4A261)">
+-            <img data-src-base="images/comfort-2" data-ext-idx="0" src="images/comfort-2.jpg" alt="Sneaker angle" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
++            <img data-src-base="images/comfort-2" data-ext-idx="0" src="images/comfort-2.webp" alt="Sneaker angle" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+             <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[26%] text-black/10"></i>
+           </div>
+           <p class="text-sm text-ink-soft leading-relaxed">Move effortlessly with lightweight shoes that provide comfort without weighing you down.</p>
+         </div>
+         <div class="tile-white p-5" data-reveal data-reveal-delay="2">
+           <div class="tile tile-3d aspect-[16/10] relative" style="background:linear-gradient(135deg,#219EBC,#8ECAE6)">
+-            <img data-src-base="images/comfort-3" data-ext-idx="0" src="images/comfort-3.jpg" alt="Sneaker sole" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
++            <img data-src-base="images/comfort-3" data-ext-idx="0" src="images/comfort-3.webp" alt="Sneaker sole" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+             <i class="fa-solid fa-shoe-prints absolute inset-0 m-auto text-[26%] text-black/10"></i>
+           </div>
+         </div>
+diff --git a/journal.html b/journal.html
+index d4ccf62..1f70254 100644
+--- a/journal.html
++++ b/journal.html
+@@ -57,28 +57,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+@@ -183,7 +183,7 @@
+   <div class="tilt" data-tilt data-reveal>
+   <div class="tile aspect-[4/3] sm:aspect-[16/9] lg:aspect-[16/7] relative tilt-inner overflow-hidden" style="background:linear-gradient(120deg,#606C38,#283618,#0B0B0C)">
+     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+-    <img data-src-base="images/journal-featured" data-ext-idx="0" src="images/journal-featured.jpg" alt="Inside the workshop" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
++    <img data-src-base="images/journal-featured" data-ext-idx="0" src="images/journal-featured.webp" alt="Inside the workshop" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+     <video data-src-base="videos/journal-featured" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline autoplay></video>
+     <div class="absolute inset-0" style="background:linear-gradient(0deg, rgba(11,11,12,.7), transparent 55%)"></div>
+     <div class="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10">
+diff --git a/js/site.js b/js/site.js
+index 9d8c265..6968c3e 100644
+--- a/js/site.js
++++ b/js/site.js
+@@ -685,6 +685,49 @@ function initCountUp() {
+   els.forEach((el) => io.observe(el));
+ }
+ 
++/* ---------------------------------------------------------------------
++   TOUCH MEGA MENU
++   The mega menu (and any nav-has-mega trigger) opens on CSS :hover /
++   :focus-within, which is invisible to touch. That's fine on phones —
++   they get the hamburger nav below the "lg" breakpoint — but every
++   iPad in landscape (and the 12.9" Pro in portrait) is >=1024px wide,
++   so they render the *desktop* nav with a real anchor tag as the
++   trigger. A tap there just follows the link straight to shop.html
++   before the menu can appear. On devices that lack fine hover, treat
++   the first tap on that trigger as "open the menu", and only let a
++   second tap (or a tap while it's already open) navigate through.
++--------------------------------------------------------------------- */
++function initTouchMegaMenu() {
++  if (window.matchMedia("(hover: hover)").matches) return; // real hover devices are fine as-is
++  const triggers = document.querySelectorAll(".nav-has-mega > a.nav-link");
++  if (!triggers.length) return;
++
++  function closeAll(except) {
++    document.querySelectorAll(".nav-has-mega.is-open").forEach((el) => {
++      if (el !== except) el.classList.remove("is-open");
++    });
++  }
++
++  triggers.forEach((trigger) => {
++    trigger.addEventListener("click", (e) => {
++      const wrap = trigger.closest(".nav-has-mega");
++      if (!wrap.classList.contains("is-open")) {
++        e.preventDefault();
++        closeAll(wrap);
++        wrap.classList.add("is-open");
++      }
++      // already open: let this tap navigate through normally
++    });
++  });
++
++  document.addEventListener("click", (e) => {
++    if (!e.target.closest(".nav-has-mega")) closeAll(null);
++  });
++  document.addEventListener("keydown", (e) => {
++    if (e.key === "Escape") closeAll(null);
++  });
++}
++
+ function initSkipLink() {
+   const link = document.createElement("a");
+   link.href = "#";
+@@ -716,6 +759,7 @@ document.addEventListener("DOMContentLoaded", () => {
+   initSplitText();
+   initNavSearch();
+   initActiveNav();
++  initTouchMegaMenu();
+   initScrollProgress();
+   initCustomCursor();
+   initRipple();
+diff --git a/login.html b/login.html
+index a8257d0..35fa7b2 100644
+--- a/login.html
++++ b/login.html
+@@ -77,7 +77,7 @@
+   <!-- visual side -->
+   <div class="relative tile !rounded-none overflow-hidden auth-media h-56 sm:h-72 lg:h-auto order-first lg:order-none" style="background:linear-gradient(135deg,#9D4EDD,#F72585,#3A0CA3)">
+     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+-    <img data-src-base="images/auth-login" data-ext-idx="0" src="images/auth-login.jpg" alt="" class="absolute inset-0 w-full h-full object-cover auth-media-layer" onerror="imgTryNext(this)">
++    <img data-src-base="images/auth-login" data-ext-idx="0" src="images/auth-login.webp" alt="" class="absolute inset-0 w-full h-full object-cover auth-media-layer" onerror="imgTryNext(this)">
+     <video data-src-base="videos/auth-login" class="absolute inset-0 w-full h-full object-cover auth-media-layer" muted loop playsinline autoplay></video>
+     <div class="absolute inset-0" style="background:linear-gradient(0deg, rgba(11,11,12,.75), rgba(11,11,12,.15) 45%, rgba(11,11,12,.05))"></div>
+     <div class="tech-scan absolute inset-0"></div>
+diff --git a/lookbook.html b/lookbook.html
+index a4c7f63..06b6396 100644
+--- a/lookbook.html
++++ b/lookbook.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+@@ -181,7 +181,7 @@
+ 
+ <!-- ============ FULL-BLEED EDITORIAL PANELS ============ -->
+ <section class="lookbook-panel" style="background:linear-gradient(160deg,#F72585,#7209B7)" data-reveal>
+-  <img data-src-base="images/lookbook-1" data-ext-idx="0" src="images/lookbook-1.jpg" alt="Lookbook editorial 1" class="absolute inset-0 w-full h-full object-cover" data-parallax onerror="imgTryNext(this)">
++  <img data-src-base="images/lookbook-1" data-ext-idx="0" src="images/lookbook-1.webp" alt="Lookbook editorial 1" class="absolute inset-0 w-full h-full object-cover" data-parallax onerror="imgTryNext(this)">
+   <video data-src-base="videos/lookbook-1" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline autoplay></video>
+   <div class="lookbook-caption max-w-7xl mx-auto px-5 sm:px-8 pb-14 text-white">
+     <span class="pill pill-volt mb-4 inline-block">Chapter 01</span>
+@@ -192,7 +192,7 @@
+ </section>
+ 
+ <section class="lookbook-panel" style="background:linear-gradient(160deg,#0077B6,#00B4D8)" data-reveal>
+-  <img data-src-base="images/lookbook-2" data-ext-idx="0" src="images/lookbook-2.jpg" alt="Lookbook editorial 2" class="absolute inset-0 w-full h-full object-cover" data-parallax onerror="imgTryNext(this)" loading="lazy">
++  <img data-src-base="images/lookbook-2" data-ext-idx="0" src="images/lookbook-2.webp" alt="Lookbook editorial 2" class="absolute inset-0 w-full h-full object-cover" data-parallax onerror="imgTryNext(this)" loading="lazy">
+   <div class="lookbook-caption max-w-7xl mx-auto px-5 sm:px-8 pb-14 text-white">
+     <span class="pill pill-volt mb-4 inline-block">Chapter 02</span>
+     <h2 class="font-display text-5xl sm:text-7xl leading-[0.95] mb-5">Trail<br>Season</h2>
+@@ -202,7 +202,7 @@
+ </section>
+ 
+ <section class="lookbook-panel" style="background:linear-gradient(160deg,#606C38,#283618)" data-reveal>
+-  <img data-src-base="images/lookbook-3" data-ext-idx="0" src="images/lookbook-3.jpg" alt="Lookbook editorial 3" class="absolute inset-0 w-full h-full object-cover" data-parallax onerror="imgTryNext(this)" loading="lazy">
++  <img data-src-base="images/lookbook-3" data-ext-idx="0" src="images/lookbook-3.webp" alt="Lookbook editorial 3" class="absolute inset-0 w-full h-full object-cover" data-parallax onerror="imgTryNext(this)" loading="lazy">
+   <div class="lookbook-caption max-w-7xl mx-auto px-5 sm:px-8 pb-14 text-white">
+     <span class="pill pill-volt mb-4 inline-block">Chapter 03</span>
+     <h2 class="font-display text-5xl sm:text-7xl leading-[0.95] mb-5">Off the<br>Beaten Path</h2>
+@@ -215,10 +215,10 @@
+ <section class="max-w-7xl mx-auto px-5 sm:px-8 py-20">
+   <h2 class="font-display text-4xl sm:text-5xl mb-10 text-center" data-reveal>Behind the shots</h2>
+   <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+-    <a href="product.html?id=nitro-3-running" class="tilt" data-tilt><div class="tilt-inner tile aspect-square relative" style="background:linear-gradient(135deg,#FF6B6B,#C44569)"><img data-src-base="images/lookbook-g1" data-ext-idx="0" src="images/lookbook-g1.jpg" alt="Nitro 3 Running" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy"></div></a>
+-    <a href="product.html?id=coastal-slide" class="tilt" data-tilt><div class="tilt-inner tile aspect-square relative" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)"><img data-src-base="images/lookbook-g2" data-ext-idx="0" src="images/lookbook-g2.jpg" alt="Coastal Slide Sandal" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy"></div></a>
+-    <a href="product.html?id=terra-cross-trainer" class="tilt" data-tilt><div class="tilt-inner tile aspect-square relative" style="background:linear-gradient(135deg,#FFB703,#FB8500)"><img data-src-base="images/lookbook-g3" data-ext-idx="0" src="images/lookbook-g3.jpg" alt="Terra Cross Trainer" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy"></div></a>
+-    <a href="product.html?id=nightfall-high" class="tilt" data-tilt><div class="tilt-inner tile aspect-square relative" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)"><img data-src-base="images/lookbook-g4" data-ext-idx="0" src="images/lookbook-g4.jpg" alt="Nightfall High" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy"></div></a>
++    <a href="product.html?id=nitro-3-running" class="tilt" data-tilt><div class="tilt-inner tile aspect-square relative" style="background:linear-gradient(135deg,#FF6B6B,#C44569)"><img data-src-base="images/lookbook-g1" data-ext-idx="0" src="images/lookbook-g1.webp" alt="Nitro 3 Running" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy"></div></a>
++    <a href="product.html?id=coastal-slide" class="tilt" data-tilt><div class="tilt-inner tile aspect-square relative" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)"><img data-src-base="images/lookbook-g2" data-ext-idx="0" src="images/lookbook-g2.webp" alt="Coastal Slide Sandal" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy"></div></a>
++    <a href="product.html?id=terra-cross-trainer" class="tilt" data-tilt><div class="tilt-inner tile aspect-square relative" style="background:linear-gradient(135deg,#FFB703,#FB8500)"><img data-src-base="images/lookbook-g3" data-ext-idx="0" src="images/lookbook-g3.webp" alt="Terra Cross Trainer" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy"></div></a>
++    <a href="product.html?id=nightfall-high" class="tilt" data-tilt><div class="tilt-inner tile aspect-square relative" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)"><img data-src-base="images/lookbook-g4" data-ext-idx="0" src="images/lookbook-g4.webp" alt="Nightfall High" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy"></div></a>
+   </div>
+ </section>
+ 
+diff --git a/press.html b/press.html
+index 0ba8236..8614c41 100644
+--- a/press.html
++++ b/press.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/product.html b/product.html
+index 5e8e922..f3612eb 100644
+--- a/product.html
++++ b/product.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/rewards.html b/rewards.html
+index 82fcefb..bcecaed 100644
+--- a/rewards.html
++++ b/rewards.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/shop.html b/shop.html
+index c07860d..b6eeae6 100644
+--- a/shop.html
++++ b/shop.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+@@ -183,7 +183,7 @@
+   <div class="tilt" data-tilt data-reveal>
+   <div class="tile aspect-[4/3] sm:aspect-[16/8] lg:aspect-[21/6] relative tilt-inner overflow-hidden" style="background:linear-gradient(120deg,#0B0B0C,#283618,#606C38)">
+     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+-    <img data-src-base="images/shop-banner" data-ext-idx="0" src="images/shop-banner.jpg" alt="New drop" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
++    <img data-src-base="images/shop-banner" data-ext-idx="0" src="images/shop-banner.webp" alt="New drop" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)" loading="lazy">
+     <video data-src-base="videos/shop-banner" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline autoplay></video>
+     <div class="absolute inset-0" style="background:linear-gradient(90deg, rgba(11,11,12,.75), transparent 60%)"></div>
+     <div class="absolute inset-0 flex items-center px-8 sm:px-12">
+diff --git a/signup.html b/signup.html
+index 0227b3f..1b0b0d8 100644
+--- a/signup.html
++++ b/signup.html
+@@ -50,7 +50,7 @@
+   <!-- visual side -->
+   <div class="relative tile !rounded-none order-2 lg:order-1 overflow-hidden auth-media h-56 sm:h-72 lg:h-auto" style="background:linear-gradient(135deg,#F4A261,#E76F51,#2A9D8F)">
+     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+-    <img data-src-base="images/auth-signup" data-ext-idx="0" src="images/auth-signup.jpg" alt="" class="absolute inset-0 w-full h-full object-cover auth-media-layer" onerror="imgTryNext(this)">
++    <img data-src-base="images/auth-signup" data-ext-idx="0" src="images/auth-signup.webp" alt="" class="absolute inset-0 w-full h-full object-cover auth-media-layer" onerror="imgTryNext(this)">
+     <video data-src-base="videos/auth-signup" class="absolute inset-0 w-full h-full object-cover auth-media-layer" muted loop playsinline autoplay></video>
+     <div class="absolute inset-0" style="background:linear-gradient(0deg, rgba(11,11,12,.75), rgba(11,11,12,.15) 45%, rgba(11,11,12,.05))"></div>
+     <div class="tech-scan absolute inset-0"></div>
+diff --git a/size-guide.html b/size-guide.html
+index d45ff5a..6ad4a3b 100644
+--- a/size-guide.html
++++ b/size-guide.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/stores.html b/stores.html
+index 3eb211a..bdd4565 100644
+--- a/stores.html
++++ b/stores.html
+@@ -59,28 +59,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/sustainability.html b/sustainability.html
+index e4cced5..dcd5372 100644
+--- a/sustainability.html
++++ b/sustainability.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>
+diff --git a/wishlist.html b/wishlist.html
+index ddda1de..7132c4f 100644
+--- a/wishlist.html
++++ b/wishlist.html
+@@ -58,28 +58,28 @@
+           <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 grid grid-cols-4 gap-6">
+             <a href="shop.html?category=running" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#FF6B6B,#C44569)">
+-                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.jpg" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/running" data-ext-idx="0" src="images/categories/running.webp" alt="Running shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-person-running thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Running</p>
+             </a>
+             <a href="shop.html?category=trail" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#606C38,#283618)">
+-                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.jpg" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/trail" data-ext-idx="0" src="images/categories/trail.webp" alt="Trail shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-mountain thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Trail</p>
+             </a>
+             <a href="shop.html?category=lifestyle" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#9D4EDD,#5A189A)">
+-                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.jpg" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/lifestyle" data-ext-idx="0" src="images/categories/lifestyle.webp" alt="Lifestyle shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-shoe-prints thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Lifestyle</p>
+             </a>
+             <a href="shop.html?category=casual" class="group">
+               <div class="tile thumb-art aspect-square mb-3 relative overflow-hidden" style="background:linear-gradient(135deg,#8ECAE6,#219EBC)">
+-                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.jpg" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
++                <img data-src-base="images/categories/casual" data-ext-idx="0" src="images/categories/casual.webp" alt="Casual shoes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="imgTryNext(this)">
+                 <i class="fa-solid fa-couch thumb-fallback-icon text-white/70"></i>
+               </div>
+               <p class="font-semibold text-sm group-hover:underline">Casual</p>

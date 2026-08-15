@@ -685,6 +685,49 @@ function initCountUp() {
   els.forEach((el) => io.observe(el));
 }
 
+/* ---------------------------------------------------------------------
+   TOUCH MEGA MENU
+   The mega menu (and any nav-has-mega trigger) opens on CSS :hover /
+   :focus-within, which is invisible to touch. That's fine on phones —
+   they get the hamburger nav below the "lg" breakpoint — but every
+   iPad in landscape (and the 12.9" Pro in portrait) is >=1024px wide,
+   so they render the *desktop* nav with a real anchor tag as the
+   trigger. A tap there just follows the link straight to shop.html
+   before the menu can appear. On devices that lack fine hover, treat
+   the first tap on that trigger as "open the menu", and only let a
+   second tap (or a tap while it's already open) navigate through.
+--------------------------------------------------------------------- */
+function initTouchMegaMenu() {
+  if (window.matchMedia("(hover: hover)").matches) return; // real hover devices are fine as-is
+  const triggers = document.querySelectorAll(".nav-has-mega > a.nav-link");
+  if (!triggers.length) return;
+
+  function closeAll(except) {
+    document.querySelectorAll(".nav-has-mega.is-open").forEach((el) => {
+      if (el !== except) el.classList.remove("is-open");
+    });
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      const wrap = trigger.closest(".nav-has-mega");
+      if (!wrap.classList.contains("is-open")) {
+        e.preventDefault();
+        closeAll(wrap);
+        wrap.classList.add("is-open");
+      }
+      // already open: let this tap navigate through normally
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".nav-has-mega")) closeAll(null);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAll(null);
+  });
+}
+
 function initSkipLink() {
   const link = document.createElement("a");
   link.href = "#";
@@ -716,6 +759,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSplitText();
   initNavSearch();
   initActiveNav();
+  initTouchMegaMenu();
   initScrollProgress();
   initCustomCursor();
   initRipple();

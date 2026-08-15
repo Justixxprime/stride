@@ -563,7 +563,7 @@ body{ animation: page-fade-in .4s ease forwards; }
   background:linear-gradient(90deg, transparent, var(--volt) 35%, var(--flame) 65%, transparent);
   opacity:.9;
 }
-.nav-has-mega:hover .mega-menu, .nav-has-mega:focus-within .mega-menu{
+.nav-has-mega:hover .mega-menu, .nav-has-mega:focus-within .mega-menu, .nav-has-mega.is-open .mega-menu{
   opacity:1; visibility:visible; transform:translateY(0) scale(1);
 }
 /* each category tile rises in with its own delay for a richer, staged
@@ -572,7 +572,7 @@ body{ animation: page-fade-in .4s ease forwards; }
   opacity:0; transform:translateY(14px);
   transition: opacity .38s ease, transform .38s ease, box-shadow .3s ease;
 }
-.nav-has-mega:hover .mega-menu a.group, .nav-has-mega:focus-within .mega-menu a.group{ opacity:1; transform:translateY(0); }
+.nav-has-mega:hover .mega-menu a.group, .nav-has-mega:focus-within .mega-menu a.group, .nav-has-mega.is-open .mega-menu a.group{ opacity:1; transform:translateY(0); }
 .mega-menu a.group:nth-child(1){ transition-delay:.05s; }
 .mega-menu a.group:nth-child(2){ transition-delay:.10s; }
 .mega-menu a.group:nth-child(3){ transition-delay:.15s; }
